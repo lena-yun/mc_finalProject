@@ -1,0 +1,445 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Responsive Bootstrap4 Shop Template, Created by Imran Hossain from https://imransdesign.com/">
+
+	<!-- title -->
+	<title>Single Product</title>
+
+	<!-- favicon -->
+	<link rel="shortcut icon" type="image/png" href="{% static 'assets/img/favicon.png' %}">
+	<!-- google font -->
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
+	<!-- fontawesome -->
+	<link rel="stylesheet" href="{% static 'assets/css/all.min.css' %}">
+	<!-- bootstrap -->
+	<link rel="stylesheet" href="{% static 'assets/bootstrap/css/bootstrap.min.css' %}">
+	<!-- owl carousel -->
+	<link rel="stylesheet" href="{% static 'assets/css/owl.carousel.css' %}">
+	<!-- magnific popup -->
+	<link rel="stylesheet" href="{% static 'assets/css/magnific-popup.css' %}">
+	<!-- animate css -->
+	<link rel="stylesheet" href="{% static 'assets/css/animate.css' %}">
+	<!-- mean menu css -->
+	<link rel="stylesheet" href="{% static 'assets/css/meanmenu.min.css' %}">
+	<!-- main style -->
+	<link rel="stylesheet" href="{% static 'assets/css/main.css' %}">
+	<!-- responsive -->
+	<link rel="stylesheet" href="{% static 'assets/css/responsive.css' %}">
+<style>
+	.chartdiv {
+  		width: 100%;
+  		height: 100%;
+		margin-bottom: 100px;
+		padding-bottom: 100px;
+	}
+</style>
+</head>
+<body>
+	
+	<!--PreLoader-->
+<!--    <div class="loader">-->
+<!--        <div class="loader-inner">-->
+<!--            <div class="circle"></div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    &lt;!&ndash;PreLoader Ends&ndash;&gt;-->
+<!--	-->
+<!--	&lt;!&ndash; header &ndash;&gt;-->
+<!--	<div class="top-header-area" id="sticker">-->
+<!--		<div class="container">-->
+<!--			<div class="row">-->
+<!--				<div class="col-lg-12 col-sm-12 text-center">-->
+<!--					<div class="main-menu-wrap">-->
+<!--						&lt;!&ndash; logo &ndash;&gt;-->
+<!--						<div class="site-logo">-->
+<!--							<a href="index.html">-->
+<!--								<img src="{% static 'assets/img/logo.png' %}" alt="">-->
+<!--							</a>-->
+<!--						</div>-->
+<!--						&lt;!&ndash; logo &ndash;&gt;-->
+
+<!--						&lt;!&ndash; menu start &ndash;&gt;-->
+<!--						<nav class="main-menu">-->
+<!--							<ul>-->
+<!--								<li class="current-list-item"><a href="{% url 'index' %}">Home</a>-->
+<!--								</li>-->
+<!--								<li><a href="{% url 'about' %}">About</a></li>-->
+<!--								<li><a href="#">Pages</a>-->
+<!--									<ul class="sub-menu">-->
+<!--										<li><a href="404.html">404 page</a></li>-->
+<!--										<li><a href="{% url 'about' %}">About</a></li>-->
+<!--										<li><a href="cart.html">Cart</a></li>-->
+<!--										<li><a href="checkout.html">Check Out</a></li>-->
+<!--										<li><a href="contact.html">Contact</a></li>-->
+<!--										<li><a href="news.html">News</a></li>-->
+<!--										<li><a href="shop.html">Shop</a></li>-->
+<!--									</ul>-->
+<!--								</li>-->
+<!--								<li><a href="news.html">News</a>-->
+<!--									<ul class="sub-menu">-->
+<!--										<li><a href="news.html">News</a></li>-->
+<!--										<li><a href="single-news.html">Single News</a></li>-->
+<!--									</ul>-->
+<!--								</li>-->
+<!--								<li><a href="contact.html">Contact</a></li>-->
+<!--								<li><a href="shop.html">Shop</a>-->
+<!--									<ul class="sub-menu">-->
+<!--										<li><a href="shop.html">Shop</a></li>-->
+<!--										<li><a href="checkout.html">Check Out</a></li>-->
+<!--										<li><a href="single-product.html">Single Product</a></li>-->
+<!--										<li><a href="cart.html">Cart</a></li>-->
+<!--									</ul>-->
+<!--								</li>-->
+<!--								<li>-->
+<!--									<div class="header-icons">-->
+<!--										<a class="shopping-cart" href="cart.html"><i class="fas fa-shopping-cart"></i></a>-->
+<!--										<a class="mobile-hide search-bar-icon" href="#"><i class="fas fa-search"></i></a>-->
+<!--									</div>-->
+<!--								</li>-->
+<!--							</ul>-->
+<!--						</nav>-->
+<!--						<a class="mobile-show search-bar-icon" href="#"><i class="fas fa-search"></i></a>-->
+<!--						<div class="mobile-menu"></div>-->
+<!--						&lt;!&ndash; menu end &ndash;&gt;-->
+<!--					</div>-->
+<!--				</div>-->
+<!--			</div>-->
+<!--		</div>-->
+<!--	</div>-->
+	<!-- end header -->
+
+	<!-- search area -->
+<!--	<div class="search-area">-->
+<!--		<div class="container">-->
+<!--			<div class="row">-->
+<!--				<div class="col-lg-12">-->
+<!--					<span class="close-btn"><i class="fas fa-window-close"></i></span>-->
+<!--					<div class="search-bar">-->
+<!--						<div class="search-bar-tablecell">-->
+<!--							<h3>Search For:</h3>-->
+<!--							<input type="text" placeholder="Keywords">-->
+<!--							<button type="submit">Search <i class="fas fa-search"></i></button>-->
+<!--						</div>-->
+<!--					</div>-->
+<!--				</div>-->
+<!--			</div>-->
+<!--		</div>-->
+<!--	</div>-->
+<!--	&lt;!&ndash; end search arewa &ndash;&gt;-->
+	
+	<!-- breadcrumb-section -->
+<!--	<div class="breadcrumb-section breadcrumb-bg">-->
+<!--		<div class="container">-->
+<!--			<div class="row">-->
+<!--				<div class="col-lg-8 offset-lg-2 text-center">-->
+<!--					<div class="breadcrumb-text">-->
+<!--						<p>서울특별시 노원구</p>-->
+<!--						<h1>배추</h1>-->
+<!--					</div>-->
+<!--				</div>-->
+<!--			</div>-->
+<!--		</div>-->
+<!--	</div>-->
+	<!-- end breadcrumb section -->
+
+	<!-- single product -->
+	<div class="single-product mt-100 mb-100">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-5">
+					<div class="single-product-img">
+						<img src="{% static 'assets/img/products/cabbage.jpg' %}" alt="">
+					</div>
+				</div>
+				<div class="col-md-7">
+					<div class="cart-table-wrap">
+						<h4>n년간 가격이 <span class="orange-text">가장 높은 마트와 낮은 마트</span></h4>
+						<table class="price-table">
+							<thead class="cart-table-head">
+								<tr class="table-head-row">
+<!--									<th class="product-remove"></th>-->
+									<th class="price-status">순위</th>
+									<th class="price-week-pred">마트 이름</th>
+									<th class="price-twodaysago">가격</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr class="table-body-row">
+<!--									<td class="product-remove"><a href="#"><i class="far fa-window-close"></i></a></td>-->
+									<td class="price-week-pred">1위</td>
+									<td class="price-twodaysago">85원</td>
+									<td class="price-yesterday">00원________________________________</td>
+								</tr>
+								<tr class="table-body-row">
+<!--									<td class="product-remove"><a href="#"><i class="far fa-window-close"></i></a></td>-->
+									<td class="price-week-pred">2위</td>
+									<td class="price-twodaysago">85원</td>
+									<td class="price-yesterday">00원</td>
+								</tr>
+						</table>
+						<br/>
+						<h4>n년간 가격이 <span class="orange-text">가장 높은 시장과 낮은 시장</span></h4>
+						<table class="price-table">
+							<thead class="cart-table-head">
+								<tr class="table-head-row">
+<!--									<th class="product-remove"></th>-->
+									<th class="price-status">순위</th>
+									<th class="price-week-pred">마트 이름</th>
+									<th class="price-twodaysago">가격</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr class="table-body-row">
+<!--									<td class="product-remove"><a href="#"><i class="far fa-window-close"></i></a></td>-->
+									<td class="price-week-pred">1위</td>
+									<td class="price-twodaysago">85원</td>
+									<td class="price-yesterday">00원</td>
+								</tr>
+								<tr class="table-body-row">
+<!--									<td class="product-remove"><a href="#"><i class="far fa-window-close"></i></a></td>-->
+									<td class="price-week-pred">2위</td>
+									<td class="price-twodaysago">85원</td>
+									<td class="price-yesterday">00원________________________________</td>
+								</tr>
+						</table>
+					</div>
+<!--
+						<div class="single-product-form">
+							<form action="index.html">
+								<input type="number" placeholder="0">
+							</form>
+							<a href="cart.html" class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
+							<p><strong>Categories: </strong>Fruits, Organic</p>
+						</div>
+-->
+<!--
+						<h4>Share:</h4>
+						<ul class="product-share">
+							<li><a href=""><i class="fab fa-facebook-f"></i></a></li>
+							<li><a href=""><i class="fab fa-twitter"></i></a></li>
+							<li><a href=""><i class="fab fa-google-plus-g"></i></a></li>
+							<li><a href=""><i class="fab fa-linkedin"></i></a></li>
+						</ul>
+-->
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end single product -->
+
+	<!-- more products -->
+	<div class="more-products mb-150">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 offset-lg-2 text-center">
+					<div class="section-title">
+						<h3>노원구 배추 가격 <span class="orange-text">분석 결과</span></h3>
+						<p>배추는 몸에도 좋고 맛도 좋고! 겨울에 김장 배추 가격 예산을 정해보자</p>
+					</div>
+					<div class ="chartdiv">
+<!--					    <canvas id="myChart" width="400" height="400"></canvas>-->
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="more-products mb-150">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 offset-lg-2 text-center">
+					<div class="section-title">
+						<h3>노원구 시장과 대형마트 <span class="orange-text">가격 비교</span></h3>
+						<p>시장과 대형마트 채소 가격을 비교하여 어떠한 채소가 더 비싸고 더 저렴한지 <br/>파악해보자</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end more products -->
+
+	<!-- logo carousel -->
+<!--	<div class="logo-carousel-section">-->
+<!--		<div class="container">-->
+<!--			<div class="row">-->
+<!--				<div class="col-lg-12">-->
+<!--					<div class="logo-carousel-inner">-->
+<!--						<div class="single-logo-item">-->
+<!--							<img src="{% static 'assets/img/company-logos/1.png' %}" alt="">-->
+<!--						</div>-->
+<!--						<div class="single-logo-item">-->
+<!--							<img src="{% static 'assets/img/company-logos/2.png' %}" alt="">-->
+<!--						</div>-->
+<!--						<div class="single-logo-item">-->
+<!--							<img src="{% static 'assets/img/company-logos/3.png' %}" alt="">-->
+<!--						</div>-->
+<!--						<div class="single-logo-item">-->
+<!--							<img src="{% static 'assets/img/company-logos/4.png' %}" alt="">-->
+<!--						</div>-->
+<!--						<div class="single-logo-item">-->
+<!--							<img src="{% static 'assets/img/company-logos/5.png' %}" alt="">-->
+<!--						</div>-->
+<!--					</div>-->
+<!--				</div>-->
+<!--			</div>-->
+<!--		</div>-->
+<!--	</div>-->
+<!--	&lt;!&ndash; end logo carousel &ndash;&gt;-->
+
+<!--	&lt;!&ndash; footer &ndash;&gt;-->
+<!--	<div class="footer-area">-->
+<!--		<div class="container">-->
+<!--			<div class="row">-->
+<!--				<div class="col-lg-3 col-md-6">-->
+<!--					<div class="footer-box about-widget">-->
+<!--						<h2 class="widget-title">About us</h2>-->
+<!--						<p>Ut enim ad minim veniam perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae.</p>-->
+<!--					</div>-->
+<!--				</div>-->
+<!--				<div class="col-lg-3 col-md-6">-->
+<!--					<div class="footer-box get-in-touch">-->
+<!--						<h2 class="widget-title">Get in Touch</h2>-->
+<!--						<ul>-->
+<!--							<li>34/8, East Hukupara, Gifirtok, Sadan.</li>-->
+<!--							<li>support@fruitkha.com</li>-->
+<!--							<li>+00 111 222 3333</li>-->
+<!--						</ul>-->
+<!--					</div>-->
+<!--				</div>-->
+<!--				<div class="col-lg-3 col-md-6">-->
+<!--					<div class="footer-box pages">-->
+<!--						<h2 class="widget-title">Pages</h2>-->
+<!--						<ul>-->
+<!--							<li><a href="index.html">Home</a></li>-->
+<!--							<li><a href="about.html">About</a></li>-->
+<!--							<li><a href="services.html">Shop</a></li>-->
+<!--							<li><a href="news.html">News</a></li>-->
+<!--							<li><a href="contact.html">Contact</a></li>-->
+<!--						</ul>-->
+<!--					</div>-->
+<!--				</div>-->
+<!--				<div class="col-lg-3 col-md-6">-->
+<!--					<div class="footer-box subscribe">-->
+<!--						<h2 class="widget-title">Subscribe</h2>-->
+<!--						<p>Subscribe to our mailing list to get the latest updates.</p>-->
+<!--						<form action="index.html">-->
+<!--							<input type="email" placeholder="Email">-->
+<!--							<button type="submit"><i class="fas fa-paper-plane"></i></button>-->
+<!--						</form>-->
+<!--					</div>-->
+<!--				</div>-->
+<!--			</div>-->
+<!--		</div>-->
+<!--	</div>-->
+<!--	&lt;!&ndash; end footer &ndash;&gt;-->
+<!--	-->
+<!--	&lt;!&ndash; copyright &ndash;&gt;-->
+<!--	<div class="copyright">-->
+<!--		<div class="container">-->
+<!--			<div class="row">-->
+<!--				<div class="col-lg-6 col-md-12">-->
+<!--					<p>Copyrights &copy; 2019 - <a href="https://imransdesign.com/">Imran Hossain</a>,  All Rights Reserved.</p>-->
+<!--				</div>-->
+<!--				<div class="col-lg-6 text-right col-md-12">-->
+<!--					<div class="social-icons">-->
+<!--						<ul>-->
+<!--							<li><a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a></li>-->
+<!--							<li><a href="#" target="_blank"><i class="fab fa-twitter"></i></a></li>-->
+<!--							<li><a href="#" target="_blank"><i class="fab fa-instagram"></i></a></li>-->
+<!--							<li><a href="#" target="_blank"><i class="fab fa-linkedin"></i></a></li>-->
+<!--							<li><a href="#" target="_blank"><i class="fab fa-dribbble"></i></a></li>-->
+<!--						</ul>-->
+<!--					</div>-->
+<!--				</div>-->
+<!--			</div>-->
+<!--		</div>-->
+<!--	</div>-->
+	<!-- end copyright -->
+	
+	<!-- jquery -->
+	<script src="{% static 'assets/js/jquery-1.11.3.min.js' %}"></script>
+	<!-- bootstrap -->
+	<script src="{% static 'assets/bootstrap/js/bootstrap.min.js' %}"></script>
+	<!-- count down -->
+	<script src="{% static 'assets/js/jquery.countdown.js' %}"></script>
+	<!-- isotope -->
+	<script src="{% static 'assets/js/jquery.isotope-3.0.6.min.js' %}"></script>
+	<!-- waypoints -->
+	<script src="{% static 'assets/js/waypoints.js' %}"></script>
+	<!-- owl carousel -->
+	<script src="{% static 'assets/js/owl.carousel.min.js' %}"></script>
+	<!-- magnific popup -->
+	<script src="{% static 'assets/js/jquery.magnific-popup.min.js' %}"></script>
+	<!-- mean menu -->
+	<script src="{% static 'assets/js/jquery.meanmenu.min.js' %}"></script>
+	<!-- sticker js -->
+	<script src="{% static 'assets/js/sticker.js' %}"></script>
+	<!-- main js -->
+	<script src="{% static 'assets/js/main.js' %}"></script>
+
+
+	<script type="text/javascript"  src="https://cdn.amcharts.com/lib/4/core.js"></script>
+	<script type="text/javascript"  src="https://cdn.amcharts.com/lib/4/charts.js"></script>
+	<script type="text/javascript"  src="https://cdn.amcharts.com/lib/4/themes/animated.js"></script>
+
+
+	<script>
+	am4core.ready(function() {
+
+	// Themes begin
+	am4core.useTheme(am4themes_animated);
+	// Themes end
+
+	// Create chart instance
+	var chart = am4core.create("chartdiv", am4charts.XYChart);
+
+	// Add data
+	chart.data = [
+	  {date:new Date(2019,5,12), value1:50, value2:48, previousDate:new Date(2019, 5, 5)},
+	  {date:new Date(2019,5,13), value1:53, value2:51, previousDate:new Date(2019, 5, 6)},
+	  {date:new Date(2019,5,14), value1:56, value2:58, previousDate:new Date(2019, 5, 7)},
+	  {date:new Date(2019,5,15), value1:52, value2:53, previousDate:new Date(2019, 5, 8)},
+	  {date:new Date(2019,5,16), value1:48, value2:44, previousDate:new Date(2019, 5, 9)},
+	  {date:new Date(2019,5,17), value1:47, value2:42, previousDate:new Date(2019, 5, 10)},
+	  {date:new Date(2019,5,18), value1:59, value2:55, previousDate:new Date(2019, 5, 11)}
+	]
+
+	// Create axes
+	var dateAxis = chart.xAxes.push(new am4charts.DateAxis());
+	dateAxis.renderer.minGridDistance = 50;
+
+	var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
+
+	// Create series
+	var series = chart.series.push(new am4charts.LineSeries());
+	series.dataFields.valueY = "value1";
+	series.dataFields.dateX = "date";
+	series.strokeWidth = 2;
+	series.minBulletDistance = 10;
+	series.tooltipText = "[bold]{date.formatDate()}:[/] {value1}\n[bold]{previousDate.formatDate()}:[/] {value2}";
+	series.tooltip.pointerOrientation = "vertical";
+
+	// Create series
+	var series2 = chart.series.push(new am4charts.LineSeries());
+	series2.dataFields.valueY = "value2";
+	series2.dataFields.dateX = "date";
+	series2.strokeWidth = 2;
+	series2.strokeDasharray = "3,4";
+	series2.stroke = series.stroke;
+
+	// Add cursor
+	chart.cursor = new am4charts.XYCursor();
+	chart.cursor.xAxis = dateAxis;
+
+	}); // end am4core.ready()
+	</script>
+
+</body>
+</html>

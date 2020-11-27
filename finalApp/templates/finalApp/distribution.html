@@ -1,0 +1,518 @@
+{% include 'finalApp/header.html' %}
+{% block content %}
+{% load static %}
+
+	<!-- title -->
+	<title>Fruitkha - Slider Version</title>
+
+	<!-- favicon -->
+	<link rel="shortcut icon" type="image/png" href="{% static 'assets/img/favicon.png' %}">
+	<!-- google font -->
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
+	<!-- fontawesome -->
+	<link rel="stylesheet" href="{% static 'assets/css/all.min.css' %}">
+	<!-- bootstrap -->
+	<link rel="stylesheet" href="{% static 'assets/bootstrap/css/bootstrap.min.css' %}">
+	<!-- owl carousel -->
+	<link rel="stylesheet" href="{% static 'assets/css/owl.carousel.css' %}">
+	<!-- magnific popup -->
+	<link rel="stylesheet" href="{% static 'assets/css/magnific-popup.css' %}">
+	<!-- animate css -->
+	<link rel="stylesheet" href="{% static 'assets/css/animate.css' %}">
+	<!-- mean menu css -->
+	<link rel="stylesheet" href="{% static 'assets/css/meanmenu.min.css' %}">
+	<!-- main style -->
+	<link rel="stylesheet" href="{% static 'assets/css/main.css' %}">
+	<!-- responsive -->
+	<link rel="stylesheet" href="{% static 'assets/css/responsive.css' %}">
+
+	<!-- timeline chart css -->
+	<link rel="stylesheet" href="{% static 'assets/css/timechart.css' %}">
+
+	<!-- video css -->
+	<link rel="stylesheet" href="{% static 'assets/css/video.css' %}">
+
+	<!-- video play button -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+</head>
+
+	<!-- breadcrumb-section -->
+	<div class="breadcrumb-section breadcrumb-bg">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 offset-lg-2 text-center">
+					<div class="breadcrumb-text">
+						<p>distribution</p>
+						<h1>유통</h1>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end breadcrumb section -->
+
+	<!-- features list section -->
+<!--	<div class="list-section pt-80 pb-80">-->
+<!--		<div class="container">-->
+
+<!--			<div class="row">-->
+<!--				<div class="col-lg-4 col-md-6 mb-4 mb-lg-0">-->
+<!--					<div class="list-box d-flex align-items-center">-->
+<!--						<div class="list-icon">-->
+<!--							<i class="fas fa-shipping-fast"></i>-->
+<!--						</div>-->
+<!--						<div class="content">-->
+<!--							<h3>Free Shipping</h3>-->
+<!--							<p>When order over $75</p>-->
+<!--						</div>-->
+<!--					</div>-->
+<!--				</div>-->
+<!--				<div class="col-lg-4 col-md-6 mb-4 mb-lg-0">-->
+<!--					<div class="list-box d-flex align-items-center">-->
+<!--						<div class="list-icon">-->
+<!--							<i class="fas fa-phone-volume"></i>-->
+<!--						</div>-->
+<!--						<div class="content">-->
+<!--							<h3>24/7 Support</h3>-->
+<!--							<p>Get support all day</p>-->
+<!--						</div>-->
+<!--					</div>-->
+<!--				</div>-->
+<!--				<div class="col-lg-4 col-md-6">-->
+<!--					<div class="list-box d-flex justify-content-start align-items-center">-->
+<!--						<div class="list-icon">-->
+<!--							<i class="fas fa-sync"></i>-->
+<!--						</div>-->
+<!--						<div class="content">-->
+<!--							<h3>Refund</h3>-->
+<!--							<p>Get refund within 3 days!</p>-->
+<!--						</div>-->
+<!--					</div>-->
+<!--				</div>-->
+<!--			</div>-->
+
+<!--		</div>-->
+<!--	</div>-->
+	<!-- end features list section -->
+
+	<!-- product section -->
+<!--	<div class="product-section mt-150 mb-150">-->
+<!--		<div class="container">-->
+<!--			<div class="row">-->
+<!--				<div class="col-lg-8 offset-lg-2 text-center">-->
+<!--					<div class="section-title">	-->
+<!--						<h3><span class="orange-text">Our</span> Products</h3>-->
+<!--						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, fuga quas itaque eveniet beatae optio.</p>-->
+<!--					</div>-->
+<!--				</div>-->
+<!--			</div>-->
+
+<!--			<div class="row">-->
+<!--				<div class="col-lg-4 col-md-6 text-center">-->
+<!--					<div class="single-product-item">-->
+<!--						<div class="product-image">-->
+<!--							<a href="single-product.html"><img src="{% static 'assets/img/products/product-img-1.jpg' %}" alt=""></a>-->
+<!--						</div>-->
+<!--						<h3>Strawberry</h3>-->
+<!--						<p class="product-price"><span>Per Kg</span> 85$ </p>-->
+<!--						<a href="cart.html" class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a>-->
+<!--					</div>-->
+<!--				</div>-->
+<!--				<div class="col-lg-4 col-md-6 text-center">-->
+<!--					<div class="single-product-item">-->
+<!--						<div class="product-image">-->
+<!--							<a href="single-product.html"><img src="{% static 'assets/img/products/product-img-2.jpg' %}" alt=""></a>-->
+<!--						</div>-->
+<!--						<h3>Berry</h3>-->
+<!--						<p class="product-price"><span>Per Kg</span> 70$ </p>-->
+<!--						<a href="cart.html" class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a>-->
+<!--					</div>-->
+<!--				</div>-->
+<!--				<div class="col-lg-4 col-md-6 offset-md-3 offset-lg-0 text-center">-->
+<!--					<div class="single-product-item">-->
+<!--						<div class="product-image">-->
+<!--							<a href="single-product.html"><img src="{% static 'assets/img/products/product-img-3.jpg' %}" alt=""></a>-->
+<!--						</div>-->
+<!--						<h3>Lemon</h3>-->
+<!--						<p class="product-price"><span>Per Kg</span> 35$ </p>-->
+<!--						<a href="cart.html" class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a>-->
+<!--					</div>-->
+<!--				</div>-->
+<!--			</div>-->
+<!--		</div>-->
+<!--	</div>-->
+	<!-- end product section -->
+
+	<!-- cart banner section -->
+	<section class="cart-banner pt-100 pb-100">
+    	<div class="container">
+        	<div class="row">
+                <!--Content Column-->
+                <div class="content-column col-lg-12">
+					<h5><span class="orange-text">당신의 채소가 싸게, 또는 비싸게 느껴지는 이유</span></h5>
+					<h3>복잡한 유통 구조<br><br></h3>
+                    <div class="text">
+						&nbsp; 우리나라 채소 가격이 등락 폭이 심하다고 느끼는 이유는 바로 유통 구조 때문입니다.<br>
+						한국농수산식품유통공사(aT)가 34개 주요 농산물 가격을 분석한 결과 유통비용이 45%를 차지하는 것으로 밝혀졌습니다.<br>
+						즉, 농산물 가격이 1000원이라면 450원은 유통과정에서 발생한 비용이라는 의미입니다.<br><br>
+						&nbsp;특히 도매시장 법인에서 일어나는 도매회사들의 갑질과 예측할 수 없는 경락가 때문에 농부들이 농산물에 대해 제값을 받지 못하고 있습니다.<br>
+						이 페이지에서는 우리나라의 유통구조와 도매시장 법인에서 일어나는 일들을 조명하고자 합니다.
+					</div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- end cart banner section -->
+	<div class="product-section mt-150 mb-150">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 offset-lg-2 text-center">
+					<figure class="highcharts-figure">
+					  <div id="container"></div>
+					</figure>
+				</div>
+			</div>
+		</div>
+	</div>
+
+<!--		<div class="product-section mt-150 mb-150">-->
+<!--		<div class="container">-->
+<!--			<div class="Timeline">-->
+
+<!--					  <svg height="5" width="200">-->
+<!--					  <line x1="0" y1="0" x2="200" y2="0" style="stroke:#004165;stroke-width:5" />-->
+<!--					  Sorry, your browser does not support inline SVG.-->
+<!--					</svg>-->
+
+<!--					  <div class="event1">-->
+
+<!--						<div class="event1Bubble">-->
+<!--						  <div class="eventTime">-->
+<!--							<div class="DayDigit">700원</div>-->
+<!--&lt;!&ndash;							<div class="Day">&ndash;&gt;-->
+<!--&lt;!&ndash;							   Wednesday&ndash;&gt;-->
+<!--&lt;!&ndash;							  <div class="MonthYear">february 2016</div>&ndash;&gt;-->
+<!--&lt;!&ndash;							</div>&ndash;&gt;-->
+<!--						  </div>-->
+<!--						  <div class="eventTitle">농가 수취가격</div>-->
+<!--						</div>-->
+<!--						<div class="eventAuthor">128.5% 증가</div>-->
+<!--						<svg height="20" width="20">-->
+<!--						   <circle cx="10" cy="11" r="5" fill="#004165" />-->
+<!--						 </svg>-->
+<!--						<div class="time">농부가 채소를 유통업체에 파는 가격</div>-->
+
+<!--					  </div>-->
+
+<!--					  <svg height="5" width="300">-->
+<!--					  <line x1="0" y1="0" x2="300" y2="0" style="stroke:#004165;stroke-width:5" />-->
+<!--					  Sorry, your browser does not support inline SVG.-->
+<!--					</svg>-->
+
+<!--					  <div class="event2">-->
+
+<!--						<div class="event2Bubble">-->
+<!--						  <div class="eventTime">-->
+<!--							<div class="DayDigit">17</div>-->
+<!--							<div class="Day">-->
+<!--							   Thursday-->
+<!--							  <div class="MonthYear">April 2016</div>-->
+<!--							</div>-->
+<!--						  </div>-->
+<!--						  <div class="eventTitle">Phone Interview</div>-->
+<!--						</div>-->
+<!--&lt;!&ndash;						<div class="event2Author">by Tom Eggleston</div>&ndash;&gt;-->
+<!--						  <svg height="20" width="20">-->
+<!--						<circle cx="10" cy="11" r="5" fill="#004165" />-->
+<!--						</svg>-->
+<!--						<div class="time2">1 : 32 PM</div>-->
+<!--					  </div>-->
+
+<!--				      <div class="event3">-->
+
+<!--						<div class="event3Bubble">-->
+<!--						  <div class="eventTime">-->
+<!--							<div class="DayDigit">17</div>-->
+<!--							<div class="Day">-->
+<!--							   Thursday-->
+<!--							  <div class="MonthYear">April 2016</div>-->
+<!--							</div>-->
+<!--						  </div>-->
+<!--						  <div class="eventTitle">Phone Interview</div>-->
+<!--						</div>-->
+<!--&lt;!&ndash;						<div class="event2Author">by Tom Eggleston</div>&ndash;&gt;-->
+<!--						  <svg height="20" width="20">-->
+<!--						<circle cx="10" cy="11" r="5" fill="#004165" />-->
+<!--						</svg>-->
+<!--						<div class="time2">1 : 32 PM</div>-->
+<!--					  </div>-->
+
+<!--					  <svg height="5" width="50">-->
+<!--					  <line x1="0" y1="0" x2="50" y2="0" style="stroke:#004165;stroke-width:5" />-->
+<!--					  Sorry, your browser does not support inline SVG.-->
+<!--					</svg>-->
+
+<!--					  <div class="now">-->
+<!--						소비자-->
+<!--					  </div>-->
+
+
+<!--&lt;!&ndash;					  <svg height="5" width="150">&ndash;&gt;-->
+<!--&lt;!&ndash;					  <line x1="0" y1="0" x2="150" y2="0" style="stroke:rgba(162, 164, 163, 0.37);stroke-width:5" />&ndash;&gt;-->
+<!--&lt;!&ndash;					  Sorry, your browser does not support inline SVG.&ndash;&gt;-->
+<!--&lt;!&ndash;					</svg>&ndash;&gt;-->
+<!--&lt;!&ndash;					  <div class="event3 futureGray ">&ndash;&gt;-->
+<!--&lt;!&ndash;						<div class="event1Bubble futureOpacity">&ndash;&gt;-->
+<!--&lt;!&ndash;						  <div class="eventTime">&ndash;&gt;-->
+<!--&lt;!&ndash;							<div class="DayDigit">05</div>&ndash;&gt;-->
+<!--&lt;!&ndash;							<div class="Day">&ndash;&gt;-->
+<!--&lt;!&ndash;							   Tuesday&ndash;&gt;-->
+<!--&lt;!&ndash;							  <div class="MonthYear">May 2016</div>&ndash;&gt;-->
+<!--&lt;!&ndash;							</div>&ndash;&gt;-->
+<!--&lt;!&ndash;						  </div>&ndash;&gt;-->
+<!--&lt;!&ndash;						  <div class="eventTitle">Anticipated Hire</div>&ndash;&gt;-->
+<!--&lt;!&ndash;						</div>&ndash;&gt;-->
+<!--&lt;!&ndash;						  <svg height="20" width="20">&ndash;&gt;-->
+<!--&lt;!&ndash;						<circle cx="10" cy="11" r="5" fill="rgba(162, 164, 163, 0.37)" />&ndash;&gt;-->
+<!--&lt;!&ndash;						</svg>&ndash;&gt;-->
+<!--&lt;!&ndash;					  </div>&ndash;&gt;-->
+<!--&lt;!&ndash;					<svg height="5" width="50">&ndash;&gt;-->
+<!--&lt;!&ndash;					<line x1="0" y1="0" x2="50" y2="0" style="stroke:#004165;stroke-width:5" />&ndash;&gt;-->
+<!--&lt;!&ndash;					</svg>&ndash;&gt;-->
+<!--&lt;!&ndash;					<svg height="20" width="42">&ndash;&gt;-->
+<!--&lt;!&ndash;					<line x1="1" y1="0" x2="1" y2="20" style="stroke:#004165;stroke-width:2" />&ndash;&gt;-->
+<!--&lt;!&ndash;					<circle cx="11" cy="10" r="3" fill="#004165" />&ndash;&gt;-->
+<!--&lt;!&ndash;					<circle cx="21" cy="10" r="3" fill="#004165" />&ndash;&gt;-->
+<!--&lt;!&ndash;					<circle cx="31" cy="10" r="3" fill="#004165" />&ndash;&gt;-->
+<!--&lt;!&ndash;					<line x1="41" y1="0" x2="41" y2="20" style="stroke:#004165;stroke-width:2" />&ndash;&gt;-->
+<!--&lt;!&ndash;					</svg>&ndash;&gt;-->
+
+<!--					</div>-->
+<!--		</div>-->
+<!--	</div>-->
+
+
+	<!-- testimonail-section -->
+<!--	<div class="testimonail-section mt-150 mb-150">-->
+<!--		<div class="container">-->
+<!--			<div class="row">-->
+<!--				<div class="col-lg-10 offset-lg-1 text-center">-->
+<!--					<div class="testimonial-sliders">-->
+<!--						<div class="single-testimonial-slider">-->
+<!--							<div class="client-avater">-->
+<!--								<img src="{% static 'assets/img/avaters/avatar1.png' %}" alt="">-->
+<!--							</div>-->
+<!--							<div class="client-meta">-->
+<!--								<h3>Saira Hakim <span>Local shop owner</span></h3>-->
+<!--								<p class="testimonial-body">-->
+<!--									" Sed ut perspiciatis unde omnis iste natus error veritatis et  quasi architecto beatae vitae dict eaque ipsa quae ab illo inventore Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium "-->
+<!--								</p>-->
+<!--								<div class="last-icon">-->
+<!--									<i class="fas fa-quote-right"></i>-->
+<!--								</div>-->
+<!--							</div>-->
+<!--						</div>-->
+<!--						<div class="single-testimonial-slider">-->
+<!--							<div class="client-avater">-->
+<!--								<img src="{% static 'assets/img/avaters/avatar2.png' %}" alt="">-->
+<!--							</div>-->
+<!--							<div class="client-meta">-->
+<!--								<h3>David Niph <span>Local shop owner</span></h3>-->
+<!--								<p class="testimonial-body">-->
+<!--									" Sed ut perspiciatis unde omnis iste natus error veritatis et  quasi architecto beatae vitae dict eaque ipsa quae ab illo inventore Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium "-->
+<!--								</p>-->
+<!--								<div class="last-icon">-->
+<!--									<i class="fas fa-quote-right"></i>-->
+<!--								</div>-->
+<!--							</div>-->
+<!--						</div>-->
+<!--						<div class="single-testimonial-slider">-->
+<!--							<div class="client-avater">-->
+<!--								<img src="{% static 'assets/img/avaters/avatar3.png' %}" alt="">-->
+<!--							</div>-->
+<!--							<div class="client-meta">-->
+<!--								<h3>Jacob Sikim <span>Local shop owner</span></h3>-->
+<!--								<p class="testimonial-body">-->
+<!--									" Sed ut perspiciatis unde omnis iste natus error veritatis et  quasi architecto beatae vitae dict eaque ipsa quae ab illo inventore Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium "-->
+<!--								</p>-->
+<!--								<div class="last-icon">-->
+<!--									<i class="fas fa-quote-right"></i>-->
+<!--								</div>-->
+<!--							</div>-->
+<!--						</div>-->
+<!--					</div>-->
+<!--				</div>-->
+<!--			</div>-->
+<!--		</div>-->
+<!--	</div>-->
+	<!-- end testimonail-section -->
+	
+	<!-- advertisement section -->
+	<section class="cart-banner pt-100 pb-80">
+<!--		<div class="abt-section mb-90">-->
+<!--			<div class="container">-->
+<!--				<div class="row">-->
+<!--					<div class="col-lg-3 col-md-4">-->
+<!--						<div class="abt-bg">-->
+<!--							<a href="https://youtube.com/watch?v=DBLlFWYcIGQ" class="video-play-btn popup-youtube"><i class="fas fa-play"></i></a>-->
+<!--						</div>-->
+<!--					</div>-->
+<!--					<div class="col-lg-3 col-md-4">-->
+<!--						<div class="abt-bg">-->
+<!--							<a href="https://www.youtube.com/watch?v=67Ef9ItPMPg&t=13s" class="video-play-btn popup-youtube"><i class="fas fa-play"></i></a>-->
+<!--						</div>-->
+<!--					</div>-->
+<!--					<div class="col-lg-3 col-md-4">-->
+<!--						<div class="abt-bg">-->
+<!--							<a href="https://www.youtube.com/watch?v=ofkyGqHhFFM" class="video-play-btn popup-youtube"><i class="fas fa-play"></i></a>-->
+<!--						</div>-->
+<!--					</div>-->
+<!--					<div class="col-lg-3 col-md-4">-->
+<!--						<div class="abt-text">-->
+<!--&lt;!&ndash;							<p class="top-sub">Since Year 1999</p>&ndash;&gt;-->
+<!--							<h4><span class="orange-text">도매시장</span>에서<br> 일어나는 사건들</h4>-->
+<!--							<p>공정위, 농산물 유통구조 실태 파악 나서</p>-->
+<!--&lt;!&ndash;							<a href="about.html" class="boxed-btn mt-4">know more</a>&ndash;&gt;-->
+<!--						</div>-->
+<!--					</div>-->
+<!--				</div>-->
+<!--			</div>-->
+<!--		</div>-->
+			<!-- latest news -->
+		<div class="latest-news mt-80 mb-80">
+			<div class="container">
+				<div class = "section-title text-center"><h3><span class="orange-text">도매시장</span>에서 일어나는 사건들</h3></div>
+				<div class="row">
+					<div class="col-lg-4 ">
+						<div class="single-latest-news">
+							<a href="https://youtu.be/67Ef9ItPMPg"><div class="latest-news-bg video-bg-1"></div></a>
+							<div class="news-text-box">
+								<h3><a href="https://youtu.be/67Ef9ItPMPg">공정위, 농산물 유통구조 실태 파악 나서</a></h3>
+								<p class="excerpt">소수 사업자들의 독점과 담합에 취약한 구조를 가지고 있는 농산물 유통시장.<br>
+									공정위 관계자는 "농산물 유통경로와 경쟁상황을 파악하고 관련 제도와 규제 분석을 통해 유통 구조의 효율성을 높이고
+									출하자와 소비자의 부담을 완화하는 방안을 마련할 예정"이라고 밝혔습니다.</p>
+								<div align="center">
+									<a href="https://youtu.be/mn22yzOXB9U" class="read-more-btn" style="font-size:20px;color:grey">view more</a>
+									<i class="fa fa-youtube-play" style="font-size:20px;color:red"></i>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-4 ">
+						<div class="single-latest-news">
+							<a href="https://youtu.be/TCwL4aqO2F0"><div class="latest-news-bg video-bg-2"></div></a>
+							<div class="news-text-box">
+								<h3><a href="https://youtu.be/TCwL4aqO2F0">농민에 갑질한 가락시장 도매회사들</a></h3>
+									<p class="excerpt">가락시장은 연간 거래액이 4조원을 넘는 국내 최대 농산물 도매시장입니다.<br>
+										그런데 이 시장의 도매회사들이 자신들이 부담해야 할 비용을 농민에게 떠넘기는 갑질을 장기간 해온 사실이 들통나
+										100억원 넘는 과징금 폭탄을 맞게 되었습니다.
+									</p>
+								<div align="center">
+									<a href="https://youtu.be/mn22yzOXB9U" class="read-more-btn" style="font-size:20px;color:grey">view more</a>
+									<i class="fa fa-youtube-play" style="font-size:20px;color:red"></i>
+								</div>
+							</div>
+
+						</div>
+					</div>
+					<div class="col-lg-4 ">
+						<div class="single-latest-news">
+							<a href="https://youtu.be/mn22yzOXB9U"><div class="latest-news-bg video-bg-3"></div></a>
+							<div class="news-text-box">
+								<h3><a href="https://youtu.be/mn22yzOXB9U">농산물, 재벌·거대 자본이 좌지우지</a></h3>
+								<p class="excerpt">
+									도매시장 법인은 농산물 거래 수수료는 최대 7%까지 받으면서도, 가락시장 사용료는 거래액의 0.55%만 내고 있습니다.<br>
+						 			이렇다보니 영업이익률은 18%, 전체 도소매업종  평균 이익률의 8배가 넘습니다.
+						 			'황금알을 낳는 거위'나 다름 없지만,  감사 규정도 없습니다.
+								</p>
+								<div align="center">
+									<a href="https://youtu.be/mn22yzOXB9U" class="read-more-btn" style="font-size:20px;color:grey">view more</a>
+									<i class="fa fa-youtube-play" style="font-size:20px;color:red"></i>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="text-right">
+				<a href="{% url 'news' %}" class="btn btn-outline-dark" role="button"><i class="fa fa-newspaper-o" style="font-size:24px"></i>&nbsp;&nbsp;관련 뉴스 더 알아보기</a>
+				</div>
+			</div>
+		</div>
+
+	<!-- end latest news -->
+	</section>
+	<!-- end advertisement section -->
+
+
+
+
+	<!--	script-->
+	<script src="https://code.highcharts.com/highcharts.js"></script>
+	<script src="https://code.highcharts.com/modules/timeline.js"></script>
+	<script src="https://code.highcharts.com/modules/exporting.js"></script>
+	<script src="https://code.highcharts.com/modules/accessibility.js"></script>
+
+	<script>
+	Highcharts.chart('container', {
+	  chart: {
+		type: 'timeline'
+	  },
+	  accessibility: {
+		screenReaderSection: {
+		  beforeChartFormat: '<h5>{chartTitle}</h5>' +
+			'<div>{typeDescription}</div>' +
+			'<div>{chartSubtitle}</div>' +
+			'<div>{chartLongdesc}</div>'
+		},
+		point: {
+		  valueDescriptionFormat: '{index}. {point.label}. {point.description}.'
+		}
+	  },
+	  xAxis: {
+		visible: false
+	  },
+	  yAxis: {
+		visible: false
+	  },
+	  title: {
+		text: '양파 가격으로 알아보는 유통과정'
+	  },
+	  colors: [
+		'#4185F3',
+		'#427CDD',
+		'#406AB2',
+		'#3E5A8E',
+		'#3B4A68',
+		'#363C46'
+	  ],
+	  series: [{
+		data: [{
+		  name: '농가 수취가격',
+		  label: '700원: 128.5% 증가',
+		  description: '농부가 양파를 유통업체에 파는 가격 '
+		}, {
+		  name: '산지유통',
+		  label: '1600원: 68.7% 증가',
+		  description: '유통업체가 각지의 양파를 도매시장에 옮기며 상승한 가격'
+		}, {
+		  name: '도매시장 법인',
+		  label: '2700원: 33.3% 증가',
+		  description: '가락시장 등지에서 양파를 도매상에게 판매하는 가격 '
+		}, {
+		  name: '도매업체',
+		  label: '3600원: 16.6% 증가',
+		  description: '도매업체가 소매업체에게 파는 가격'
+		}, {
+		  name: '소매업체(소비자판매가격)',
+		  label: '4200원',
+		  description: '시장과 마트에서 판매하는 가격'
+		}]
+	  }]
+	});
+	</script>
+{% endblock %}
+{% include 'finalApp/footer.html' %}

@@ -1,0 +1,13 @@
+.modal {
+  width: 500px !important;
+  max-height: 700px !important;
+  position: absolute;
+  float: left;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.modal-content {
+  padding: 0px !important;
+}

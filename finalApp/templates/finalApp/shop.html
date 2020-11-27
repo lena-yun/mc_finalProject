@@ -1,0 +1,473 @@
+{% include 'finalApp/header.html' %}
+{% block content %}
+{% load static %}
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Responsive Bootstrap4 Shop Template, Created by Imran Hossain from https://imransdesign.com/">
+
+	<!-- title -->
+	<title>Shop</title>
+
+	<!-- favicon -->
+	<link rel="shortcut icon" type="image/png" href="{% static 'assets/img/favicon.png' %}">
+	<!-- google font -->
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
+	<!-- fontawesome -->
+	<link rel="stylesheet" href="{% static 'assets/css/all.min.css' %}">
+	<!-- bootstrap -->
+	<link rel="stylesheet" href="{% static 'assets/bootstrap/css/bootstrap.min.css' %}">
+	<!-- owl carousel -->
+	<link rel="stylesheet" href="{% static 'assets/css/owl.carousel.css' %}">
+	<!-- magnific popup -->
+	<link rel="stylesheet" href="{% static 'assets/css/magnific-popup.css' %}">
+	<!-- animate css -->
+	<link rel="stylesheet" href="{% static 'assets/css/animate.css' %}">
+	<!-- mean menu css -->
+	<link rel="stylesheet" href="{% static 'assets/css/meanmenu.min.css' %}">
+	<!-- main style -->
+	<link rel="stylesheet" href="{% static 'assets/css/main.css' %}">
+	<!-- responsive -->
+	<link rel="stylesheet" href="{% static 'assets/css/responsive.css' %}">
+
+</head>
+<body>
+	<!-- breadcrumb-section -->
+	<div class="breadcrumb-section breadcrumb-bg">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 offset-lg-2 text-center">
+					<div class="breadcrumb-text">
+						<p>for producers</p>
+						<h1>경락가 예측</h1>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end breadcrumb section -->
+
+	<!-- products -->
+	<div class="product-section mt-150 mb-50">
+		<div class="container">
+			<div class="row product-lists">
+				<div class="col-lg-2 col-md-6 text-center onion">
+					<div class="single-product-item">
+						<div class="product-image">
+							<a href="single-product.html"><img src="{% static 'assets/img/products/onion.jpg' %}" alt=""></a>
+						</div>
+						<p class="product-price"><span>15Kg</span>양파</p>
+						<a data-toggle="collapse" aria-expanded="false" aria-controls="nooneacabbagediv" href="#nooneacabbagediv" class="cart-btn" id="vegetableclick1"><i class="fas fa-shopping-cart"></i>Click</a>
+					</div>
+				</div>
+				<div class="col-lg-2 col-md-6 text-center cabbage">
+					<div class="single-product-item">
+						<div class="product-image">
+							<a href="#None"><img src="{% static 'assets/img/products/cabbage.jpg' %}" alt=""></a>
+						</div>
+						<p class="product-price"><span>10Kg</span>배추</p>
+						<a data-toggle="collapse" aria-expanded="false" aria-controls="nooneacabbagediv" href="#nooneacabbagediv" class="cart-btn" id="vegetableclick2"><i class="fas fa-shopping-cart"></i>Click</a></p>
+					</div>
+				</div>
+				<div class="col-lg-2 col-md-6 text-center Radish">
+					<div class="single-product-item">
+						<div class="product-image">
+							<a href="single-product.html"><img src="{% static 'assets/img/products/Radish.jpg' %}" alt=""></a>
+						</div>
+						<p class="product-price"><span>20Kg</span>무</p>
+						<a data-toggle="collapse" aria-expanded="false" aria-controls="nooneacabbagediv" href="#nooneacabbagediv" class="cart-btn" id="vegetableclick3"><i class="fas fa-shopping-cart"></i>Click</a>
+					</div>
+				</div>
+				<div class="col-lg-2 col-md-6 text-center cucumber">
+					<div class="single-product-item">
+						<div class="product-image">
+							<a href="single-product.html"><img src="{% static 'assets/img/products/garlic.jpg' %}" alt=""></a>
+						</div>
+						<p class="product-price"><span>3Kg</span>마늘</p>
+						<a data-toggle="collapse" aria-expanded="false" aria-controls="nooneacabbagediv" href="#nooneacabbagediv" class="cart-btn" id="vegetableclick4"><i class="fas fa-shopping-cart"></i>Click</a>
+					</div>
+				</div>
+				<div class="col-lg-2 col-md-6 text-center hotpepper">
+					<div class="single-product-item">
+						<div class="product-image">
+							<a href="single-product.html"><img src="{% static 'assets/img/products/hot pepper.jpg' %}" alt=""></a>
+						</div>
+						<p class="product-price"><span>10Kg</span>고추</p>
+						<a  data-toggle="collapse" href="#nooneacabbagediv" class="cart-btn" id="vegetableclick5"><i class="fas fa-shopping-cart"></i>Click</a>
+					</div>
+				</div>
+				<div class="col-lg-2 col-md-6 text-center bigpa">
+					<div class="single-product-item">
+						<div class="product-image">
+							<a href="single-product.html"><img src="{% static 'assets/img/products/bigpa.jpg' %}" alt=""></a>
+						</div>
+						<p class="product-price"><span>1Kg</span>대파</p>
+						<a  data-toggle="collapse" href="#nooneacabbagediv" class="cart-btn" id="vegetableclick6"><i class="fas fa-shopping-cart"></i>Click</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="container collapse" id="nooneacabbagediv" >
+	<div class="col-md-push-(12)">
+					<!-- single product -->
+	<div class="single-product mt-100 mb-100" id="region_p">
+		<div class="container" id="moreRegion_p">
+			<div class="row">
+				<div class="col-md-5">
+					<div class="single-product-img" id="preview">
+					</div>
+				</div>
+				<div class="col-md-7">
+					<div class="cart-table-wrap">
+						<h3>금일평균 경락가 <span class="orange-text"> 0000원</span></h3>
+						<table class="price-table">
+							<thead class="cart-table-head">
+								<tr class="table-head-row">
+									<th class="price-status">상태</th>
+									<th class="price-week-pred">주간예측가격</th>
+									<th class="price-twodaysago">2일전일가</th>
+									<th class="price-yesterday">전일가</th>
+									<th class="price-gap">차액정보(2일전일가-전일가)</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr class="table-body-row">
+									<td class="price-status"><img src="{% static 'assets/img/products/status-smile.png' %}" alt="" width="100"></td>
+									<td class="price-week-pred">00원/Kg</td>
+									<td class="price-twodaysago">85원</td>
+									<td class="price-yesterday">00원</td>
+									<td class="price-gap">1</td>
+								</tr>
+						</table>
+					</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end single product -->
+
+	<!-- more products -->
+	<div class="more-products mb-150" id="region2_p">
+		<div class="container" id="moreRegion2_p">
+			<div class="row">
+				<div class="col-lg-8 offset-lg-2 text-center">
+					<div class="section-title" id="vegdiv1_p">
+						<h3>주간 경락가 <span class="orange-text">예측</span></h3>
+						<p>이틀 전 ~ 5일 후 까지의 주간 경락가를 살펴보자</p>
+					</div>
+					<figure class="highcharts-figure" id="chartregion">
+						<div id ="chartdiv">
+							<p class="highcharts-description"></p>
+						</div>
+					</figure>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="more-products mb-150" id="region3_p">
+		<div class="container" id="moreRegion3_p">
+			<div class="row">
+				<div class="col-lg-8 offset-lg-2 text-center">
+					<div class="section-title" id="vegdiv3_p">
+						{% csrf_token %}
+						<h3>경락가 형성에 영향을 미치는 변수<span class="orange-text"></span></h3>
+						<p>{{id}}의 경락가 형성은 어떤 변수의 영향을 가장 많이 받는가?</p>
+					</div>
+					<figure class="highcharts-figure" id="chartregion02">
+						<div id ="chartdiv02">
+							<p class="highcharts-description">
+<!--						    <canvas id="myChart" width="400" height="400"></canvas>-->
+							</p>
+						</div>
+					</figure>
+
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end more products -->
+
+	</div>
+	</div>
+
+	<!-- end products -->
+{% endblock %}
+{% include 'finalApp/footer.html' %}
+
+	<!--	예측 경락가-->
+	<script src="https://code.highcharts.com/highcharts.src.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<script>
+	$(document).ready(function() {
+		$('#vegetableclick1').click(function () {
+			$.ajax({
+				url: "{% url 'vegetableSelectProducer' id='양파' %}",
+				data: {'csrfmiddlewaretoken': '{{csrf_token}}'},
+				datatype:'json',
+				type: 'post',
+				success: function (data) {
+					console.log(data)
+					$('#preview').html($('<img src="{% static 'assets/img/products/onion.jpg' %}" alt="">'));
+					$('#vegdiv1_p').empty();
+					$('#vegdiv1_p').html('<h3>' + ' 경락가' + '<span class="orange-text">' +' 예측 결과' + '</span></h3>'+
+										'<p>' + data[0].category + '의 예측 경락가를 알아보자!' + '</p>');
+					$('#vegdiv2_p').html('<h3>' + ' 주간 경락가'+ '<span class="orange-text">'+ '예측' + '</span></h3>');
+						Highcharts.chart('chartdiv', {
+							chart : { type : 'line'},
+							title : { text : data[0].category + '경락가 현황 및 예측'},
+							xAxis : {  categories: data[0].days},
+							yAxis : {
+								title : {text : '가격(원)'}
+						},
+							series : [
+								{   name: "전체",
+									data: data[0].price_total
+								}]
+						})
+						Highcharts.chart('chartdiv02', {
+							chart : { type : 'bar'},
+							title : { text :  data[0].category + '의 경락가 형성 변수 중요도'},
+							xAxis : {  categories: data[0].price_total},
+							yAxis : { title : {text : '평균가격'} },
+							plotOptions: {
+								series: {
+            						colorByPoint: true
+        						}
+    						},
+							series : [
+								{   name: "전체",
+									data: data[0].price_total
+								}]
+						})
+				}
+			});
+		})
+		$('#vegetableclick2').click(function () {
+			$.ajax({
+				url: "{% url 'vegetableSelectProducer' id='배추' %}",
+				data: {'csrfmiddlewaretoken': '{{csrf_token}}'},
+				datatype:'json',
+				type: 'post',
+				success: function (data) {
+					console.log(data)
+					$('#preview').html($('<img src="{% static 'assets/img/products/cabbage.jpg' %}" alt="">'));
+					$('#vegdiv1_p').empty();
+					$('#vegdiv1_p').html('<h3>' + ' 경락가' + '<span class="orange-text">' +' 예측 결과' + '</span></h3>'+
+										'<p>' + data[0].category + '의 예측 경락가를 알아보자!' + '</p>');
+					$('#vegdiv2_p').html('<h3>' + ' 주간 경락가'+ '<span class="orange-text">'+ '예측' + '</span></h3>');
+						Highcharts.chart('chartdiv', {
+							chart : { type : 'line'},
+							title : { text : data[0].category + '경락가 현황 및 예측'},
+							xAxis : {  categories: data[0].days},
+							yAxis : {
+								title : {text : '가격(원)'}
+						},
+							series : [
+								{   name: "전체",
+									data: data[0].price_total
+								}]
+						})
+						Highcharts.chart('chartdiv02', {
+							chart : { type : 'bar'},
+							title : { text :  data[0].category + '의 경락가 형성 변수 중요도'},
+							xAxis : {  categories: data[0].price_total },
+							yAxis : { title : {text : '평균가격'} },
+							plotOptions: {
+								series: {
+            						colorByPoint: true
+        						}
+    						},
+							series : [
+								{   name: "전체",
+									data: data[0].price_total
+								}]
+						})
+				}
+			});
+		})
+		$('#vegetableclick3').click(function () {
+			$.ajax({
+				url: "{% url 'vegetableSelectProducer' id='무' %}",
+				data: {'csrfmiddlewaretoken': '{{csrf_token}}'},
+				datatype:'json',
+				type: 'post',
+				success: function (data) {
+					console.log(data)
+					$('#preview').html($('<img src="{% static 'assets/img/products/Radish.jpg' %}" alt="">'));
+					$('#vegdiv1_p').empty();
+					$('#vegdiv1_p').html('<h3>' + ' 경락가' + '<span class="orange-text">' +' 예측 결과' + '</span></h3>'+
+										'<p>' + data[0].category + '의 예측 경락가를 알아보자!' + '</p>');
+					$('#vegdiv2_p').html('<h3>' + ' 주간 경락가'+ '<span class="orange-text">'+ '예측' + '</span></h3>');
+						Highcharts.chart('chartdiv', {
+							chart : { type : 'line'},
+							title : { text : data[0].category + '경락가 현황 및 예측'},
+							xAxis : {  categories: data[0].days},
+							yAxis : {
+								title : {text : '가격(원)'}
+						},
+							series : [
+								{   name: "전체",
+									data: data[0].price_total
+								}]
+						})
+						Highcharts.chart('chartdiv02', {
+							chart : { type : 'bar'},
+							title : { text :  data[0].category + '의 경락가 형성 변수 중요도'},
+							xAxis : {  categories: data[0].price_total },
+							yAxis : { title : {text : '평균가격'} },
+							plotOptions: {
+								series: {
+            						colorByPoint: true
+        						}
+    						},
+							series : [
+								{   name: "전체",
+									data: data[0].price_total
+								}]
+						})
+				}
+			});
+		})
+
+		$('#vegetableclick4').click(function () {
+			$.ajax({
+				url: "{% url 'vegetableSelectProducer' id='마늘' %}",
+				data: {'csrfmiddlewaretoken': '{{csrf_token}}'},
+				datatype:'json',
+				type: 'post',
+				success: function (data) {
+					console.log(data)
+					$('#preview').html($('<img src="{% static 'assets/img/products/garlic.jpg' %}" alt="">'));
+					$('#vegdiv1_p').empty();
+					$('#vegdiv1_p').html('<h3>' + ' 경락가' + '<span class="orange-text">' +' 예측 결과' + '</span></h3>'+
+										'<p>' + data[0].category + '의 예측 경락가를 알아보자!' + '</p>');
+					$('#vegdiv2_p').html('<h3>' + ' 주간 경락가'+ '<span class="orange-text">'+ '예측' + '</span></h3>');
+						Highcharts.chart('chartdiv', {
+							chart : { type : 'line'},
+							title : { text : data[0].category + '경락가 현황 및 예측'},
+							xAxis : {  categories: data[0].days},
+							yAxis : {
+								title : {text : '가격(원)'}
+						},
+							series : [
+								{   name: "전체",
+									data: data[0].price_total
+								}]
+						})
+						Highcharts.chart('chartdiv02', {
+							chart : { type : 'bar'},
+							title : { text :  data[0].category + '의 경락가 형성 변수 중요도'},
+							xAxis : {  categories: data[0].price_total},
+							yAxis : { title : {text : '평균가격'} },
+							plotOptions: {
+								series: {
+            						colorByPoint: true
+        						}
+    						},
+							series : [
+								{   name: "전체",
+									data: data[0].price_total
+								}]
+						})
+				}
+			});
+		})
+		$('#vegetableclick5').click(function () {
+			$.ajax({
+				url: "{% url 'vegetableSelectProducer' id='고추' %}",
+				data: {'csrfmiddlewaretoken': '{{csrf_token}}'},
+				datatype:'json',
+				type: 'post',
+				success: function (data) {
+					console.log(data)
+					$('#preview').html($('<img src="{% static 'assets/img/products/hot pepper.jpg' %}" alt="">'));
+					$('#vegdiv1_p').empty();
+					$('#vegdiv1_p').html('<h3>'+ ' 경락가' + '<span class="orange-text">' +' 예측 결과' + '</span></h3>'+
+										'<p>' + data[0].category + '의 예측 경락가를 알아보자!' + '</p>');
+					$('#vegdiv2_p').html('<h3>' + ' 주간 경락가'+ '<span class="orange-text">'+ '예측' + '</span></h3>');
+						Highcharts.chart('chartdiv', {
+							chart : { type : 'line'},
+							title : { text : data[0].category + '경락가 현황 및 예측'},
+							xAxis : {  categories: data[0].days},
+							yAxis : {
+								title : {text : '가격(원)'}
+						},
+							series : [
+								{   name: "전체",
+									data: data[0].price_total
+								}]
+						})
+						Highcharts.chart('chartdiv02', {
+							chart : { type : 'bar'},
+							title : { text :  data[0].category + '의 경락가 형성 변수 중요도'},
+							xAxis : {  categories: data[0].price_total},
+							yAxis : { title : {text : '평균가격'} },
+							plotOptions: {
+								series: {
+            						colorByPoint: true
+        						}
+    						},
+							series : [
+								{   name: "전체",
+									data: data[0].price_total
+								}]
+						})
+				}
+			});
+		})
+		$('#vegetableclick6').click(function () {
+			$.ajax({
+				url: "{% url 'vegetableSelectProducer' id='대파' %}",
+				data: {'csrfmiddlewaretoken': '{{csrf_token}}'},
+				datatype:'json',
+				type: 'post',
+				success: function (data) {
+					console.log(data)
+					$('#preview').html($('<img src="{% static 'assets/img/products/bigpa.jpg' %}" alt="">'));
+					$('#vegdiv1_p').empty();
+					$('#vegdiv1_p').html('<h3>' + ' 경락가' + '<span class="orange-text">' +' 예측 결과' + '</span></h3>'+
+										'<p>' + data[0].category + '의 예측 경락가를 알아보자!' + '</p>');
+					$('#vegdiv3_p').empty();
+					$('#vegdiv3_p').html('<h3>' + '경락가 형성에 영향을 미치는 요인들' + '<span class="orange-text"></span></h3>'+
+										'<p>' + '어떤 변수의 영향을 가장 많이 받는가?' + '</p>');
+					$('#vegdiv2_p').html('<h3>' + ' 주간 경락가'+ '<span class="orange-text">'+ '예측' + '</span></h3>');
+						Highcharts.chart('chartdiv', {
+							chart : { type : 'line'},
+							title : { text : data[0].category + '경락가 현황 및 예측'},
+							xAxis : {  categories: data[0].days},
+							yAxis : {
+								title : {text : '가격(원)'}
+						},
+							series : [
+								{   name: "전체",
+									data: data[0].price_total
+								}]
+						})
+						Highcharts.chart('chartdiv02', {
+							chart : { type : 'bar'},
+							title : { text :  data[0].category + '의 경락가 형성 변수 중요도'},
+							xAxis : {  categories: data[0].price_total},
+							yAxis : { title : {text : '평균가격'} },
+							plotOptions: {
+								series: {
+            						colorByPoint: true
+        						}
+    						},
+							series : [
+								{   name: "전체",
+									data: data[0].price_total
+								}]
+						})
+				}
+			});
+		})
+	})
+	</script>
+
+</body>
+</html>

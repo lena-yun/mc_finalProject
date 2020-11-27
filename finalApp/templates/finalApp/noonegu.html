@@ -1,0 +1,1171 @@
+{% include 'finalApp/header.html' %}
+{% block content %}
+{% load static %}
+	<!-- title -->
+	<title>Shop</title>
+
+	<!-- favicon -->
+	<link rel="shortcut icon" type="image/png" href="{% static 'assets/img/favicon.png' %}">
+	<!-- google font -->
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Poppins:400,700&display=swap" rel="stylesheet">
+	<!-- fontawesome -->
+	<link rel="stylesheet" href="{% static 'assets/css/all.min.css' %}">
+	<!-- bootstrap -->
+	<link rel="stylesheet" href="{% static 'assets/bootstrap/css/bootstrap.min.css' %}">
+	<!-- owl carousel -->
+	<link rel="stylesheet" href="{% static 'assets/css/owl.carousel.css' %}">
+	<!-- magnific popup -->
+	<link rel="stylesheet" href="{% static 'assets/css/magnific-popup.css' %}">
+	<!-- animate css -->
+	<link rel="stylesheet" href="{% static 'assets/css/animate.css' %}">
+	<!-- mean menu css -->
+	<link rel="stylesheet" href="{% static 'assets/css/meanmenu.min.css' %}">
+	<!-- main style -->
+	<link rel="stylesheet" href="{% static 'assets/css/main.css' %}">
+
+<style>
+	.chartdiv {
+  		width: 100%;
+  		height: 100%;
+		/*margin-bottom: 50px;*/
+		/*padding-bottom: 50px;*/
+	}
+</style>
+<script  src="http://code.jquery.com/jquery-latest.min.js"></script>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/js/materialize.min.js"></script>
+
+
+</head>
+<body>
+	<!-- breadcrumb-section -->
+	<div class="breadcrumb-section breadcrumb-bg">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 offset-lg-2 text-center">
+					<div class="breadcrumb-text">
+						<p>서울특별시</p>
+						{% csrf_token %}
+						<h1>{{name}}</h1>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end breadcrumb section -->
+
+	<!-- products -->
+	<div class="product-section mt-100 mb-50">
+		<div class="container">
+			<div class="row product-lists">
+				<div class="col-lg-2 col-md-6 text-center onion  ml-4 mr-3">
+					<div class="single-product-item">
+						<div class="product-image">
+							<a href="single-product.html"><img src="{% static 'assets/img/products/onion.jpg' %}" alt=""></a>
+						</div>
+						<p class="product-price"><span>15Kg</span>양파</p>
+						<a href="#nooneacabbagediv" data-toggle="collapse"  class="cart-btn" id="vegetableclick1" ><i class="fas fa-shopping-cart"></i>Click</a>
+					</div>
+				</div>
+				<div class="col-lg-2 col-md-6 text-center cabbage ml-4">
+					<div class="single-product-item">
+						<div class="product-image">
+							<a href="#None"><img src="{% static 'assets/img/products/cabbage.jpg' %}" alt=""></a>
+						</div>
+						<p class="product-price"><span>10Kg</span>배추</p>
+						<a href="#nooneacabbagediv" data-toggle="collapse"   class="cart-btn" id="vegetableclick2"><i class="fas fa-shopping-cart"></i>Click</a>
+					</div>
+				</div>
+				<div class="col-lg-2 col-md-6 text-center Radish ml-4">
+					<div class="single-product-item">
+						<div class="product-image">
+							<a href="single-product.html"><img src="{% static 'assets/img/products/Radish.jpg' %}" alt=""></a>
+						</div>
+						<p class="product-price"><span>20Kg</span>무</p>
+						<a href="#nooneacabbagediv" data-toggle="collapse"   class="cart-btn" id="vegetableclick3"><i class="fas fa-shopping-cart"></i>Click</a>
+					</div>
+				</div>
+				<div class="col-lg-2 col-md-6 text-center cucumber ml-4">
+					<div class="single-product-item">
+						<div class="product-image">
+							<a href="single-product.html"><img src="{% static 'assets/img/products/cucumber.jpg' %}" alt=""></a>
+						</div>
+						<p class="product-price"><span>3Kg</span>오이</p>
+						<a href="#nooneacabbagediv" data-toggle="collapse"   class="cart-btn" id="vegetableclick4"><i class="fas fa-shopping-cart"></i>Click</a>
+					</div>
+				</div>
+				<div class="col-lg-2 col-md-6 text-center lettuce ml-4">
+					<div class="single-product-item">
+						<div class="product-image">
+							<a href="single-product.html"><img src="{% static 'assets/img/products/lettuce.jpg' %}" alt=""></a>
+						</div>
+						<p class="product-price"><span>10Kg</span>상추</p>
+						<a href="#nooneacabbagediv" data-toggle="collapse"   class="cart-btn"  id="vegetableclick5"><i class="fas fa-shopping-cart"></i>Click</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+<div class="container collapse "  id="nooneacabbagediv" >
+	<div class="col-md-push-(12)">
+					<!-- single product -->
+	<div class="single-product mt-100 mb-100" id="region" >
+		<div class="container" id="moreRegion">
+			<div class="row">
+				<div class="col-md-5">
+					<div class="single-product-img"  id='preview' >
+
+
+					</div>
+				</div>
+				<div class="col-md-7">
+					<div class="cart-table-wrap">
+						<h4>시장 & 마트 가격 <span class="orange-text">(2020년 평균 가격 ~ 10월)</span></h4>
+						<table class="price-table col-md-9 ">
+							<thead class="cart-table-head">
+								<tr class="table-head-row">
+<!--									<th class="product-remove"></th>-->
+									<th class="price-status">장소</th>
+									<th class="price-week-pred">가격</th>
+								</tr>
+							</thead>
+							<tbody id="tablelist">
+								<tr class="table-body-row">
+									<td class="price-week-pred">1위</td>
+									<td class="price-twodaysago">85원</td>
+								</tr>
+								<tr class="table-body-row">
+<!--									<td class="product-remove"><a href="#"><i class="far fa-window-close"></i></a></td>-->
+									<td class="price-week-pred">2위</td>
+									<td class="price-twodaysago">85원</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end single product -->
+
+	<!-- more products -->
+	<div class="more-products mb-50" id="region2">
+		<div class="container" id="moreRegion2">
+			<div class="row">
+				<div class="col-lg-8 offset-lg-2 text-center">
+					<div class="section-title" id="vegdiv1">
+						{% csrf_token %}
+						<h3>{{name}} {{category}} 가격 <span class="orange-text">분석 결과</span></h3>
+						<p>{{category}}와 함께 건강을 챙기자!</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<figure class="highcharts-figure" id="chartregion" >
+					<div id ="chartdiv">
+						<p class="highcharts-description">
+<!--						    <canvas id="myChart" width="400" height="400"></canvas>-->
+						</p>
+					</div>
+	</figure>
+
+	<!--modal start-->
+	<script src="https://code.highcharts.com/modules/series-label.js"></script>
+	<script src="https://code.highcharts.com/modules/exporting.js"></script>
+
+	<div class="container">
+
+	  <!-- Trigger the modal with a button -->
+	  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal" id="myBtn" >시장 예측가격</button>
+
+	  <!-- Modal -->
+	  <div class="modal fade" id="myModal" role="dialog">
+		<div class="modal-dialog">
+
+		  <!-- Modal content-->
+		  <div class="modal-content">
+			<div class="modal-header">
+			  <button type="button" class="close" data-dismiss="modal">&times;</button>
+<!--			  <h4 class="modal-title">Modal Header</h4>-->
+			</div>
+			<div class="modal-body">
+
+			<div id="container"></div>
+
+			</div>
+			<div class="modal-footer">
+			  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+			</div>
+		  </div>
+
+		</div>
+	  </div>
+
+	</div>
+
+
+	<!--	modal ends-->
+
+	<div class="more-products mb-50 mt-80" id="region4">
+		<div class="container" id="moreRegion4">
+			<div class="row">
+				<div class="col-lg-8 offset-lg-2 text-center">
+					<div class="section-title" id="vegdiv4">
+						{% csrf_token %}
+						<h3>{{name}}  {{category}} 가격 <span class="orange-text">수준</span></h3>
+						<p>서울과 비교한 {{name}} {{category}} 가격</p>
+					</div>
+					<ul id="localprice">
+
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="more-products mb-150 mt-80" id="region3" >
+		<div class="container" id="moreRegion3">
+			<div class="row">
+				<div class="col-lg-8 offset-lg-2 text-center">
+					<div class="section-title" id="vegdiv2">
+						{% csrf_token %}
+						<h3>{{name}} 시장과 대형마트 <span class="orange-text">가격 비교</span></h3>
+						<p>시장과 대형마트 채소 가격을 비교하여 어떠한 채소가 더 비싸고 더 저렴한지 <br/>파악해보자</p>
+					</div>
+				<div class="featured-text">
+						<div class="row">
+							<div class="col-lg-6 col-md-6 mb-4 mb-md-5">
+								<div class="list-box d-flex">
+									<div class="list-icon">
+										<i class="fas fa-shipping-fast"></i>
+									</div>
+									<div class="content">
+										<h4>대형마트가 더 저렴한 채소</h4>
+<!--										<p>{{cheaper_price_mart}}</p>-->
+										<div class="product-image">
+											{% for board in label_mart %}
+												{% if board == 1%}
+													<p><img src="{% static 'assets/img/products/Radish.jpg' %}"></p>
+												{% elif board == 2 %}
+													<p><img src="{% static 'assets/img/products/cabbage.jpg' %}"></p>
+												{% elif board == 3 %}
+												<p><img src="{% static 'assets/img/products/bigpa.jpg' %}"></p>
+												{% elif board == 4 %}
+													<p><img src="{% static 'assets/img/products/onion.jpg' %}"></p>
+												{% else %}
+													<p><img src="{% static 'assets/img/products/cucumber.jpg' %}"></p>
+												{% endif %}
+											{% endfor %}
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-6 col-md-6 mb-4 mb-md-5">
+								<div class="list-box d-flex">
+									<div class="list-icon">
+										<i class="fas fa-shipping-fast"></i>
+									</div>
+									<div class="content">
+										<h4>시장이 더 저렴한 채소</h4>
+<!--										<p>{{cheaper_price_si}}</p>-->
+										<div class="product-image">
+											{% for board in label_si %}
+												{% if board == 1%}
+													<p><img src="{% static 'assets/img/products/Radish.jpg' %}"></p>
+												{% elif board == 2 %}
+													<p><img src="{% static 'assets/img/products/cabbage.jpg' %}"></p>
+												{% elif board == 3 %}
+												<p><img src="{% static 'assets/img/products/bigpa.jpg' %}"></p>
+												{% elif board == 4 %}
+													<p><img src="{% static 'assets/img/products/onion.jpg' %}"></p>
+												{% else %}
+													<p><img src="{% static 'assets/img/products/cucumber.jpg' %}"></p>
+												{% endif %}
+											{% endfor %}
+										</div>
+									</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div>
+				<div class="col-lg-8 offset-lg-2 text-center" >
+						<div class="content" >
+							<h3>서울에 비해 <span class="orange-text">{% csrf_token %}{{name}}</span>의 가격 수준은?</h3><br/>
+							<div class="section-title" id="vegdiv3">
+								<ul>
+									<li><h5>{% csrf_token %}{{name}}가 서울 평균 가격보다 싸게 파는 채소는 <span class="orange-text">{{cheap_li}}</span>입니다.</h5></li><br/>
+									<li><h5>{% csrf_token %}{{name}}가 서울 평균 가격보다 비싸게 파는 채소는 <span class="orange-text">{{expensive_li}}</span>입니다.</h5></li>
+								</ul>
+							</div>
+						</div>
+					<div class="container" >
+						<a href="{% url 'distribution' %}" ><button type="button" class="btn btn-dark">혹시 당신의 채소, 비싸게 느껴지시나요?</button></a>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end more products -->
+	<!-- end products -->
+
+{% endblock %}
+{% include 'finalApp/footer.html' %}
+<!--	<script type="text/javascript"  src="https://cdn.amcharts.com/lib/4/core.js"></script>-->
+<!--	<script type="text/javascript"  src="https://cdn.amcharts.com/lib/4/charts.js"></script>-->
+<!--	<script type="text/javascript"  src="https://cdn.amcharts.com/lib/4/themes/animated.js"></script>-->
+<!--	<script src="https://code.highcharts.com/highcharts.src.js"></script>-->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+<!--	<script src="http://code.highcharts.com/modules/exporting.js"></script>-->
+	<script src="http://code.highcharts.com/highcharts.js"></script>
+
+	<script>
+	$(document).ready(function() {
+		$('#vegetableclick1').click(function () {
+			$.ajax({
+				url: "{% url 'vegetableSelect' id='양파' %}",
+				data: {'csrfmiddlewaretoken': '{{csrf_token}}'},
+				datatype:'json',
+				type: 'post',
+				success: function (data) {
+					console.log(data)
+					$('#preview').html($('<img src="{% static 'assets/img/products/onion.jpg' %}" alt="">'))
+					$('#vegdiv1').empty();
+					$('#vegdiv1').html('<h3>' + data[0].name + ' '+ data[0].category + ' 가격' + '<span class="orange-text">' +'분석 결과' + '</span></h3>'+
+										'<p>' + data[0].category + '와 함께 건강을 챙기자!' + '</p>');
+					$('#vegdiv2').empty();
+					$('#vegdiv2').html('<h3>' + data[0].name + ' 시장과 대형마트'+ '<span class="orange-text">'+ '가격 비교' + '</span></h3>');
+					$('#vegdiv4').empty();
+					$('#vegdiv4').html('<h3>' + data[0].name + ' '+   data[0].category +  ' 가격' + '<span class="orange-text">' + '수준' + '</span></h3>'+
+										'<p>' + '서울과 비교한' + ' '+  data[0].name + ' '+  data[0].category +  ' 가격' + '</p>');
+					$('#localprice').empty();
+					$('#localprice').html('<li>' +'<h5>' + data[0].name + '는' + ' '+ data[0].category + '를' + ' '+ '서울 평균보다 '+ '<span class="orange-text">'+ data[0].ratio + '</span>'+ '만큼 '  +
+											 data[0].ExpCheap + ' 팝니다.' + '</h5></li><br/>'+
+											'<li>'+'<h5>'+  data[0].name + ' 다음으로 배추를 싸게 파는 지역은 '+'<span class="orange-text">'+ data[0].cheaper_next +  '</span>'+ '입니다.' + '</h5></li><br/>'+
+											'<li>'+'<h5>'+  data[0].name + ' 다음으로 배추를 비싸게 파는 지역은 '+'<span class="orange-text">'+ data[0].expen_next +  '</span>'+ '입니다.' + '</h5></li><br/>');
+					if(data[0].priceZero == 'False'){
+						alert(data[0].name + '에는 '+ data[0].category + '값이 없습니다.');
+						$('#nooneacabbagediv').hide()
+					}
+					$('#tablelist').empty()
+					var txt = "";
+					var place= data[0].year2020_place
+					var mean = data[0].year2020_mean
+					for(var i = 0 ; i<data[0].length; i++){
+						txt +='<tr class="table-body-row">';
+						txt +='<td class="price-week-pred">' + place[i] + '</td>'
+						txt += '<td class="price-twodaysago">' + mean[i] + '</td>'
+						txt += '</tr>'
+					}
+					$("#tablelist").append(txt);
+					if(data[0].sizero == 'False') {
+						Highcharts.chart('chartdiv', {
+							chart : { type : 'line'},
+							title : { text : data[0].name + ' ' + data[0].category + ' 평균 가격'},
+							xAxis : {
+								 categories: data[0].dada
+							},
+							yAxis : {
+								title : {text : '평균가격'}
+						},
+							series : [
+								{   name: "마트",
+									data: data[0].price_mart,
+
+								},
+								{   name: "서울 전체",
+									data:  data[0].price_seoul
+								}]
+						})
+					}
+					if(data[0].martzero == 'False') {
+						Highcharts.chart('chartdiv', {
+							chart : { type : 'line'},
+							title : { text : data[0].name + ' ' + data[0].category + ' 평균 가격'},
+							xAxis : {  categories: data[0].dada},
+							yAxis : {
+								title : {text : '평균가격'}
+						},
+							series : [
+								{   name: "시장",
+									data: data[0].price_si
+								},
+								{   name: "서울 전체",
+									data:  data[0].price_seoul
+								}]
+						})
+					}
+					if(data[0].seoulzero == 'False') {
+						Highcharts.chart('chartdiv', {
+							chart : { type : 'line'},
+							title : { text : data[0].name + ' ' + data[0].category + ' 평균 가격'},
+							xAxis : {  categories: data[0].dada},
+							yAxis : {
+								title : {text : '평균가격'}
+						},
+							series : [
+								{   name: "시장",
+									data: data[0].price_si
+								},
+								{   name: "마트",
+									data: data[0].price_mart
+								}]
+						})
+					}
+					if(data[0].sizero != 'False' & data[0].martzero != 'False' & data[0].seoulzero != 'False' ) {
+						Highcharts.chart('chartdiv', {
+							chart : { type : 'line'},
+							title : { text : data[0].name + ' ' + data[0].category + ' 평균 가격'},
+							xAxis : { categories: data[0].dada },
+							yAxis : {
+									title : {text : '평균가격'}
+									},
+							series : [
+								{   name: "시장",
+									data: data[0].price_si
+								},
+								{   name: "마트",
+									data: data[0].price_mart
+								},
+								{   name: "시장 전체",
+									data: data[0].price_seoul
+							}]
+						})
+					}
+				}
+			});
+		})
+		$('#vegetableclick2').click(function () {
+			$.ajax({
+				url: "{% url 'vegetableSelect' id='배추' %}",
+				data: {'csrfmiddlewaretoken': '{{csrf_token}}'},
+				datatype:'json',
+				type: 'post',
+				success: function (data) {
+					console.log(data)
+					$('#preview').html($('<img src="{% static 'assets/img/products/cabbage.jpg' %}" alt="">'));
+					$('#vegdiv1').empty();
+					$('#vegdiv1').html('<h3>' + data[0].name + ' '+ data[0].category + ' 가격' + '<span class="orange-text">' +'분석 결과' + '</span></h3>'+
+										'<p>' + data[0].category + '와 함께 건강을 챙기자!' + '</p>');
+					$('#vegdiv2').html('<h3>' + data[0].name + ' 시장과 대형마트'+ '<span class="orange-text">'+ '가격 비교' + '</span></h3>');
+					$('#vegdiv4').html('<h3>' + data[0].name + ' '+   data[0].category +  ' 가격' + '<span class="orange-text">' + '수준' + '</span></h3>'+
+										'<p>' + '서울과 비교한' + ' '+  data[0].name + ' '+  data[0].category +  ' 가격' + '</p>');
+					$('#localprice').empty();
+					$('#localprice').html('<li>' +'<h5>' + data[0].name + '는' + ' '+ data[0].category + '를' + ' '+ '서울 평균보다 '+ '<span class="orange-text">'+ data[0].ratio + '</span>'+ '만큼 '  +
+											 data[0].ExpCheap + ' 팝니다.' + '</h5></li><br/>'+
+											'<li>'+'<h5>'+  data[0].name + ' 다음으로 배추를 싸게 파는 지역은 '+'<span class="orange-text">'+ data[0].cheaper_next +  '</span>'+ '입니다.' + '</h5></li><br/>'+
+											'<li>'+'<h5>'+  data[0].name + ' 다음으로 배추를 비싸게 파는 지역은 '+'<span class="orange-text">'+ data[0].expen_next +  '</span>'+ '입니다.' + '</h5></li><br/>');
+					$('#tablelist').empty()
+					var txt = "";
+					var place= data[0].year2020_place
+					var mean = data[0].year2020_mean
+					for(var i = 0 ; i<data[0].length; i++){
+						txt +='<tr class="table-body-row">';
+						txt +='<td class="price-week-pred">' + place[i] + '</td>'
+						txt += '<td class="price-twodaysago">' + mean[i] + '</td>'
+						txt += '</tr>'
+					}
+					$("#tablelist").append(txt);
+					if(data[0].priceZero == 'False'){
+						alert(data[0].name + '에는 '+ data[0].category + '값이 없습니다.');
+						$('#nooneacabbagediv').hide()
+					}
+					if(data[0].sizero == 'False') {
+						Highcharts.chart('chartdiv', {
+							chart : { type : 'line'},
+							ttitle : { text : data[0].name + ' ' + data[0].category + ' 평균 가격'},
+							xAxis : {  categories: data[0].dada},
+							yAxis : {
+								title : {text : '평균가격'}
+						},
+							series : [
+								{   name: "마트",
+									data: data[0].price_mart
+								},
+								{   name: "서울 전체",
+									data:  data[0].price_seoul
+								}]
+						})
+					}
+					if(data[0].martzero  == 'False') {
+						Highcharts.chart('chartdiv', {
+							chart : { type : 'line'},
+							title : { text : data[0].name + ' ' + data[0].category + ' 평균 가격'},
+							xAxis : {  categories: data[0].dada},
+							yAxis : {
+								title : {text : '평균가격'}
+						},
+							series : [
+								{   name: "시장",
+									data: data[0].price_si
+								},
+								{   name: "서울 전체",
+									data:  data[0].price_seoul
+								}]
+						})
+					}
+					if(data[0].seoulzero == 'False') {
+						Highcharts.chart('chartdiv', {
+							chart : { type : 'line'},
+							title : { text : data[0].name + ' ' + data[0].category + ' 평균 가격'},
+							xAxis : {  categories: data[0].dada},
+							yAxis : {
+								title : {text : '평균가격'}
+						},
+							series : [
+								{   name: "시장",
+									data: data[0].price_si
+								},
+								{   name: "마트",
+									data: data[0].price_mart
+								}]
+						})
+					}
+					if(data[0].sizero != 'False' & data[0].martzero != 'False' & data[0].seoulzero != 'False') {
+						Highcharts.chart('chartdiv', {
+							chart : { type : 'line'},
+							title : { text : data[0].name + ' ' + data[0].category + ' 평균 가격'},
+							xAxis : { categories : data[0].dada},
+							yAxis : {
+									title : {text : '평균가격'}
+									},
+							series : [
+								{   name: "시장",
+									data: data[0].price_si,
+
+								},
+								{   name: "마트",
+									data: data[0].price_mart,
+																	},
+								{   name: "시장 전체",
+									data: data[0].price_seoul,
+
+							}]
+						})
+					}
+				}
+			});
+		})
+		$('#vegetableclick3').click(function () {
+			$.ajax({
+				url: "{% url 'vegetableSelect' id='무' %}",
+				data: {'csrfmiddlewaretoken': '{{csrf_token}}'},
+				datatype:'json',
+				type: 'post',
+				success: function (data) {
+					console.log(data)
+					$('#preview').html($('<img src="{% static 'assets/img/products/Radish.jpg' %}" alt="">'));
+					$('#vegdiv1').empty();
+					$('#vegdiv1').html('<h3>' + data[0].name + ' '+ data[0].category + ' 가격' + '<span class="orange-text">' +'분석 결과' + '</span></h3>'+
+										'<p>' + data[0].category + '와 함께 건강을 챙기자!' + '</p>');
+					$('#vegdiv2').html('<h3>' + data[0].name + ' 시장과 대형마트'+ '<span class="orange-text">'+ '가격 비교' + '</span></h3>');
+					$('#vegdiv4').html('<h3>' + data[0].name + ' '+   data[0].category +  ' 가격' + '<span class="orange-text">' + '수준' + '</span></h3>'+
+										'<p>' + '서울과 비교한' + ' '+  data[0].name + ' '+  data[0].category +  ' 가격' + '</p>');
+					$('#localprice').empty();
+					$('#localprice').html('<li>' +'<h5>' + data[0].name + '는' + ' '+ data[0].category + '를' + ' '+ '서울 평균보다 '+ '<span class="orange-text">'+ data[0].ratio + '</span>'+ '만큼 '  +
+											 data[0].ExpCheap + ' 팝니다.' + '</h5></li><br/>'+
+											'<li>'+'<h5>'+  data[0].name + ' 다음으로 배추를 싸게 파는 지역은 '+'<span class="orange-text">'+ data[0].cheaper_next +  '</span>'+ '입니다.' + '</h5></li><br/>'+
+											'<li>'+'<h5>'+  data[0].name + ' 다음으로 배추를 비싸게 파는 지역은 '+'<span class="orange-text">'+ data[0].expen_next +  '</span>'+ '입니다.' + '</h5></li><br/>');
+					if(data[0].priceZero == 'False'){
+						alert(data[0].name + '에는 '+ data[0].category + '값이 없습니다.');
+						$('#nooneacabbagediv').hide()
+					}
+					$('#tablelist').empty()
+					var txt = "";
+					var place= data[0].year2020_place
+					var mean = data[0].year2020_mean
+					for(var i = 0 ; i<data[0].length; i++){
+						txt +='<tr class="table-body-row">';
+						txt +='<td class="price-week-pred">' + place[i] + '</td>'
+						txt += '<td class="price-twodaysago">' + mean[i] + '</td>'
+						txt += '</tr>'
+					}
+					$("#tablelist").append(txt);
+					if(data[0].sizero == 'False') {
+						Highcharts.chart('chartdiv', {
+							chart : { type : 'line'},
+							title : { text : data[0].name + ' ' + data[0].category + ' 평균 가격'},
+							xAxis : {  categories: data[0].dada},
+							yAxis : {
+								title : {text : '평균가격'}
+						},
+							series : [
+								{   name: "마트",
+									data: data[0].price_mart
+								},
+								{   name: "서울 전체",
+									data:  data[0].price_seoul
+								}]
+						})
+					}
+					if(data[0].martzero == 'False') {
+						Highcharts.chart('chartdiv', {
+							chart : { type : 'line'},
+							title : { text : data[0].name + ' ' + data[0].category + ' 평균 가격'},
+							xAxis : {  categories: data[0].dada},
+							yAxis : {
+								title : {text : '평균가격'}
+						},
+							series : [
+								{   name: "시장",
+									data: data[0].price_si
+								},
+								{   name: "서울 전체",
+									data:  data[0].price_seoul
+								}]
+						})
+					}
+					if(data[0].seoulzero == 'False') {
+						Highcharts.chart('chartdiv', {
+							chart : { type : 'line'},
+							title : { text : data[0].name + ' ' + data[0].category + ' 평균 가격'},
+							xAxis : {  categories: data[0].dada},
+							yAxis : {
+								title : {text : '평균가격'}
+						},
+							series : [
+								{   name: "시장",
+									data: data[0].price_si
+								},
+								{   name: "마트",
+									data: data[0].price_mart
+								}]
+						})
+					}
+					if(data[0].sizero != 'False' & data[0].martzero != 'False' & data[0].seoulzero != 'False') {
+						Highcharts.chart('chartdiv', {
+							chart : { type : 'line'},
+							title : { text : data[0].name + ' ' + data[0].category + ' 평균 가격'},
+							xAxis : {  categories: data[0].dada},
+							yAxis : {
+									title : {text : '평균가격'}
+									},
+							series : [
+								{   name: "시장",
+									data: data[0].price_si
+								},
+								{   name: "마트",
+									data: data[0].price_mart
+								},
+								{   name: "시장 전체",
+									data: data[0].price_seoul
+							}]
+						})
+					}
+				}
+			});
+		})
+		$('#vegetableclick4').click(function () {
+			$.ajax({
+				url: "{% url 'vegetableSelect' id='오이' %}",
+				data: {'csrfmiddlewaretoken': '{{csrf_token}}'},
+				datatype:'json',
+				type: 'post',
+				success: function (data) {
+					console.log(data)
+					$('#preview').html($('<img src="{% static 'assets/img/products/cucumber.jpg' %}" alt="">'));
+					$('#vegdiv1').empty();
+					$('#vegdiv1').html('<h3>' + data[0].name + ' '+ data[0].category + ' 가격' + '<span class="orange-text">' +'분석 결과' + '</span></h3>'+
+										'<p>' + data[0].category + '와 함께 건강을 챙기자!' + '</p>');
+					$('#vegdiv2').html('<h3>' + data[0].name + ' 시장과 대형마트'+ '<span class="orange-text">'+ '가격 비교' + '</span></h3>');
+					$('#vegdiv4').html('<h3>' + data[0].name + ' '+   data[0].category +  ' 가격' + '<span class="orange-text">' + '수준' + '</span></h3>'+
+										'<p>' + '서울과 비교한' + ' '+  data[0].name + ' '+  data[0].category +  ' 가격' + '</p>');
+					$('#localprice').empty();
+					$('#localprice').html('<li>' +'<h5>' + data[0].name + '는' + ' '+ data[0].category + '를' + ' '+ '서울 평균보다 '+ '<span class="orange-text">'+ data[0].ratio + '</span>'+ '만큼 '  +
+											 data[0].ExpCheap + ' 팝니다.' + '</h5></li><br/>'+
+											'<li>'+'<h5>'+  data[0].name + ' 다음으로 배추를 싸게 파는 지역은 '+'<span class="orange-text">'+ data[0].cheaper_next +  '</span>'+ '입니다.' + '</h5></li><br/>'+
+											'<li>'+'<h5>'+  data[0].name + ' 다음으로 배추를 비싸게 파는 지역은 '+'<span class="orange-text">'+ data[0].expen_next +  '</span>'+ '입니다.' + '</h5></li><br/>');
+					if(data[0].priceZero == 'False'){
+						alert(data[0].name + '에는 '+ data[0].category + '값이 없습니다.');
+						$('#nooneacabbagediv').hide()
+					}
+					$('#tablelist').empty()
+					var txt = "";
+					var place= data[0].year2020_place
+					var mean = data[0].year2020_mean
+					for(var i = 0 ; i<data[0].length; i++){
+						txt +='<tr class="table-body-row">';
+						txt +='<td class="price-week-pred">' + place[i] + '</td>'
+						txt += '<td class="price-twodaysago">' + mean[i] + '</td>'
+						txt += '</tr>'
+					}
+					$("#tablelist").append(txt);
+					if(data[0].sizero == 'False') {
+						Highcharts.chart('chartdiv', {
+							chart : { type : 'line'},
+							title : { text : data[0].name + ' ' + data[0].category + ' 평균 가격'},
+							xAxis : {  categories: data[0].dada},
+							yAxis : {
+								title : {text : '평균가격'}
+						},
+							series : [
+								{   name: "마트",
+									data: data[0].price_mart
+								},
+								{   name: "서울 전체",
+									data:  data[0].price_seoul
+								}]
+						})
+					}
+					if(data[0].martzero == 'False') {
+						Highcharts.chart('chartdiv', {
+							chart : { type : 'line'},
+							title : { text : data[0].name + ' ' + data[0].category + ' 평균 가격'},
+							xAxis : {  categories: data[0].dada},
+							yAxis : {
+								title : {text : '평균가격'}
+						},
+							series : [
+								{   name: "시장",
+									data: data[0].price_si
+								},
+								{   name: "서울 전체",
+									data:  data[0].price_seoul
+								}]
+						})
+					}
+					if(data[0].seoulzero  == 'False') {
+						Highcharts.chart('chartdiv', {
+							chart : { type : 'line'},
+							title : { text : data[0].name + ' ' + data[0].category + ' 평균 가격'},
+							xAxis : {  categories: data[0].dada},
+							yAxis : {
+								title : {text : '평균가격'}
+						},
+							series : [
+								{   name: "시장",
+									data: data[0].price_si
+								},
+								{   name: "마트",
+									data: data[0].price_mart
+								}]
+						})
+					}
+					if(data[0].sizero != 'False' & data[0].martzero != 'False' & data[0].seoulzero != 'False' ) {
+						Highcharts.chart('chartdiv', {
+							chart : { type : 'line'},
+							title : { text : data[0].name + ' ' + data[0].category + ' 평균 가격'},
+							xAxis : {  categories: data[0].dada},
+							yAxis : {
+									title : {text : '평균가격'}
+									},
+							series : [
+								{   name: "시장",
+									data: data[0].price_si
+								},
+								{   name: "마트",
+									data: data[0].price_mart
+								},
+								{   name: "시장 전체",
+									data: data[0].price_seoul
+							}]
+						})
+					}
+				}
+			});
+		})
+		$('#vegetableclick5').click(function () {
+			$.ajax({
+				url: "{% url 'vegetableSelect' id='상추' %}",
+				data: {'csrfmiddlewaretoken': '{{csrf_token}}'},
+				datatype:'json',
+				type: 'post',
+				success: function (data) {
+					console.log(data)
+					$('#preview').html($('<img src="{% static 'assets/img/products/lettuce.jpg' %}" alt="">'));
+					$('#vegdiv1').empty();
+					$('#vegdiv1').html('<h3>' + data[0].name + ' '+ data[0].category + ' 가격' + '<span class="orange-text">' +'분석 결과' + '</span></h3>'+
+										'<p>' + data[0].category + '와 함께 건강을 챙기자!' + '</p>');
+					$('#vegdiv2').html('<h3>' + data[0].name + ' 시장과 대형마트'+ '<span class="orange-text">'+ '가격 비교' + '</span></h3>');
+					$('#vegdiv4').html('<h3>' + data[0].name + ' '+   data[0].category +  ' 가격' + '<span class="orange-text">' + '수준' + '</span></h3>'+
+										'<p>' + '서울과 비교한' + ' '+  data[0].name + ' '+  data[0].category +  ' 가격' + '</p>');
+					$('#localprice').empty();
+					$('#localprice').html('<li>' +'<h5>' + data[0].name + '는' + ' '+ data[0].category + '를' + ' '+ '서울 평균보다 '+ '<span class="orange-text">'+ data[0].ratio + '</span>'+ '만큼 '  +
+											 data[0].ExpCheap + ' 팝니다.' + '</h5></li><br/>'+
+											'<li>'+'<h5>'+  data[0].name + ' 다음으로 배추를 싸게 파는 지역은 '+'<span class="orange-text">'+ data[0].cheaper_next +  '</span>'+ '입니다.' + '</h5></li><br/>'+
+											'<li>'+'<h5>'+  data[0].name + ' 다음으로 배추를 비싸게 파는 지역은 '+'<span class="orange-text">'+ data[0].expen_next +  '</span>'+ '입니다.' + '</h5></li><br/>');
+					if(data[0].priceZero == 'False'){
+						alert(data[0].name + '에는 '+ data[0].category + '값이 없습니다.');
+						$('#nooneacabbagediv').hide()
+					}
+					$('#tablelist').empty()
+					var txt = "";
+					var place= data[0].year2020_place
+					var mean = data[0].year2020_mean
+					for(var i = 0 ; i<data[0].length; i++){
+						txt +='<tr class="table-body-row">';
+						txt +='<td class="price-week-pred">' + place[i] + '</td>'
+						txt += '<td class="price-twodaysago">' + mean[i] + '</td>'
+						txt += '</tr>'
+					}
+					$("#tablelist").append(txt);
+					if(data[0].sizero == 'False') {
+						Highcharts.chart('chartdiv', {
+							chart : { type : 'line'},
+							title : { text : data[0].name + ' ' + data[0].category + ' 평균 가격'},
+							xAxis : {  categories: data[0].dada},
+							yAxis : {
+								title : {text : '평균가격'}
+						},
+							series : [
+								{   name: "마트",
+									data: data[0].price_mart
+								},
+								{   name: "서울 전체",
+									data:  data[0].price_seoul
+								}]
+						})
+					}
+					if(data[0].martzero == 'False') {
+						Highcharts.chart('chartdiv', {
+							chart : { type : 'line'},
+							title : { text : data[0].name + ' ' + data[0].category + ' 평균 가격'},
+							xAxis : {  categories: data[0].dada},
+							yAxis : {
+								title : {text : '평균가격'}
+						},
+							series : [
+								{   name: "시장",
+									data: data[0].price_si
+								},
+								{   name: "서울 전체",
+									data:  data[0].price_seoul
+								}]
+						})
+					}
+					if(data[0].seoulzero == 'False') {
+						Highcharts.chart('chartdiv', {
+							chart : { type : 'line'},
+							title : { text : data[0].name + ' ' + data[0].category + ' 평균 가격'},
+							xAxis : {  categories: data[0].dada},
+							yAxis : {
+								title : {text : '평균가격'}
+						},
+							series : [
+								{   name: "시장",
+									data: data[0].price_si
+								},
+								{   name: "마트",
+									data: data[0].price_mart
+								}]
+						})
+					}
+					if(data[0].sizero != 'False' & data[0].martzero != 'False' & data[0].seoulzero != 'False') {
+						Highcharts.chart('chartdiv','container', {
+							chart : { type : 'line'},
+							title : { text : data[0].name + ' ' + data[0].category + ' 평균 가격'},
+							xAxis : {  categories: data[0].dada},
+							yAxis : {
+									title : {text : '평균가격'}
+									},
+							series : [
+								{   name: "시장",
+									data: data[0].price_si
+								},
+								{   name: "마트",
+									data: data[0].price_mart
+								},
+								{   name: "시장 전체",
+									data: data[0].price_seoul
+							}]
+						})
+					}
+				}
+			});
+		})
+	})
+	</script>
+
+
+<!--	<script>-->
+<!--	$(document).ready(function(){-->
+
+<!--		Highcharts.chart('container', {-->
+
+<!--			chart : { type : 'line'},-->
+
+<!--			title: {-->
+<!--				text: '시장 예측가격 그래프'-->
+<!--			},-->
+
+<!--			subtitle: {-->
+<!--				text: '부제 (안써도됨)'-->
+<!--			},-->
+
+<!--			yAxis: {-->
+<!--				title: {-->
+<!--					text: '예상 가격'-->
+<!--				}-->
+<!--			},-->
+<!--			legend: {-->
+<!--				layout: 'vertical',-->
+<!--				align: 'right',-->
+<!--				verticalAlign: 'middle'-->
+<!--			},-->
+
+<!--			plotOptions: {-->
+<!--				series: {-->
+<!--					label: {-->
+<!--						connectorAllowed: false-->
+<!--					},-->
+<!--					pointStart: 2010-->
+<!--				}-->
+<!--			},-->
+
+<!--			series: [{-->
+<!--				name: 'Installation',-->
+<!--				data: [43934, 52503, 57177, 69658, 97031, 119931, 137133, 154175]-->
+<!--			},  {-->
+<!--				name: 'Project Development',-->
+<!--				data: [null, null, 7988, 12169, 15112, 22452, 34400, 34227]-->
+<!--			}, {-->
+<!--				name: 'Other',-->
+<!--				data: [12908, 5948, 8105, 11248, 8989, 11816, 18274, 18111]-->
+<!--			}],-->
+
+<!--			responsive: {-->
+<!--				rules: [{-->
+<!--					condition: {-->
+<!--						maxWidth: 500-->
+<!--					},-->
+<!--					chartOptions: {-->
+<!--						legend: {-->
+<!--							layout: 'horizontal',-->
+<!--							align: 'center',-->
+<!--							verticalAlign: 'bottom'-->
+<!--						}-->
+<!--					}-->
+<!--				}]-->
+<!--			}-->
+
+<!--		});-->
+<!--	});-->
+<!--	</script>-->
+
+<!--&lt;!&ndash;	작동잘되는 원본 script&ndash;&gt;-->
+<!--	<script>-->
+<!--	$(document).ready(function(){-->
+
+<!--		Highcharts.chart('container', {-->
+
+<!--			title: {-->
+<!--				text: '시장 예측가격 그래프'-->
+<!--			},-->
+
+<!--			subtitle: {-->
+<!--				text: '부제 (안써도됨)'-->
+<!--			},-->
+
+<!--			yAxis: {-->
+<!--				title: {-->
+<!--					text: 'Number of Employees'-->
+<!--				}-->
+<!--			},-->
+<!--			legend: {-->
+<!--				layout: 'vertical',-->
+<!--				align: 'right',-->
+<!--				verticalAlign: 'middle'-->
+<!--			},-->
+
+<!--			plotOptions: {-->
+<!--				series: {-->
+<!--					label: {-->
+<!--						connectorAllowed: false-->
+<!--					},-->
+<!--					pointStart: 2010-->
+<!--				}-->
+<!--			},-->
+
+<!--			series: [{-->
+<!--				name: 'Installation',-->
+<!--				data: [43934, 52503, 57177, 69658, 97031, 119931, 137133, 154175]-->
+<!--			}, {-->
+<!--				name: 'Manufacturing',-->
+<!--				data: [24916, 24064, 29742, 29851, 32490, 30282, 38121, 40434]-->
+<!--			}, {-->
+<!--				name: 'Sales & Distribution',-->
+<!--				data: [11744, 17722, 16005, 19771, 20185, 24377, 32147, 39387]-->
+<!--			}, {-->
+<!--				name: 'Project Development',-->
+<!--				data: [null, null, 7988, 12169, 15112, 22452, 34400, 34227]-->
+<!--			}, {-->
+<!--				name: 'Other',-->
+<!--				data: [12908, 5948, 8105, 11248, 8989, 11816, 18274, 18111]-->
+<!--			}],-->
+
+<!--			responsive: {-->
+<!--				rules: [{-->
+<!--					condition: {-->
+<!--						maxWidth: 500-->
+<!--					},-->
+<!--					chartOptions: {-->
+<!--						legend: {-->
+<!--							layout: 'horizontal',-->
+<!--							align: 'center',-->
+<!--							verticalAlign: 'bottom'-->
+<!--						}-->
+<!--					}-->
+<!--				}]-->
+<!--			}-->
+
+<!--		});-->
+<!--	});-->
+<!--	</script>-->
+
+<!--	modal test script!!!!!!! 11/27 5:50pm-->
+	<script>
+	$(document).ready(function() {
+		$('#vegetableclick1').click(function () {
+			$.ajax({
+				url: "{% url 'chartInModal' id='양파' %}",
+				data: {'csrfmiddlewaretoken': '{{csrf_token}}'},
+				datatype:'json',
+				type: 'post',
+				success: function (data) {
+					console.log(data)
+					Highcharts.chart('container',{
+					 	chart : { type : 'line'},
+						title : { text : data[0].category + '예상 가격'},
+						xAxis : { categories : data[0].days},
+						yAxis : {
+								title : {text : '평균가격'}
+								},
+						series : [
+							{   name: "시장 예측가격",
+								data: data[0].modal_si_price,
+							},
+							{   name: "마트 예측가격",
+								data: data[0].modal_si_mart,
+						}]
+
+					 })
+
+				}
+			});
+		})
+		$('#vegetableclick2').click(function () {
+			$.ajax({
+				url: "{% url 'chartInModal' id='배추' %}",
+				data: {'csrfmiddlewaretoken': '{{csrf_token}}'},
+				datatype:'json',
+				type: 'post',
+				success: function (data) {
+					console.log(data)
+					Highcharts.chart('container',{
+					 	chart : { type : 'line'},
+						title : { text : data[0].category + '예상 가격'},
+						xAxis : { categories : data[0].days},
+						yAxis : {
+								title : {text : '평균가격'}
+								},
+						series : [
+							{   name: "시장 예측가격",
+								data: data[0].modal_si_price,
+							},
+							{   name: "마트 예측가격",
+								data: data[0].modal_si_mart,
+						}]
+
+					 })
+
+				}
+			});
+		})
+		$('#vegetableclick3').click(function () {
+			$.ajax({
+				url: "{% url 'chartInModal' id='무' %}",
+				data: {'csrfmiddlewaretoken': '{{csrf_token}}'},
+				datatype:'json',
+				type: 'post',
+				success: function (data) {
+					console.log(data)
+					Highcharts.chart('container',{
+					 	chart : { type : 'line'},
+						title : { text : data[0].category + '예상 가격'},
+						xAxis : { categories : data[0].days},
+						yAxis : {
+								title : {text : '평균가격'}
+								},
+						series : [
+							{   name: "시장 예측가격",
+								data: data[0].modal_si_price,
+							},
+							{   name: "마트 예측가격",
+								data: data[0].modal_si_mart,
+						}]
+
+					 })
+
+				}
+			});
+		})
+		$('#vegetableclick4').click(function () {
+			$.ajax({
+				url: "{% url 'chartInModal' id='오이' %}",
+				data: {'csrfmiddlewaretoken': '{{csrf_token}}'},
+				datatype:'json',
+				type: 'post',
+				success: function (data) {
+					console.log(data)
+					Highcharts.chart('container',{
+					 	chart : { type : 'line'},
+						title : { text : data[0].category + '예상 가격'},
+						xAxis : { categories : data[0].days},
+						yAxis : {
+								title : {text : '평균가격'}
+								},
+						series : [
+							{   name: "시장 예측가격",
+								data: data[0].modal_si_price,
+							},
+							{   name: "마트 예측가격",
+								data: data[0].modal_si_mart,
+						}]
+
+					 })
+
+				}
+			});
+		})
+		$('#vegetableclick5').click(function () {
+			$.ajax({
+				url: "{% url 'chartInModal' id='상추' %}",
+				data: {'csrfmiddlewaretoken': '{{csrf_token}}'},
+				datatype:'json',
+				type: 'post',
+				success: function (data) {
+					console.log(data)
+					Highcharts.chart('container',{
+					 	chart : { type : 'line'},
+						title : { text : data[0].category + '예상 가격'},
+						xAxis : { categories : data[0].days},
+						yAxis : {
+								title : {text : '평균가격'}
+								},
+						series : [
+							{   name: "시장 예측가격",
+								data: data[0].modal_si_price,
+							},
+							{   name: "마트 예측가격",
+								data: data[0].modal_si_mart,
+						}]
+
+					 })
+
+				}
+			});
+		})
+	})
+	</script>
+
+
+</body>
+</html>
