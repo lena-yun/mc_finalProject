@@ -39,8 +39,8 @@
 			<div class="row">
 				<div class="col-lg-8 offset-lg-2 text-center">
 					<div class="breadcrumb-text">
-						<p>for producers</p>
-						<h1>경락가 예측</h1>
+						<p>predict the price of vegetables</p>
+						<h1>미래의 채소가격</h1>
 					</div>
 				</div>
 			</div>
@@ -49,10 +49,10 @@
 	<!-- end breadcrumb section -->
 
 	<!-- products -->
-	<div class="product-section mt-150 mb-50">
+	<div class="product-section mt-100 mb-50">
 		<div class="container">
 			<div class="row product-lists">
-				<div class="col-lg-2 col-md-6 text-center onion">
+				<div class="col-lg-2 col-md-6 text-center onion  ml-4 mr-3">
 					<div class="single-product-item">
 						<div class="product-image">
 							<a href="single-product.html"><img src="{% static 'assets/img/products/onion.jpg' %}" alt=""></a>
@@ -61,7 +61,7 @@
 						<a data-toggle="collapse" aria-expanded="false" aria-controls="nooneacabbagediv" href="#nooneacabbagediv" class="cart-btn" id="vegetableclick1"><i class="fas fa-shopping-cart"></i>Click</a>
 					</div>
 				</div>
-				<div class="col-lg-2 col-md-6 text-center cabbage">
+				<div class="col-lg-2 col-md-6 text-center cabbage ml-4">
 					<div class="single-product-item">
 						<div class="product-image">
 							<a href="#None"><img src="{% static 'assets/img/products/cabbage.jpg' %}" alt=""></a>
@@ -70,7 +70,7 @@
 						<a data-toggle="collapse" aria-expanded="false" aria-controls="nooneacabbagediv" href="#nooneacabbagediv" class="cart-btn" id="vegetableclick2"><i class="fas fa-shopping-cart"></i>Click</a></p>
 					</div>
 				</div>
-				<div class="col-lg-2 col-md-6 text-center Radish">
+				<div class="col-lg-2 col-md-6 text-center Radish ml-4">
 					<div class="single-product-item">
 						<div class="product-image">
 							<a href="single-product.html"><img src="{% static 'assets/img/products/Radish.jpg' %}" alt=""></a>
@@ -79,31 +79,22 @@
 						<a data-toggle="collapse" aria-expanded="false" aria-controls="nooneacabbagediv" href="#nooneacabbagediv" class="cart-btn" id="vegetableclick3"><i class="fas fa-shopping-cart"></i>Click</a>
 					</div>
 				</div>
-				<div class="col-lg-2 col-md-6 text-center cucumber">
+				<div class="col-lg-2 col-md-6 text-center cucumber ml-4">
 					<div class="single-product-item">
 						<div class="product-image">
 							<a href="single-product.html"><img src="{% static 'assets/img/products/garlic.jpg' %}" alt=""></a>
 						</div>
-						<p class="product-price"><span>3Kg</span>마늘</p>
+						<p class="product-price"><span>3Kg</span>오이</p>
 						<a data-toggle="collapse" aria-expanded="false" aria-controls="nooneacabbagediv" href="#nooneacabbagediv" class="cart-btn" id="vegetableclick4"><i class="fas fa-shopping-cart"></i>Click</a>
 					</div>
 				</div>
-				<div class="col-lg-2 col-md-6 text-center hotpepper">
+				<div class="col-lg-2 col-md-6 text-center hotpepper ml-4">
 					<div class="single-product-item">
 						<div class="product-image">
 							<a href="single-product.html"><img src="{% static 'assets/img/products/hot pepper.jpg' %}" alt=""></a>
 						</div>
-						<p class="product-price"><span>10Kg</span>고추</p>
+						<p class="product-price"><span>10Kg</span>상추</p>
 						<a  data-toggle="collapse" href="#nooneacabbagediv" class="cart-btn" id="vegetableclick5"><i class="fas fa-shopping-cart"></i>Click</a>
-					</div>
-				</div>
-				<div class="col-lg-2 col-md-6 text-center bigpa">
-					<div class="single-product-item">
-						<div class="product-image">
-							<a href="single-product.html"><img src="{% static 'assets/img/products/bigpa.jpg' %}" alt=""></a>
-						</div>
-						<p class="product-price"><span>1Kg</span>대파</p>
-						<a  data-toggle="collapse" href="#nooneacabbagediv" class="cart-btn" id="vegetableclick6"><i class="fas fa-shopping-cart"></i>Click</a>
 					</div>
 				</div>
 			</div>
@@ -121,7 +112,7 @@
 				</div>
 				<div class="col-md-7">
 					<div class="cart-table-wrap">
-						<h3>금일평균 경락가 <span class="orange-text"> 0000원</span></h3>
+						<h3>금일평균 소비자가 <span class="orange-text"> 0000원</span></h3>
 						<table class="price-table">
 							<thead class="cart-table-head">
 								<tr class="table-head-row">
@@ -156,8 +147,8 @@
 			<div class="row">
 				<div class="col-lg-8 offset-lg-2 text-center">
 					<div class="section-title" id="vegdiv1_p">
-						<h3>주간 경락가 <span class="orange-text">예측</span></h3>
-						<p>이틀 전 ~ 5일 후 까지의 주간 경락가를 살펴보자</p>
+						<h3>주간 소비자가격 <span class="orange-text">예측</span></h3>
+						<p>이틀 전 ~ 5일 후 까지의 소비자가격을 살펴보자</p>
 					</div>
 					<figure class="highcharts-figure" id="chartregion">
 						<div id ="chartdiv">
@@ -175,8 +166,8 @@
 				<div class="col-lg-8 offset-lg-2 text-center">
 					<div class="section-title" id="vegdiv3_p">
 						{% csrf_token %}
-						<h3>경락가 형성에 영향을 미치는 변수<span class="orange-text"></span></h3>
-						<p>{{id}}의 경락가 형성은 어떤 변수의 영향을 가장 많이 받는가?</p>
+						<h3>소비자가 형성에 영향을 미치는 변수<span class="orange-text"></span></h3>
+						<p>{{id}}의 소비자가격 형성은 어떤 변수의 영향을 가장 많이 받는가?</p>
 					</div>
 					<figure class="highcharts-figure" id="chartregion02">
 						<div id ="chartdiv02">
@@ -214,12 +205,12 @@
 					console.log(data)
 					$('#preview').html($('<img src="{% static 'assets/img/products/onion.jpg' %}" alt="">'));
 					$('#vegdiv1_p').empty();
-					$('#vegdiv1_p').html('<h3>' + ' 경락가' + '<span class="orange-text">' +' 예측 결과' + '</span></h3>'+
-										'<p>' + data[0].category + '의 예측 경락가를 알아보자!' + '</p>');
-					$('#vegdiv2_p').html('<h3>' + ' 주간 경락가'+ '<span class="orange-text">'+ '예측' + '</span></h3>');
+					$('#vegdiv1_p').html('<h3>' + ' 소비자가격' + '<span class="orange-text">' +' 예측' + '</span></h3>'+
+										'<p>' + data[0].category + '의 소비자가격을 예측해보자!' + '</p>');
+					$('#vegdiv2_p').html('<h3>' + ' 주간 소비자가'+ '<span class="orange-text">'+ '예측' + '</span></h3>');
 						Highcharts.chart('chartdiv', {
 							chart : { type : 'line'},
-							title : { text : data[0].category + '경락가 현황 및 예측'},
+							title : { text : data[0].category + '소비자가 현황 및 예측'},
 							xAxis : {  categories: data[0].days},
 							yAxis : {
 								title : {text : '가격(원)'}
@@ -231,7 +222,7 @@
 						})
 						Highcharts.chart('chartdiv02', {
 							chart : { type : 'bar'},
-							title : { text :  data[0].category + '의 경락가 형성 변수 중요도'},
+							title : { text :  data[0].category + '의 소비자가격 형성 변수 중요도'},
 							xAxis : {  categories: data[0].price_total},
 							yAxis : { title : {text : '평균가격'} },
 							plotOptions: {
@@ -257,12 +248,12 @@
 					console.log(data)
 					$('#preview').html($('<img src="{% static 'assets/img/products/cabbage.jpg' %}" alt="">'));
 					$('#vegdiv1_p').empty();
-					$('#vegdiv1_p').html('<h3>' + ' 경락가' + '<span class="orange-text">' +' 예측 결과' + '</span></h3>'+
-										'<p>' + data[0].category + '의 예측 경락가를 알아보자!' + '</p>');
-					$('#vegdiv2_p').html('<h3>' + ' 주간 경락가'+ '<span class="orange-text">'+ '예측' + '</span></h3>');
+					$('#vegdiv1_p').html('<h3>' + ' 소비자가격' + '<span class="orange-text">' +' 예측 결과' + '</span></h3>'+
+										'<p>' + data[0].category + '의 소비자가격을 예측해보자!' + '</p>');
+					$('#vegdiv2_p').html('<h3>' + ' 주간 소비자가격'+ '<span class="orange-text">'+ '예측' + '</span></h3>');
 						Highcharts.chart('chartdiv', {
 							chart : { type : 'line'},
-							title : { text : data[0].category + '경락가 현황 및 예측'},
+							title : { text : data[0].category + '소비자가 현황 및 예측'},
 							xAxis : {  categories: data[0].days},
 							yAxis : {
 								title : {text : '가격(원)'}
@@ -274,7 +265,7 @@
 						})
 						Highcharts.chart('chartdiv02', {
 							chart : { type : 'bar'},
-							title : { text :  data[0].category + '의 경락가 형성 변수 중요도'},
+							title : { text :  data[0].category + '의 소비자가격 형성 변수 중요도'},
 							xAxis : {  categories: data[0].price_total },
 							yAxis : { title : {text : '평균가격'} },
 							plotOptions: {
@@ -300,12 +291,12 @@
 					console.log(data)
 					$('#preview').html($('<img src="{% static 'assets/img/products/Radish.jpg' %}" alt="">'));
 					$('#vegdiv1_p').empty();
-					$('#vegdiv1_p').html('<h3>' + ' 경락가' + '<span class="orange-text">' +' 예측 결과' + '</span></h3>'+
-										'<p>' + data[0].category + '의 예측 경락가를 알아보자!' + '</p>');
-					$('#vegdiv2_p').html('<h3>' + ' 주간 경락가'+ '<span class="orange-text">'+ '예측' + '</span></h3>');
+					$('#vegdiv1_p').html('<h3>' + ' 소비자가격' + '<span class="orange-text">' +' 예측 결과' + '</span></h3>'+
+										'<p>' + data[0].category + '의 소비자가격을 예측해보자!' + '</p>');
+					$('#vegdiv2_p').html('<h3>' + ' 주간 소비자가격'+ '<span class="orange-text">'+ '예측' + '</span></h3>');
 						Highcharts.chart('chartdiv', {
 							chart : { type : 'line'},
-							title : { text : data[0].category + '경락가 현황 및 예측'},
+							title : { text : data[0].category + '소비자가 현황 및 예측'},
 							xAxis : {  categories: data[0].days},
 							yAxis : {
 								title : {text : '가격(원)'}
@@ -317,7 +308,7 @@
 						})
 						Highcharts.chart('chartdiv02', {
 							chart : { type : 'bar'},
-							title : { text :  data[0].category + '의 경락가 형성 변수 중요도'},
+							title : { text :  data[0].category + '의 소비자가 형성 변수 중요도'},
 							xAxis : {  categories: data[0].price_total },
 							yAxis : { title : {text : '평균가격'} },
 							plotOptions: {
@@ -344,12 +335,12 @@
 					console.log(data)
 					$('#preview').html($('<img src="{% static 'assets/img/products/garlic.jpg' %}" alt="">'));
 					$('#vegdiv1_p').empty();
-					$('#vegdiv1_p').html('<h3>' + ' 경락가' + '<span class="orange-text">' +' 예측 결과' + '</span></h3>'+
+					$('#vegdiv1_p').html('<h3>' + ' 소비자가격' + '<span class="orange-text">' +' 예측 결과' + '</span></h3>'+
 										'<p>' + data[0].category + '의 예측 경락가를 알아보자!' + '</p>');
-					$('#vegdiv2_p').html('<h3>' + ' 주간 경락가'+ '<span class="orange-text">'+ '예측' + '</span></h3>');
+					$('#vegdiv2_p').html('<h3>' + ' 주간 소비자가격'+ '<span class="orange-text">'+ '예측' + '</span></h3>');
 						Highcharts.chart('chartdiv', {
 							chart : { type : 'line'},
-							title : { text : data[0].category + '경락가 현황 및 예측'},
+							title : { text : data[0].category + '소비자가격 현황 및 예측'},
 							xAxis : {  categories: data[0].days},
 							yAxis : {
 								title : {text : '가격(원)'}
@@ -361,7 +352,7 @@
 						})
 						Highcharts.chart('chartdiv02', {
 							chart : { type : 'bar'},
-							title : { text :  data[0].category + '의 경락가 형성 변수 중요도'},
+							title : { text :  data[0].category + '의 소비자가 형성 변수 중요도'},
 							xAxis : {  categories: data[0].price_total},
 							yAxis : { title : {text : '평균가격'} },
 							plotOptions: {
@@ -387,12 +378,12 @@
 					console.log(data)
 					$('#preview').html($('<img src="{% static 'assets/img/products/hot pepper.jpg' %}" alt="">'));
 					$('#vegdiv1_p').empty();
-					$('#vegdiv1_p').html('<h3>'+ ' 경락가' + '<span class="orange-text">' +' 예측 결과' + '</span></h3>'+
-										'<p>' + data[0].category + '의 예측 경락가를 알아보자!' + '</p>');
-					$('#vegdiv2_p').html('<h3>' + ' 주간 경락가'+ '<span class="orange-text">'+ '예측' + '</span></h3>');
+					$('#vegdiv1_p').html('<h3>'+ ' 소비자가격' + '<span class="orange-text">' +' 예측 결과' + '</span></h3>'+
+										'<p>' + data[0].category + '의 소비자가격을 예측해보자!' + '</p>');
+					$('#vegdiv2_p').html('<h3>' + ' 주간 소비자가격'+ '<span class="orange-text">'+ '예측' + '</span></h3>');
 						Highcharts.chart('chartdiv', {
 							chart : { type : 'line'},
-							title : { text : data[0].category + '경락가 현황 및 예측'},
+							title : { text : data[0].category + '소비자가 현황 및 예측'},
 							xAxis : {  categories: data[0].days},
 							yAxis : {
 								title : {text : '가격(원)'}
@@ -404,7 +395,7 @@
 						})
 						Highcharts.chart('chartdiv02', {
 							chart : { type : 'bar'},
-							title : { text :  data[0].category + '의 경락가 형성 변수 중요도'},
+							title : { text :  data[0].category + '의 소비자가 형성 변수 중요도'},
 							xAxis : {  categories: data[0].price_total},
 							yAxis : { title : {text : '평균가격'} },
 							plotOptions: {
@@ -420,52 +411,7 @@
 				}
 			});
 		})
-		$('#vegetableclick6').click(function () {
-			$.ajax({
-				url: "{% url 'vegetableSelectProducer' id='대파' %}",
-				data: {'csrfmiddlewaretoken': '{{csrf_token}}'},
-				datatype:'json',
-				type: 'post',
-				success: function (data) {
-					console.log(data)
-					$('#preview').html($('<img src="{% static 'assets/img/products/bigpa.jpg' %}" alt="">'));
-					$('#vegdiv1_p').empty();
-					$('#vegdiv1_p').html('<h3>' + ' 경락가' + '<span class="orange-text">' +' 예측 결과' + '</span></h3>'+
-										'<p>' + data[0].category + '의 예측 경락가를 알아보자!' + '</p>');
-					$('#vegdiv3_p').empty();
-					$('#vegdiv3_p').html('<h3>' + '경락가 형성에 영향을 미치는 요인들' + '<span class="orange-text"></span></h3>'+
-										'<p>' + '어떤 변수의 영향을 가장 많이 받는가?' + '</p>');
-					$('#vegdiv2_p').html('<h3>' + ' 주간 경락가'+ '<span class="orange-text">'+ '예측' + '</span></h3>');
-						Highcharts.chart('chartdiv', {
-							chart : { type : 'line'},
-							title : { text : data[0].category + '경락가 현황 및 예측'},
-							xAxis : {  categories: data[0].days},
-							yAxis : {
-								title : {text : '가격(원)'}
-						},
-							series : [
-								{   name: "전체",
-									data: data[0].price_total
-								}]
-						})
-						Highcharts.chart('chartdiv02', {
-							chart : { type : 'bar'},
-							title : { text :  data[0].category + '의 경락가 형성 변수 중요도'},
-							xAxis : {  categories: data[0].price_total},
-							yAxis : { title : {text : '평균가격'} },
-							plotOptions: {
-								series: {
-            						colorByPoint: true
-        						}
-    						},
-							series : [
-								{   name: "전체",
-									data: data[0].price_total
-								}]
-						})
-				}
-			});
-		})
+
 	})
 	</script>
 

@@ -515,3 +515,7 @@ def chartInModal(request, id):
     }
     data = [context]
     return JsonResponse(data, safe=False)
+
+
+def additionalfactors(request):
+    return render(request, 'finalApp/additionalfactors.html')

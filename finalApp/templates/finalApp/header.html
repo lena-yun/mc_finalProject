@@ -68,13 +68,15 @@
 							<ul>
 								<li class="current-list-item"><a href="{% url 'index' %}">홈</a>
 								<li><a href="{% url 'about' %}">홈페이지 소개</a></li>
-								<li><a href="{% url 'selectshop' %}">소비자</a></li>
-								<li><a href="{% url 'shop' %}">생산자</a></li>
+								<li><a href="{% url 'selectshop' %}">현재 채소가격</a></li>
+								<li><a href="{% url 'shop' %}">미래의 채소가격</a></li>
+								<li><a href="{% url 'additionalfactors' %}">재미로 알아보는 채소가격</a></li>
 								<li><a href="#">더 알아보기</a>
 									<ul class="sub-menu">
 										<li><a href="#">채소 가격 변동</a></li>
 										<li><a href="{% url 'distribution' %}">유통</a></li>
 										<li><a href="{% url 'news' %}">농산물 관련 기사</a></li>
+										<li><a href="{% url 'additionalfactors' %}">추가 변수 페이지</a></li>
 									</ul>
 								</li>
 								<li>

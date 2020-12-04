@@ -25,4 +25,7 @@ urlpatterns = [
     path('vegetableSelectProducer/<str:id>', views.vegetableSelectProducer, name='vegetableSelectProducer'),
 
     path('chartInModal/<str:id>', views.chartInModal, name='chartInModal'),
+
+    path('additionalfactors/', views.additionalfactors, name='additionalfactors'),
+
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
