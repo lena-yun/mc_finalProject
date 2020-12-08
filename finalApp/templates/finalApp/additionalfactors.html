@@ -1,6 +1,10 @@
 {% include 'finalApp/header.html' %}
 {% block content %}
 {% load static %}
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Responsive Bootstrap4 Shop Template, Created by Imran Hossain from https://imransdesign.com/">
 
 	<!-- title -->
 	<title>Fruitkha - Slider Version</title>
@@ -36,9 +40,12 @@
 	<!-- video play button -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
+	<!-- up and down-->
+	<link rel="stylesheet" href="{% static 'assets/css/additional.css' %}">
+
 
 </head>
-
+<body>
 	<!-- breadcrumb-section -->
 	<div class="breadcrumb-section breadcrumb-bg">
 		<div class="container">
@@ -57,12 +64,20 @@
 	<div class="product-section mt-150 mb-150">
 		<div class="container">
                 <div class="content-column col-lg-12">
-					<h2><span class="orange-text">Google</span>이 채소가격을 들었다 놨다 한다고?</h2>
+					<div class="row">
+						<div class="col-lg-3">
+							<img src="{% static 'assets/img/additional/google_logo.png' %}" class="img-responsive">
+						</div>
+						<div class="col-lg-9 align-self-center">
+							<h2>이 채소가격을 들었다 놨다 한다고?</h2>
+						</div>
+					</div>
+
 
 					<div class="row">
-						<div >
-							<select class="mdb-select md-form my-5">
-							  <option value="" disabled selected>채소를 선택하세요</option>
+						<div class="col-lg-3">
+							<select class="mdb-select md-form my-5 btn-lg">
+							  <option value="" disabled selected >채소를 선택하세요</option>
 							  <option value="1">양파</option>
 							  <option value="2">배추</option>
 							  <option value="3">무</option>
@@ -70,37 +85,43 @@
 							  <option value="5">상추</option>
 							</select>
 						</div>
-						<div>
-							<form class="range-field my-5">
-								<input id="calculatorSlider" class="no-border" type="range" value="0" min="0" max="100" />
-								<span id="ex6CurrentSliderValLabel">Google 검색량 : <span id="ex6SliderVal">3</span></span>
-							</form>
-
-
-							<div class="card">
-							  <div class="card-body">
-
-								<h5 class="text-center font-weight-bold blue-text mt-3 mb-4 pb-4"><strong>구글 검색량을 설정하세요</strong></h5>
-								<hr>
-								  <h2><span class="badge blue lighten-2 mb-4">예상 가격</span></h2>
-								  <h2 class="display-4" style="color:#0d47a1"><strong id="resellerEarnings">75$</strong></h2>
-
-
-								<!-- Grid row -->
-								<div class="row">
-
-								  <!-- Grid column -->
-								  <div class="col-md-6 text-center pb-5">
-
-								  </div>
-								  <!-- Grid column -->
-
-
-								</div>
-								<!-- Grid row -->
-
-							  </div>
+						<div class="col-lg-9">
+							<div>검색횟수를 알려주세요</div>
+							<div class="def-number-input number-input safari_only my-5">
+							  <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" class="minus"></button>
+							  <input class="quantity" min="0" max="100" name="quantity" value="1" type="number">
+							  <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus"></button>
 							</div>
+<!--							<form class="range-field my-5">-->
+<!--								<input id="calculatorSlider" class="no-border" type="range" value="0" min="0" max="100" />-->
+<!--								<span id="ex6CurrentSliderValLabel">Google 검색량 : <span id="ex6SliderVal">3</span></span>-->
+<!--							</form>-->
+
+
+<!--							<div class="card">-->
+<!--							  <div class="card-body">-->
+
+<!--								<h5 class="text-center font-weight-bold blue-text mt-3 mb-4 pb-4"><strong>구글 검색량을 설정하세요</strong></h5>-->
+<!--								<hr>-->
+<!--								  <h2><span class="badge blue lighten-2 mb-4">예상 가격</span></h2>-->
+<!--								  <h2 class="display-4" style="color:#0d47a1"><strong id="resellerEarnings">75$</strong></h2>-->
+
+
+<!--								&lt;!&ndash; Grid row &ndash;&gt;-->
+<!--								<div class="row">-->
+
+<!--								  &lt;!&ndash; Grid column &ndash;&gt;-->
+<!--								  <div class="col-md-6 text-center pb-5">-->
+
+<!--								  </div>-->
+<!--								  &lt;!&ndash; Grid column &ndash;&gt;-->
+
+
+<!--								</div>-->
+<!--								&lt;!&ndash; Grid row &ndash;&gt;-->
+
+<!--							  </div>-->
+<!--							</div>-->
 
 						</div>
 					</div>
@@ -115,27 +136,138 @@
     	<div class="container">
         	<div class="row">
                 <!--Content Column-->
-                <div class="content-column col-lg-12">
-					<h5><span class="orange-text">백종원과 채소가격</span></h5>
-					<h3><span class="orange-text">백종원</span>이 요리를 하면?<br><br></h3>
-                    <div class="text">
-						<ol>
-						  <li>백종원 선생님이 TV에서  할 요리를 선택하세요</li>
-						  <li>예상 시청률을 입력하세요</li>
-						  <li>채소 가격 상승률을 알아보세요</li>
-						</ol>
+                <div class="content-column col-lg-12 row">
+					<div class="content-column col-lg-6">
+						<img src="{% static 'assets/img/additional/baekjongwon.png' %}" class="img-responsive">
+						<div class="row my-100" align="center">
+							<a data-toggle="collapse" aria-expanded="false" aria-controls="quizdiv" href="#quizdiv1" class="cart-btn" id="cabbageclick">배추김치</a>
+							<a data-toggle="collapse" aria-expanded="false" aria-controls="quizdiv" href="#quizdiv2" class="cart-btn" id="radishclick">무조림</a>
+							<a data-toggle="collapse" aria-expanded="false" aria-controls="quizdiv" href="#quizdiv3" class="cart-btn" id="cucumberclick">오이소박이</a>
+							<a data-toggle="collapse" aria-expanded="false" aria-controls="quizdiv" href="#quizdiv4" class="cart-btn" id="onionclick">양파장아찌</a>
+							<a data-toggle="collapse" aria-expanded="false" aria-controls="quizdiv" href="#quizdiv5" class="cart-btn" id="lettuceclick">상추쌈</a>
+						</div>
 					</div>
+					<div class="content-column col-lg-6 my-auto">
+						<h5><span class="orange-text">백종원과 채소가격 Quiz Quiz </span></h5>
+						<h2>Q. <span class="orange-text">백종원</span>이<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TV에서 요리를 한다면?<br><br></h2>
+						<div class="text">
+							<ol>
+							  <li>백종원 선생님이 TV에서 선보일 요리를 선택하세요</li>
+							  <li>Quiz의 정답을 선택해주세요</li>
+							</ol>
+						</div>
+					</div>
+
+<!--					<div class="row" my-100>-->
+<!--						<a data-toggle="collapse" aria-expanded="false" aria-controls="quizdiv" href="#quizdiv1" class="cart-btn" id="cabbageclick">배추김치</a>-->
+<!--						<a data-toggle="collapse" aria-expanded="false" aria-controls="quizdiv" href="#quizdiv2" class="cart-btn" id="radishclick">무조림</a>-->
+<!--						<a data-toggle="collapse" aria-expanded="false" aria-controls="quizdiv" href="#quizdiv3" class="cart-btn" id="cucumberclick">오이소박이</a>-->
+<!--						<a data-toggle="collapse" aria-expanded="false" aria-controls="quizdiv" href="#quizdiv4" class="cart-btn" id="onionclick">양파장아찌</a>-->
+<!--						<a data-toggle="collapse" aria-expanded="false" aria-controls="quizdiv" href="#quizdiv5" class="cart-btn" id="lettuceclick">상추쌈</a>-->
+<!--					</div>-->
 
                 </div>
             </div>
         </div>
+		<div class="container collapse" id="quizdiv1" >
+			<div class="col-md-push-(12)">
+				<div class="single-product mt-80 mb-100" >
+					<div class="container">
+						<div class="row">
+							<div class="card card-body">
+    							<div class="row">
+									<div class="col-md-6" align="center">
+										<img src="{% static 'assets/img/additional/quiz_o.png' %}" class="img-responsive" id="positive">
+										<p><h4><strong>배추 가격이 <span class="orange-text">오를 것이다</span></strong></h4></p>
+										<button type="button" class="btn-btn btn-lg" data-toggle="modal" data-target="#myModalYes">select</button>
+									</div>
+									<div class="col-md-6" align="center">
+										<img src="{% static 'assets/img/additional/quiz_x.png' %}" class="img-responsive" id="negative">
+										<p><h4><strong>배추 가격이 <span class="orange-text">오르지 않을 것이다</span></strong></h4></p>
+										<button type="button" class="btn-btn btn-lg" data-toggle="modal" data-target="#myModalNo">select</button>
+									</div>
+								</div>
+
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+	</div>
     </section>
+		<!-- Modal -->
+	<div id="myModalNo" class="modal fade" role="dialog">
+	  <div class="modal-dialog modal-dialog-centered">
+
+		<!-- Modal content-->
+		<div class="modal-content">
+		  <div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal">&times;</button>
+<!--			<h4 class="modal-title">Modal Header</h4>-->
+		  </div>
+		  <div class="modal-body" align="center">
+			  <img src="{% static 'assets/img/additional/main_quiz_o.png' %}" class="img-responsive">
+				<p>백종원과 배추는 상관관계가 없습니다</p>
+		  </div>
+		  <div class="modal-footer">
+			<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		  </div>
+		</div>
+
+	  </div>
+	</div>
+<!--	fin modal-->
+		<!-- Modal -->
+	<div id="myModalYes" class="modal fade" role="dialog">
+	  <div class="modal-dialog modal-dialog-centered">
+
+		<!-- Modal content-->
+		<div class="modal-content">
+		  <div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal">&times;</button>
+<!--			<h4 class="modal-title">Modal Header</h4>-->
+		  </div>
+		  <div class="modal-body" align="center">
+			  <img src="{% static 'assets/img/additional/main_quiz_x.png' %}" class="img-responsive">
+				<p>백종원과 배추는 상관관계가 없습니다</p>
+		  </div>
+		  <div class="modal-footer">
+			<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		  </div>
+		</div>
+
+	  </div>
+	</div>
+<!--	fin modal-->
+
+
+
     <!-- end cart banner section -->
 	<div class="product-section mt-150 mb-150">
 		<div class="container">
-			<div class="content-column col-lg-12">
-				<h3>주린이들을 위한<span class="orange-text">&nbsp;농업 테마주</span></h3>
-				<h5>농업 관련 회사의 주식 변동을 알아보자</h5>
+			<div class="row">
+				<div class="content-column col-lg-12 mt-30 mb-30">
+					<h2>주린이들을 위한<span class="orange-text">&nbsp;농업 테마주</span></h2>
+					<h5>농업 관련 회사의 주식 변동을 알아보자</h5>
+				</div>
+			</div>
+
+			<div class="row mt-80 mb-80" >
+				<div class="content-column col-lg-2 pt-5" >
+						<a  class="cart-btn" id="co_smartfarm">스마트팜 회사</a></p>
+						<a  class="cart-btn" id="co_fertilizer">&nbsp;&nbsp;&nbsp;비료 회사&nbsp;&nbsp;&nbsp;</a></p>
+						<a  class="cart-btn" id="co_pesticide">&nbsp;&nbsp;&nbsp;농약 회사&nbsp;&nbsp;&nbsp;</a></p>
+						<a  class="cart-btn" id="co_kind">&nbsp;&nbsp;&nbsp;종자 회사&nbsp;&nbsp;&nbsp;</a></p>
+						<a  class="cart-btn" id="co_machine">&nbsp;농기계 회사&nbsp;</a></p>
+				</div>
+				<div class="content-column col-lg-10">
+					<figure class="highcharts-figure" id="graph">
+					  <div id="container_stock"></div>
+					</figure>
+				</div>
+
+
 			</div>
 
 		</div>
@@ -162,6 +294,9 @@
 	<script src="https://code.highcharts.com/modules/timeline.js"></script>
 	<script src="https://code.highcharts.com/modules/exporting.js"></script>
 	<script src="https://code.highcharts.com/modules/accessibility.js"></script>
+
+	<script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 
 <!--Material Select Initialization-->
 	<script>
@@ -240,5 +375,482 @@
 
 	</script>
 
+
+	<script>
+	Highcharts.chart('container_stock2', {
+	  chart: {
+		zoomType: 'xy'
+	  },
+	  title: {
+		text: '주식과 농산물가격'
+	  },
+	  subtitle: {
+		text: 'Stock and agricultural product prices'
+	  },
+	  xAxis: [{
+		categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
+		  'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+		crosshair: true
+	  }],
+	  yAxis: [{ // Primary yAxis
+		labels: {
+		  format: '{value}원',
+		  style: {
+			color: Highcharts.getOptions().colors[1]
+		  }
+		},
+		title: {
+		  text: '주식가격',
+		  style: {
+			color: Highcharts.getOptions().colors[1]
+		  }
+		}
+	  }, { // Secondary yAxis
+		title: {
+		  text: '농산물가격',
+		  style: {
+			color: Highcharts.getOptions().colors[0]
+		  }
+		},
+		labels: {
+		  format: '{value} 원',
+		  style: {
+			color: Highcharts.getOptions().colors[0]
+		  }
+		},
+		opposite: true
+	  }],
+	  tooltip: {
+		shared: true
+	  },
+	  legend: {
+		layout: 'vertical',
+		align: 'left',
+		x: 120,
+		verticalAlign: 'top',
+		y: 100,
+		floating: true,
+		backgroundColor:
+		  Highcharts.defaultOptions.legend.backgroundColor || // theme
+		  'rgba(255,255,255,0.25)'
+	  },
+	  series: [{
+		name: '농산물가격',
+		type: 'column',
+		yAxis: 1,
+		data: [49.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4],
+		tooltip: {
+		  valueSuffix: ' 원'
+		}
+
+	  }, {
+		name: '주식',
+		type: 'spline',
+		data: [7000.0, 6000.9, 9000.5, 1400.5, 1800.2, 2100.5, 2500.2, 2600.5, 2300.3, 1800.3, 1300.9, 9000.6],
+		tooltip: {
+		  valueSuffix: '원'
+		}
+	  }]
+	});
+	</script>
+
+
+	<script>
+	$(document).ready(function() {
+		$('#co_smartfarm').click(function () {
+			$.ajax({
+				url: "{% url 'additionalfactors2' %}",
+				data: {'csrfmiddlewaretoken': '{{csrf_token}}'},
+				datatype:'json',
+				type: 'post',
+				success: function (data) {
+               		$('#graph').empty()
+               		$('#graph').html('<div id="container_stock"></div>')
+					console.log(data)
+						Highcharts.chart('container_stock', {
+							chart : { zoomType: 'xy'},
+							title : { text: '주식과 배추 가격'},
+							xAxis : {  categories: data[0].days},
+							yAxis: [{ // Primary yAxis
+								labels: {
+								  format: '{value}원',
+								  style: {
+									color: Highcharts.getOptions().colors[1]
+								  }
+								},
+								title: {
+								  text: '주가',
+								  style: {
+									color: Highcharts.getOptions().colors[1]
+								  }
+								}
+							  }, { // Secondary yAxis
+								title: {
+								  text: '배추 소비자가',
+								  style: {
+									color: Highcharts.getOptions().colors[0]
+								  }
+								},
+								labels: {
+								  format: '{value} 원',
+								  style: {
+									color: Highcharts.getOptions().colors[0]
+								  }
+								},
+								opposite: true
+							}],
+							tooltip: {
+								shared: true
+						  	},
+						  	legend: {
+								layout: 'vertical',
+								align: 'left',
+								x: 120,
+								verticalAlign: 'top',
+								y: 60,
+								floating: true,
+								backgroundColor:
+								  Highcharts.defaultOptions.legend.backgroundColor || // theme
+								  'rgba(255,255,255,0.25)'
+							  },
+							series: [{
+								name: '배추 소비자가',
+								type: 'column',
+								yAxis: 1,
+								data: data[0].cabbage_price,
+								tooltip: {
+								  valueSuffix: ' 원'
+								}
+
+							  }, {
+								name: '스마트팜',
+								type: 'spline',
+								data: data[0].stock_smartfarm,
+								tooltip: {
+								  valueSuffix: '원'
+								}
+							 }]
+						})
+				}
+			});
+		})
+		$('#co_fertilizer').click(function () {
+			$.ajax({
+				url: "{% url 'additionalfactors2' %}",
+				data: {'csrfmiddlewaretoken': '{{csrf_token}}'},
+				datatype:'json',
+				type: 'post',
+				success: function (data) {
+               		$('#graph').empty()
+               		$('#graph').html('<div id="container_stock"></div>')
+					console.log(data)
+
+						Highcharts.chart('container_stock', {
+							chart : { zoomType: 'xy'},
+							title : { text: '주식과 배추 가격'},
+							xAxis : {  categories: data[0].days},
+							yAxis: [{ // Primary yAxis
+								labels: {
+								  format: '{value}원',
+								  style: {
+									color: Highcharts.getOptions().colors[1]
+								  }
+								},
+								title: {
+								  text: '주가',
+								  style: {
+									color: Highcharts.getOptions().colors[1]
+								  }
+								}
+							  }, { // Secondary yAxis
+								title: {
+								  text: '배추 소비자가격',
+								  style: {
+									color: Highcharts.getOptions().colors[0]
+								  }
+								},
+								labels: {
+								  format: '{value} 원',
+								  style: {
+									color: Highcharts.getOptions().colors[0]
+								  }
+								},
+								opposite: true
+							}],
+							tooltip: {
+								shared: true
+						  	},
+						  	legend: {
+								layout: 'vertical',
+								align: 'left',
+								x: 120,
+								verticalAlign: 'top',
+								y: 60,
+								floating: true,
+								backgroundColor:
+								  Highcharts.defaultOptions.legend.backgroundColor || // theme
+								  'rgba(255,255,255,0.25)'
+							  },
+							series: [{
+								name: '농산물가격',
+								type: 'column',
+								yAxis: 1,
+								data: data[0].cabbage_price,
+								tooltip: {
+								  valueSuffix: ' 원'
+								}
+
+							  }, {
+								name: '비료 회사',
+								type: 'spline',
+								data: data[0].stock_fertilizer,
+								tooltip: {
+								  valueSuffix: '원'
+								}
+							 }]
+						})
+				}
+			});
+		})
+		$('#co_kind').click(function () {
+			$.ajax({
+				url: "{% url 'additionalfactors2' %}",
+				data: {'csrfmiddlewaretoken': '{{csrf_token}}'},
+				datatype:'json',
+				type: 'post',
+				success: function (data) {
+               		$('#graph').empty()
+               		$('#graph').html('<div id="container_stock"></div>')
+					console.log(data)
+
+						Highcharts.chart('container_stock', {
+							chart : { zoomType: 'xy'},
+							title : { text: '주식과 배추 가격'},
+							xAxis : {  categories: data[0].days},
+							yAxis: [{ // Primary yAxis
+								labels: {
+								  format: '{value}원',
+								  style: {
+									color: Highcharts.getOptions().colors[1]
+								  }
+								},
+								title: {
+								  text: '주식',
+								  style: {
+									color: Highcharts.getOptions().colors[1]
+								  }
+								}
+							  }, { // Secondary yAxis
+								title: {
+								  text: '배추 소비자가',
+								  style: {
+									color: Highcharts.getOptions().colors[0]
+								  }
+								},
+								labels: {
+								  format: '{value} 원',
+								  style: {
+									color: Highcharts.getOptions().colors[0]
+								  }
+								},
+								opposite: true
+							}],
+							tooltip: {
+								shared: true
+						  	},
+						  	legend: {
+								layout: 'vertical',
+								align: 'left',
+								x: 120,
+								verticalAlign: 'top',
+								y: 60,
+								floating: true,
+								backgroundColor:
+								  Highcharts.defaultOptions.legend.backgroundColor || // theme
+								  'rgba(255,255,255,0.25)'
+							  },
+							series: [{
+								name: '배추 소비자가',
+								type: 'column',
+								yAxis: 1,
+								data: data[0].cabbage_price,
+								tooltip: {
+								  valueSuffix: ' 원'
+								}
+
+							  }, {
+								name: '종자 회사',
+								type: 'spline',
+								data: data[0].stock_seedkind,
+								tooltip: {
+								  valueSuffix: '원'
+								}
+							 }]
+						})
+				}
+			});
+		})
+
+		$('#co_pesticide').click(function () {
+			$.ajax({
+				url: "{% url 'additionalfactors2' %}",
+				data: {'csrfmiddlewaretoken': '{{csrf_token}}'},
+				datatype:'json',
+				type: 'post',
+				success: function (data) {
+               		$('#graph').empty()
+               		$('#graph').html('<div id="container_stock"></div>')
+					console.log(data)
+
+						Highcharts.chart('container_stock', {
+							chart : { zoomType: 'xy'},
+							title : { text: '주식과 배추 가격'},
+							xAxis : {  categories: data[0].days},
+							yAxis: [{ // Primary yAxis
+								labels: {
+								  format: '{value}원',
+								  style: {
+									color: Highcharts.getOptions().colors[1]
+								  }
+								},
+								title: {
+								  text: '주식',
+								  style: {
+									color: Highcharts.getOptions().colors[1]
+								  }
+								}
+							  }, { // Secondary yAxis
+								title: {
+								  text: '배추 소비자가',
+								  style: {
+									color: Highcharts.getOptions().colors[0]
+								  }
+								},
+								labels: {
+								  format: '{value} 원',
+								  style: {
+									color: Highcharts.getOptions().colors[0]
+								  }
+								},
+								opposite: true
+							}],
+							tooltip: {
+								shared: true
+						  	},
+						  	legend: {
+								layout: 'vertical',
+								align: 'left',
+								x: 120,
+								verticalAlign: 'top',
+								y: 60,
+								floating: true,
+								backgroundColor:
+								  Highcharts.defaultOptions.legend.backgroundColor || // theme
+								  'rgba(255,255,255,0.25)'
+							  },
+							series: [{
+								name: '배추 소비자가',
+								type: 'column',
+								yAxis: 1,
+								data: data[0].cabbage_price,
+								tooltip: {
+								  valueSuffix: ' 원'
+								}
+
+							  }, {
+								name: '농약 회사',
+								type: 'spline',
+								data: data[0].stock_pesticide,
+								tooltip: {
+								  valueSuffix: '원'
+								}
+							 }]
+						})
+				}
+			});
+		})
+		$('#co_machine').click(function () {
+			$.ajax({
+				url: "{% url 'additionalfactors2' %}",
+				data: {'csrfmiddlewaretoken': '{{csrf_token}}'},
+				datatype:'json',
+				type: 'post',
+				success: function (data) {
+               		$('#graph').empty()
+               		$('#graph').html('<div id="container_stock"></div>')
+					console.log(data)
+
+						Highcharts.chart('container_stock', {
+							chart : { zoomType: 'xy'},
+							title : { text: '주식과 배추 가격'},
+							xAxis : {  categories: data[0].days},
+							yAxis: [{ // Primary yAxis
+								labels: {
+								  format: '{value}원',
+								  style: {
+									color: Highcharts.getOptions().colors[1]
+								  }
+								},
+								title: {
+								  text: '주식',
+								  style: {
+									color: Highcharts.getOptions().colors[1]
+								  }
+								}
+							  }, { // Secondary yAxis
+								title: {
+								  text: '배추 소비자가격',
+								  style: {
+									color: Highcharts.getOptions().colors[0]
+								  }
+								},
+								labels: {
+								  format: '{value} 원',
+								  style: {
+									color: Highcharts.getOptions().colors[0]
+								  }
+								},
+								opposite: true
+							}],
+							tooltip: {
+								shared: true
+						  	},
+						  	legend: {
+								layout: 'vertical',
+								align: 'left',
+								x: 120,
+								verticalAlign: 'top',
+								y: 60,
+								floating: true,
+								backgroundColor:
+								  Highcharts.defaultOptions.legend.backgroundColor || // theme
+								  'rgba(255,255,255,0.25)'
+							  },
+							series: [{
+								name: '배추 소비자가',
+								type: 'column',
+								yAxis: 1,
+								data: data[0].cabbage_price,
+								tooltip: {
+								  valueSuffix: ' 원'
+								}
+
+							  }, {
+								name: '농기계 회사',
+								type: 'spline',
+								data: data[0].stock_machine,
+								tooltip: {
+								  valueSuffix: '원'
+								}
+							 }]
+						})
+				}
+			});
+		})
+
+	})
+
+	</script>
+</body>
 {% endblock %}
 {% include 'finalApp/footer.html' %}

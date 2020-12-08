@@ -209,6 +209,7 @@
 										'<p>' + data[0].category + '의 소비자가격을 예측해보자!' + '</p>');
 					$('#vegdiv2_p').html('<h3>' + ' 주간 소비자가'+ '<span class="orange-text">'+ '예측' + '</span></h3>');
 						Highcharts.chart('chartdiv', {
+
 							chart : { type : 'line'},
 							title : { text : data[0].category + '소비자가 현황 및 예측'},
 							xAxis : {  categories: data[0].days},
@@ -221,6 +222,7 @@
 								}]
 						})
 						Highcharts.chart('chartdiv02', {
+
 							chart : { type : 'bar'},
 							title : { text :  data[0].category + '의 소비자가격 형성 변수 중요도'},
 							xAxis : {  categories: data[0].price_total},

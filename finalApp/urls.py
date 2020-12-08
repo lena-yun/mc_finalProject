@@ -28,4 +28,6 @@ urlpatterns = [
 
     path('additionalfactors/', views.additionalfactors, name='additionalfactors'),
 
+    path('additionalfactors2/', views.additionalfactors2, name='additionalfactors2'),
+
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
