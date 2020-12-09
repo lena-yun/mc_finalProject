@@ -82,7 +82,7 @@
 				<div class="col-lg-2 col-md-6 text-center cucumber ml-4">
 					<div class="single-product-item">
 						<div class="product-image">
-							<a href="single-product.html"><img src="{% static 'assets/img/products/garlic.jpg' %}" alt=""></a>
+							<a href="single-product.html"><img src="{% static 'assets/img/products/cucumber.jpg' %}" alt=""></a>
 						</div>
 						<p class="product-price"><span>3Kg</span>오이</p>
 						<a data-toggle="collapse" aria-expanded="false" aria-controls="nooneacabbagediv" href="#nooneacabbagediv" class="cart-btn" id="vegetableclick4"><i class="fas fa-shopping-cart"></i>Click</a>
@@ -91,7 +91,7 @@
 				<div class="col-lg-2 col-md-6 text-center hotpepper ml-4">
 					<div class="single-product-item">
 						<div class="product-image">
-							<a href="single-product.html"><img src="{% static 'assets/img/products/hot pepper.jpg' %}" alt=""></a>
+							<a href="single-product.html"><img src="{% static 'assets/img/products/lettuce.jpg' %}" alt=""></a>
 						</div>
 						<p class="product-price"><span>10Kg</span>상추</p>
 						<a  data-toggle="collapse" href="#nooneacabbagediv" class="cart-btn" id="vegetableclick5"><i class="fas fa-shopping-cart"></i>Click</a>
@@ -166,8 +166,8 @@
 				<div class="col-lg-8 offset-lg-2 text-center">
 					<div class="section-title" id="vegdiv3_p">
 						{% csrf_token %}
-						<h3>소비자가 형성에 영향을 미치는 변수<span class="orange-text"></span></h3>
-						<p>{{id}}의 소비자가격 형성은 어떤 변수의 영향을 가장 많이 받는가?</p>
+						<h3>소비자가격 형성에 영향을 주는 요인들<span class="orange-text"></span></h3>
+						<p>{{id}}의 가격은 어떤 변수의 영향을 가장 많이 받을까?</p>
 					</div>
 					<figure class="highcharts-figure" id="chartregion02">
 						<div id ="chartdiv02">
@@ -217,21 +217,24 @@
 								title : {text : '가격(원)'}
 						},
 							series : [
-								{   name: "전체",
-									data: data[0].price_total
+								{   name: "마트",
+									data: data[0].price_mart
+								},
+								{   name: "시장",
+									data: data[0].price_sijang
 								}]
 						})
 						Highcharts.chart('chartdiv02', {
 
 							chart : { type : 'bar'},
-							title : { text :  data[0].category + '의 소비자가격 형성 변수 중요도'},
+							title : { text :  data[0].category + '의 가격형성에 영향을 주는 요인들'},
 							xAxis : {  categories: data[0].price_total},
 							yAxis : { title : {text : '평균가격'} },
 							plotOptions: {
 								series: {
             						colorByPoint: true
         						}
-    						},
+        					},
 							series : [
 								{   name: "전체",
 									data: data[0].price_total
@@ -255,19 +258,22 @@
 					$('#vegdiv2_p').html('<h3>' + ' 주간 소비자가격'+ '<span class="orange-text">'+ '예측' + '</span></h3>');
 						Highcharts.chart('chartdiv', {
 							chart : { type : 'line'},
-							title : { text : data[0].category + '소비자가 현황 및 예측'},
+							title : { text : data[0].category + '소비자가격 예측'},
 							xAxis : {  categories: data[0].days},
 							yAxis : {
 								title : {text : '가격(원)'}
 						},
 							series : [
-								{   name: "전체",
-									data: data[0].price_total
+								{   name: "마트",
+									data: data[0].price_mart
+								},
+								{   name: "시장",
+									data:  data[0].price_sijang
 								}]
 						})
 						Highcharts.chart('chartdiv02', {
 							chart : { type : 'bar'},
-							title : { text :  data[0].category + '의 소비자가격 형성 변수 중요도'},
+							title : { text :  data[0].category + '의 가격형성에 영향을 주는 요인들'},
 							xAxis : {  categories: data[0].price_total },
 							yAxis : { title : {text : '평균가격'} },
 							plotOptions: {
@@ -298,14 +304,17 @@
 					$('#vegdiv2_p').html('<h3>' + ' 주간 소비자가격'+ '<span class="orange-text">'+ '예측' + '</span></h3>');
 						Highcharts.chart('chartdiv', {
 							chart : { type : 'line'},
-							title : { text : data[0].category + '소비자가 현황 및 예측'},
+							title : { text : data[0].category + '소비자가격 예측'},
 							xAxis : {  categories: data[0].days},
 							yAxis : {
 								title : {text : '가격(원)'}
 						},
 							series : [
-								{   name: "전체",
-									data: data[0].price_total
+								{   name: "마트",
+									data: data[0].price_mart
+								},
+								{   name: "시장",
+									data:  data[0].price_sijang
 								}]
 						})
 						Highcharts.chart('chartdiv02', {
@@ -329,27 +338,30 @@
 
 		$('#vegetableclick4').click(function () {
 			$.ajax({
-				url: "{% url 'vegetableSelectProducer' id='마늘' %}",
+				url: "{% url 'vegetableSelectProducer' id='오이' %}",
 				data: {'csrfmiddlewaretoken': '{{csrf_token}}'},
 				datatype:'json',
 				type: 'post',
 				success: function (data) {
 					console.log(data)
-					$('#preview').html($('<img src="{% static 'assets/img/products/garlic.jpg' %}" alt="">'));
+					$('#preview').html($('<img src="{% static 'assets/img/products/cucumber.jpg' %}" alt="">'));
 					$('#vegdiv1_p').empty();
 					$('#vegdiv1_p').html('<h3>' + ' 소비자가격' + '<span class="orange-text">' +' 예측 결과' + '</span></h3>'+
 										'<p>' + data[0].category + '의 예측 경락가를 알아보자!' + '</p>');
 					$('#vegdiv2_p').html('<h3>' + ' 주간 소비자가격'+ '<span class="orange-text">'+ '예측' + '</span></h3>');
 						Highcharts.chart('chartdiv', {
 							chart : { type : 'line'},
-							title : { text : data[0].category + '소비자가격 현황 및 예측'},
+							title : { text : data[0].category + '소비자가격 예측'},
 							xAxis : {  categories: data[0].days},
 							yAxis : {
 								title : {text : '가격(원)'}
 						},
 							series : [
-								{   name: "전체",
-									data: data[0].price_total
+								{   name: "마트",
+									data: data[0].price_mart
+								},
+								{   name: "시장",
+									data:  data[0].price_sijang
 								}]
 						})
 						Highcharts.chart('chartdiv02', {
@@ -372,32 +384,35 @@
 		})
 		$('#vegetableclick5').click(function () {
 			$.ajax({
-				url: "{% url 'vegetableSelectProducer' id='고추' %}",
+				url: "{% url 'vegetableSelectProducer' id='상추' %}",
 				data: {'csrfmiddlewaretoken': '{{csrf_token}}'},
 				datatype:'json',
 				type: 'post',
 				success: function (data) {
 					console.log(data)
-					$('#preview').html($('<img src="{% static 'assets/img/products/hot pepper.jpg' %}" alt="">'));
+					$('#preview').html($('<img src="{% static 'assets/img/products/lettuce.jpg' %}" alt="">'));
 					$('#vegdiv1_p').empty();
 					$('#vegdiv1_p').html('<h3>'+ ' 소비자가격' + '<span class="orange-text">' +' 예측 결과' + '</span></h3>'+
 										'<p>' + data[0].category + '의 소비자가격을 예측해보자!' + '</p>');
 					$('#vegdiv2_p').html('<h3>' + ' 주간 소비자가격'+ '<span class="orange-text">'+ '예측' + '</span></h3>');
 						Highcharts.chart('chartdiv', {
 							chart : { type : 'line'},
-							title : { text : data[0].category + '소비자가 현황 및 예측'},
+							title : { text : data[0].category + '소비자가격 예측'},
 							xAxis : {  categories: data[0].days},
 							yAxis : {
 								title : {text : '가격(원)'}
 						},
 							series : [
-								{   name: "전체",
-									data: data[0].price_total
+								{   name: "마트",
+									data: data[0].price_mart
+								},
+								{   name: "시장",
+									data:  data[0].price_sijang
 								}]
 						})
 						Highcharts.chart('chartdiv02', {
 							chart : { type : 'bar'},
-							title : { text :  data[0].category + '의 소비자가 형성 변수 중요도'},
+							title : { text :  data[0].category + '의 가격형성에 영향을 주는 요인들'},
 							xAxis : {  categories: data[0].price_total},
 							yAxis : { title : {text : '평균가격'} },
 							plotOptions: {

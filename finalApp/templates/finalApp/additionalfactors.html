@@ -63,70 +63,38 @@
 
 	<div class="product-section mt-150 mb-150">
 		<div class="container">
-                <div class="content-column col-lg-12">
-					<div class="row">
-						<div class="col-lg-3">
-							<img src="{% static 'assets/img/additional/google_logo.png' %}" class="img-responsive">
-						</div>
-						<div class="col-lg-9 align-self-center">
-							<h2>이 채소가격을 들었다 놨다 한다고?</h2>
-						</div>
+			<div class="row">
+                <!--Content Column-->
+                <div class="content-column col-lg-12 row">
+					<div class="content-column col-lg-6">
+						<img src="{% static 'assets/img/additional/googlesearch.png' %}" class="img-responsive">
 					</div>
+					<div class="content-column col-lg-6 my-auto">
+						<h5><span class="orange-text">구글 검색량에 따라 변동하는 채소가격을 알아보자 </span></h5>
+						<h2>Q. <span class="orange-text">구글</span>이 채소가격을<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;들었다 놨다 한다고?<br><br></h2>
 
-
-					<div class="row">
-						<div class="col-lg-3">
-							<select class="mdb-select md-form my-5 btn-lg">
-							  <option value="" disabled selected >채소를 선택하세요</option>
-							  <option value="1">양파</option>
-							  <option value="2">배추</option>
-							  <option value="3">무</option>
-							  <option value="4">오이</option>
-							  <option value="5">상추</option>
-							</select>
-						</div>
-						<div class="col-lg-9">
-							<div>검색횟수를 알려주세요</div>
-							<div class="def-number-input number-input safari_only my-5">
-							  <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" class="minus"></button>
-							  <input class="quantity" min="0" max="100" name="quantity" value="1" type="number">
-							  <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus"></button>
+						<div class="card card-body">
+							<div class="row my-5">
+								<select class="mdb-select md-form  btn-lg col-lg-5" id="item">
+									<option value="" disabled selected >채소를 선택하세요</option>
+									<option value="1">양파</option>
+									<option value="2">배추</option>
+									<option value="3">무</option>
+									<option value="4">오이</option>
+									<option value="5">상추</option>
+								</select>
+								<div class="inputDiv col-xs-6  col-lg-7">
+									<label for="qty"><strong>50~100 사이의 검색량을 입력하세요.</strong></label>
+									<input type="number" class="form-control input-lg my-auto" id="qty" aria-describedby="googleSearchNum" placeholder="숫자입력">
+								</div>
 							</div>
-<!--							<form class="range-field my-5">-->
-<!--								<input id="calculatorSlider" class="no-border" type="range" value="0" min="0" max="100" />-->
-<!--								<span id="ex6CurrentSliderValLabel">Google 검색량 : <span id="ex6SliderVal">3</span></span>-->
-<!--							</form>-->
-
-
-<!--							<div class="card">-->
-<!--							  <div class="card-body">-->
-
-<!--								<h5 class="text-center font-weight-bold blue-text mt-3 mb-4 pb-4"><strong>구글 검색량을 설정하세요</strong></h5>-->
-<!--								<hr>-->
-<!--								  <h2><span class="badge blue lighten-2 mb-4">예상 가격</span></h2>-->
-<!--								  <h2 class="display-4" style="color:#0d47a1"><strong id="resellerEarnings">75$</strong></h2>-->
-
-
-<!--								&lt;!&ndash; Grid row &ndash;&gt;-->
-<!--								<div class="row">-->
-
-<!--								  &lt;!&ndash; Grid column &ndash;&gt;-->
-<!--								  <div class="col-md-6 text-center pb-5">-->
-
-<!--								  </div>-->
-<!--								  &lt;!&ndash; Grid column &ndash;&gt;-->
-
-
-<!--								</div>-->
-<!--								&lt;!&ndash; Grid row &ndash;&gt;-->
-
-<!--							  </div>-->
-<!--							</div>-->
-
+							<button type="button" class="btn btn-primary btn-block" id="searchBtn">예상가격 확인하기&nbsp;&nbsp;<i class="fas fa-mouse-pointer"></i></button>
 						</div>
 					</div>
-
+					<div class="container p-3 my-3 text-center bg-light text-dark"> <h2><span class="orange-text">" 예상 가격은
+						<input type="text" id="result" class="col-xs-2">원 입니다 "</span></h2></div>
                 </div>
+            </div>
 		</div>
 	</div>
 
@@ -137,16 +105,6 @@
         	<div class="row">
                 <!--Content Column-->
                 <div class="content-column col-lg-12 row">
-					<div class="content-column col-lg-6">
-						<img src="{% static 'assets/img/additional/baekjongwon.png' %}" class="img-responsive">
-						<div class="row my-100" align="center">
-							<a data-toggle="collapse" aria-expanded="false" aria-controls="quizdiv" href="#quizdiv1" class="cart-btn" id="cabbageclick">배추김치</a>
-							<a data-toggle="collapse" aria-expanded="false" aria-controls="quizdiv" href="#quizdiv2" class="cart-btn" id="radishclick">무조림</a>
-							<a data-toggle="collapse" aria-expanded="false" aria-controls="quizdiv" href="#quizdiv3" class="cart-btn" id="cucumberclick">오이소박이</a>
-							<a data-toggle="collapse" aria-expanded="false" aria-controls="quizdiv" href="#quizdiv4" class="cart-btn" id="onionclick">양파장아찌</a>
-							<a data-toggle="collapse" aria-expanded="false" aria-controls="quizdiv" href="#quizdiv5" class="cart-btn" id="lettuceclick">상추쌈</a>
-						</div>
-					</div>
 					<div class="content-column col-lg-6 my-auto">
 						<h5><span class="orange-text">백종원과 채소가격 Quiz Quiz </span></h5>
 						<h2>Q. <span class="orange-text">백종원</span>이<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TV에서 요리를 한다면?<br><br></h2>
@@ -157,19 +115,24 @@
 							</ol>
 						</div>
 					</div>
+					<div class="content-column col-lg-6">
+						<img src="{% static 'assets/img/additional/baekjongwon.png' %}" class="img-responsive">
 
-<!--					<div class="row" my-100>-->
-<!--						<a data-toggle="collapse" aria-expanded="false" aria-controls="quizdiv" href="#quizdiv1" class="cart-btn" id="cabbageclick">배추김치</a>-->
-<!--						<a data-toggle="collapse" aria-expanded="false" aria-controls="quizdiv" href="#quizdiv2" class="cart-btn" id="radishclick">무조림</a>-->
-<!--						<a data-toggle="collapse" aria-expanded="false" aria-controls="quizdiv" href="#quizdiv3" class="cart-btn" id="cucumberclick">오이소박이</a>-->
-<!--						<a data-toggle="collapse" aria-expanded="false" aria-controls="quizdiv" href="#quizdiv4" class="cart-btn" id="onionclick">양파장아찌</a>-->
-<!--						<a data-toggle="collapse" aria-expanded="false" aria-controls="quizdiv" href="#quizdiv5" class="cart-btn" id="lettuceclick">상추쌈</a>-->
-<!--					</div>-->
+<!--						<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">-->
+
+						<div class="row my-100" align="center" aria-multiselectable="true" id="accordion">
+							<a data-toggle="collapse" aria-expanded="false" aria-controls="quizdiv" href="#quizdiv1" class="cart-btn" id="cabbageclick" data-parent="#accordion">배추김치</a>
+							<a data-toggle="collapse" aria-expanded="false" aria-controls="quizdiv" href="#quizdiv2" class="cart-btn" id="radishclick" data-parent="#accordion">무조림</a>
+							<a data-toggle="collapse" aria-expanded="false" aria-controls="quizdiv" href="#quizdiv3" class="cart-btn" id="cucumberclick" data-parent="#accordion">오이소박이</a>
+							<a data-toggle="collapse" aria-expanded="false" aria-controls="quizdiv" href="#quizdiv4" class="cart-btn" id="onionclick" data-parent="#accordion">양파장아찌</a>
+							<a data-toggle="collapse" aria-expanded="false" aria-controls="quizdiv" href="#quizdiv5" class="cart-btn" id="lettuceclick" data-parent="#accordion">상추쌈</a>
+						</div>
+					</div>
 
                 </div>
             </div>
         </div>
-		<div class="container collapse" id="quizdiv1" >
+		<div class=" container collapse" id="quizdiv1" data-parent="#accordion" >
 			<div class="col-md-push-(12)">
 				<div class="single-product mt-80 mb-100" >
 					<div class="container">
@@ -177,29 +140,128 @@
 							<div class="card card-body">
     							<div class="row">
 									<div class="col-md-6" align="center">
-										<img src="{% static 'assets/img/additional/quiz_o.png' %}" class="img-responsive" id="positive">
+										<img src="{% static 'assets/img/additional/quiz_o.png' %}" class="img-responsive">
 										<p><h4><strong>배추 가격이 <span class="orange-text">오를 것이다</span></strong></h4></p>
-										<button type="button" class="btn-btn btn-lg" data-toggle="modal" data-target="#myModalYes">select</button>
+										<button type="button" class="btn-btn btn-lg" data-toggle="modal" data-target="#myModalYes1">select</button>
 									</div>
 									<div class="col-md-6" align="center">
-										<img src="{% static 'assets/img/additional/quiz_x.png' %}" class="img-responsive" id="negative">
+										<img src="{% static 'assets/img/additional/quiz_x.png' %}" class="img-responsive">
 										<p><h4><strong>배추 가격이 <span class="orange-text">오르지 않을 것이다</span></strong></h4></p>
-										<button type="button" class="btn-btn btn-lg" data-toggle="modal" data-target="#myModalNo">select</button>
+										<button type="button" class="btn-btn btn-lg" data-toggle="modal" data-target="#myModalNo1">select</button>
 									</div>
 								</div>
 
 							</div>
 						</div>
 					</div>
-
 				</div>
 			</div>
-	</div>
+		</div>
+		<div class=" container collapse" id="quizdiv2" data-parent="#accordion">
+			<div class="col-md-push-(12)">
+				<div class="single-product mt-80 mb-100" >
+					<div class="container">
+						<div class="row">
+							<div class="card card-body">
+    							<div class="row">
+									<div class="col-md-6" align="center">
+										<img src="{% static 'assets/img/additional/quiz_o.png' %}" class="img-responsive" >
+										<p><h4><strong>무 가격이 <span class="orange-text">오를 것이다</span></strong></h4></p>
+										<button type="button" class="btn-btn btn-lg" data-toggle="modal" data-target="#myModalYes2">select</button>
+									</div>
+									<div class="col-md-6" align="center">
+										<img src="{% static 'assets/img/additional/quiz_x.png' %}" class="img-responsive" >
+										<p><h4><strong>무 가격이 <span class="orange-text">오르지 않을 것이다</span></strong></h4></p>
+										<button type="button" class="btn-btn btn-lg" data-toggle="modal" data-target="#myModalNo2">select</button>
+									</div>
+								</div>
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="container collapse" id="quizdiv3"  >
+			<div class="col-md-push-(12)">
+				<div class="single-product mt-80 mb-100" >
+					<div class="container">
+						<div class="row">
+							<div class="card card-body">
+    							<div class="row">
+									<div class="col-md-6" align="center">
+										<img src="{% static 'assets/img/additional/quiz_o.png' %}" class="img-responsive">
+										<p><h4><strong>오이 가격이 <span class="orange-text">오를 것이다</span></strong></h4></p>
+										<button type="button" class="btn-btn btn-lg" data-toggle="modal" data-target="#myModalYes3">select</button>
+									</div>
+									<div class="col-md-6" align="center">
+										<img src="{% static 'assets/img/additional/quiz_x.png' %}" class="img-responsive" >
+										<p><h4><strong>오이 가격이 <span class="orange-text">오르지 않을 것이다</span></strong></h4></p>
+										<button type="button" class="btn-btn btn-lg" data-toggle="modal" data-target="#myModalNo3">select</button>
+									</div>
+								</div>
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="container collapse" id="quizdiv4" >
+			<div class="col-md-push-(12)">
+				<div class="single-product mt-80 mb-100" >
+					<div class="container">
+						<div class="row">
+							<div class="card card-body">
+    							<div class="row">
+									<div class="col-md-6" align="center">
+										<img src="{% static 'assets/img/additional/quiz_o.png' %}" class="img-responsive" >
+										<p><h4><strong>양파 가격이 <span class="orange-text">오를 것이다</span></strong></h4></p>
+										<button type="button" class="btn-btn btn-lg" data-toggle="modal" data-target="#myModalYes4">select</button>
+									</div>
+									<div class="col-md-6" align="center">
+										<img src="{% static 'assets/img/additional/quiz_x.png' %}" class="img-responsive">
+										<p><h4><strong>양파 가격이 <span class="orange-text">오르지 않을 것이다</span></strong></h4></p>
+										<button type="button" class="btn-btn btn-lg" data-toggle="modal" data-target="#myModalNo4">select</button>
+									</div>
+								</div>
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="container collapse" id="quizdiv5" >
+			<div class="col-md-push-(12)">
+				<div class="single-product mt-80 mb-100" >
+					<div class="container">
+						<div class="row">
+							<div class="card card-body">
+    							<div class="row">
+									<div class="col-md-6" align="center">
+										<img src="{% static 'assets/img/additional/quiz_o.png' %}" class="img-responsive">
+										<p><h4><strong>상추 가격이 <span class="orange-text">오를 것이다</span></strong></h4></p>
+										<button type="button" class="btn-btn btn-lg" data-toggle="modal" data-target="#myModalYes5">select</button>
+									</div>
+									<div class="col-md-6" align="center">
+										<img src="{% static 'assets/img/additional/quiz_x.png' %}" class="img-responsive" >
+										<p><h4><strong>상추 가격이 <span class="orange-text">오르지 않을 것이다</span></strong></h4></p>
+										<button type="button" class="btn-btn btn-lg" data-toggle="modal" data-target="#myModalNo5">select</button>
+									</div>
+								</div>
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
     </section>
-		<!-- Modal -->
-	<div id="myModalNo" class="modal fade" role="dialog">
-	  <div class="modal-dialog modal-dialog-centered">
 
+	<!--YES Modal -->
+	<div id="myModalNo1" class="modal fade" role="dialog">
+	  <div class="modal-dialog modal-dialog-centered">
 		<!-- Modal content-->
 		<div class="modal-content">
 		  <div class="modal-header">
@@ -207,8 +269,10 @@
 <!--			<h4 class="modal-title">Modal Header</h4>-->
 		  </div>
 		  <div class="modal-body" align="center">
-			  <img src="{% static 'assets/img/additional/main_quiz_o.png' %}" class="img-responsive">
-				<p>백종원과 배추는 상관관계가 없습니다</p>
+			  <img src="{% static 'assets/img/additional/main_quiz_o.png' %}" class="img-responsive mb-80">
+			  <img src="{% static 'assets/img/additional/백종원배추.png' %}" class="img-responsive mb-80">
+			  <p>백종원이 출연하는 TV시청률과 배추가격은 매우 낮은 상관관계를 보입니다.<br>이는 서로간의 영향을 거의 받지 않음을 의미합니다.</p>
+
 		  </div>
 		  <div class="modal-footer">
 			<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -218,8 +282,8 @@
 	  </div>
 	</div>
 <!--	fin modal-->
-		<!-- Modal -->
-	<div id="myModalYes" class="modal fade" role="dialog">
+	<!--NO Modal -->
+	<div id="myModalYes1" class="modal fade" role="dialog">
 	  <div class="modal-dialog modal-dialog-centered">
 
 		<!-- Modal content-->
@@ -229,8 +293,9 @@
 <!--			<h4 class="modal-title">Modal Header</h4>-->
 		  </div>
 		  <div class="modal-body" align="center">
-			  <img src="{% static 'assets/img/additional/main_quiz_x.png' %}" class="img-responsive">
-				<p>백종원과 배추는 상관관계가 없습니다</p>
+			  <img src="{% static 'assets/img/additional/main_quiz_x.png' %}" class="img-responsive mb-80">
+			  <img src="{% static 'assets/img/additional/백종원배추.png' %}" class="img-responsive mb-80">
+			  <p>백종원이 출연하는 TV시청률과 배추가격은 매우 낮은 상관관계를 보입니다.<br>이는 서로간의 영향을 거의 받지 않음을 의미합니다.</p>
 		  </div>
 		  <div class="modal-footer">
 			<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -240,6 +305,196 @@
 	  </div>
 	</div>
 <!--	fin modal-->
+
+	<!--YES Modal -->
+	<div id="myModalNo2" class="modal fade" role="dialog">
+	  <div class="modal-dialog modal-dialog-centered">
+		<!-- Modal content-->
+		<div class="modal-content">
+		  <div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal">&times;</button>
+<!--			<h4 class="modal-title">Modal Header</h4>-->
+		  </div>
+		  <div class="modal-body" align="center">
+			  <img src="{% static 'assets/img/additional/main_quiz_o.png' %}" class="img-responsive mb-80">
+			  <img src="{% static 'assets/img/additional/백종원무.png' %}" class="img-responsive mb-80">
+			  <p>백종원이 출연하는 TV시청률과 무가격은 매우 낮은 상관관계를 보입니다.<br>이는 서로간의 영향을 거의 받지 않음을 의미합니다.</p>
+
+		  </div>
+		  <div class="modal-footer">
+			<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		  </div>
+		</div>
+
+	  </div>
+	</div>
+<!--	fin modal-->
+	<!--NO Modal -->
+	<div id="myModalYes2" class="modal fade" role="dialog">
+	  <div class="modal-dialog modal-dialog-centered">
+
+		<!-- Modal content-->
+		<div class="modal-content">
+		  <div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal">&times;</button>
+<!--			<h4 class="modal-title">Modal Header</h4>-->
+		  </div>
+		  <div class="modal-body" align="center">
+			  <img src="{% static 'assets/img/additional/main_quiz_x.png' %}" class="img-responsive mb-80">
+			  <img src="{% static 'assets/img/additional/백종원무.png' %}" class="img-responsive mb-80">
+			  <p>백종원이 출연하는 TV시청률과 무가격은 매우 낮은 상관관계를 보입니다.<br>이는 서로간의 영향을 거의 받지 않음을 의미합니다.</p>
+		  </div>
+		  <div class="modal-footer">
+			<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		  </div>
+		</div>
+
+	  </div>
+	</div>
+<!--	fin modal-->
+
+	<!--YES Modal -->
+	<div id="myModalNo3" class="modal fade" role="dialog">
+	  <div class="modal-dialog modal-dialog-centered">
+		<!-- Modal content-->
+		<div class="modal-content">
+		  <div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal">&times;</button>
+<!--			<h4 class="modal-title">Modal Header</h4>-->
+		  </div>
+		  <div class="modal-body" align="center">
+			  <img src="{% static 'assets/img/additional/main_quiz_o.png' %}" class="img-responsive mb-80">
+			  <img src="{% static 'assets/img/additional/백종원오이.png' %}" class="img-responsive mb-80">
+			  <p>백종원이 출연하는 TV시청률과 오이가격은 매우 낮은 상관관계를 보입니다.<br>이는 서로간의 영향을 거의 받지 않음을 의미합니다.</p>
+
+		  </div>
+		  <div class="modal-footer">
+			<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		  </div>
+		</div>
+
+	  </div>
+	</div>
+<!--	fin modal-->
+	<!--NO Modal -->
+	<div id="myModalYes3" class="modal fade" role="dialog">
+	  <div class="modal-dialog modal-dialog-centered">
+
+		<!-- Modal content-->
+		<div class="modal-content">
+		  <div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal">&times;</button>
+<!--			<h4 class="modal-title">Modal Header</h4>-->
+		  </div>
+		  <div class="modal-body" align="center">
+			  <img src="{% static 'assets/img/additional/main_quiz_x.png' %}" class="img-responsive mb-80">
+			  <img src="{% static 'assets/img/additional/백종원오이.png' %}" class="img-responsive mb-80">
+			  <p>백종원이 출연하는 TV시청률과 오이가격은 매우 낮은 상관관계를 보입니다.<br>이는 서로간의 영향을 거의 받지 않음을 의미합니다.</p>
+		  </div>
+		  <div class="modal-footer">
+			<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		  </div>
+		</div>
+
+	  </div>
+	</div>
+<!--	fin modal-->
+
+	<!--YES Modal -->
+	<div id="myModalNo4" class="modal fade" role="dialog">
+	  <div class="modal-dialog modal-dialog-centered">
+		<!-- Modal content-->
+		<div class="modal-content">
+		  <div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal">&times;</button>
+<!--			<h4 class="modal-title">Modal Header</h4>-->
+		  </div>
+		  <div class="modal-body" align="center">
+			  <img src="{% static 'assets/img/additional/main_quiz_o.png' %}" class="img-responsive mb-80">
+			  <img src="{% static 'assets/img/additional/백종원양파.png' %}" class="img-responsive mb-80">
+			  <p>백종원이 출연하는 TV시청률과 양파가격은 매우 낮은 상관관계를 보입니다.<br>이는 서로간의 영향을 거의 받지 않음을 의미합니다.</p>
+
+		  </div>
+		  <div class="modal-footer">
+			<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		  </div>
+		</div>
+
+	  </div>
+	</div>
+<!--	fin modal-->
+	<!--NO Modal -->
+	<div id="myModalYes4" class="modal fade" role="dialog">
+	  <div class="modal-dialog modal-dialog-centered">
+
+		<!-- Modal content-->
+		<div class="modal-content">
+		  <div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal">&times;</button>
+<!--			<h4 class="modal-title">Modal Header</h4>-->
+		  </div>
+		  <div class="modal-body" align="center">
+			  <img src="{% static 'assets/img/additional/main_quiz_x.png' %}" class="img-responsive mb-80">
+			  <img src="{% static 'assets/img/additional/백종원양파.png' %}" class="img-responsive mb-80">
+			  <p>백종원이 출연하는 TV시청률과 양파가격은 매우 낮은 상관관계를 보입니다.<br>이는 서로간의 영향을 거의 받지 않음을 의미합니다.</p>
+		  </div>
+		  <div class="modal-footer">
+			<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		  </div>
+		</div>
+
+	  </div>
+	</div>
+<!--	fin modal-->
+
+	<!--YES Modal -->
+	<div id="myModalNo5" class="modal fade" role="dialog">
+	  <div class="modal-dialog modal-dialog-centered">
+		<!-- Modal content-->
+		<div class="modal-content">
+		  <div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal">&times;</button>
+<!--			<h4 class="modal-title">Modal Header</h4>-->
+		  </div>
+		  <div class="modal-body" align="center">
+			  <img src="{% static 'assets/img/additional/main_quiz_o.png' %}" class="img-responsive mb-80">
+			  <img src="{% static 'assets/img/additional/백종원상추.png' %}" class="img-responsive mb-80">
+			  <p>백종원이 출연하는 TV시청률과 상추가격은 매우 낮은 상관관계를 보입니다.<br>이는 서로간의 영향을 거의 받지 않음을 의미합니다.</p>
+
+		  </div>
+		  <div class="modal-footer">
+			<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		  </div>
+		</div>
+
+	  </div>
+	</div>
+<!--	fin modal-->
+	<!--NO Modal -->
+	<div id="myModalYes5" class="modal fade" role="dialog">
+	  <div class="modal-dialog modal-dialog-centered">
+
+		<!-- Modal content-->
+		<div class="modal-content">
+		  <div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal">&times;</button>
+<!--			<h4 class="modal-title">Modal Header</h4>-->
+		  </div>
+		  <div class="modal-body" align="center">
+			  <img src="{% static 'assets/img/additional/main_quiz_x.png' %}" class="img-responsive mb-80">
+			  <img src="{% static 'assets/img/additional/백종원상추.png' %}" class="img-responsive mb-80">
+			  <p>백종원이 출연하는 TV시청률과 상추가격은 매우 낮은 상관관계를 보입니다.<br>이는 서로간의 영향을 거의 받지 않음을 의미합니다.</p>
+		  </div>
+		  <div class="modal-footer">
+			<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		  </div>
+		</div>
+
+	  </div>
+	</div>
+<!--	fin modal-->
+
+
 
 
 
@@ -287,8 +542,6 @@
 	<!-- end advertisement section -->
 
 
-
-
 	<!--	script-->
 	<script src="https://code.highcharts.com/highcharts.js"></script>
 	<script src="https://code.highcharts.com/modules/timeline.js"></script>
@@ -301,79 +554,26 @@
 <!--Material Select Initialization-->
 	<script>
 		$(document).ready(function() {
-		$('.mdb-select').materialSelect();
+
+
+			$('#searchBtn').click(function() {
+				//alert('searchBtn')
+				$.ajax({
+					url : '{% url 'search' %}',
+					type : 'post',
+					data : { 'csrfmiddlewaretoken' : '{{csrf_token}}' ,
+							item : $('#item').val() ,
+							qty : $('#qty').val() },
+					dataType : 'json',
+					success : function(data) {
+						//alert(data[0].pred)
+						$('#result').val(data[0].pred)
+					}
+				})
+			})
 		});
 	</script>
 
-	<script>
-	const slider = $("#calculatorSlider");
-	const developerBtn = $("#developerBtn");
-	const corporateBtn = $("#corporateBtn");
-	const privateBtn = $("#privateBtn");
-	const reseller = $("#resellerEarnings");
-	const client = $("#clientPrice");
-	const percentageBonus = 30; // = 30%
-	const license = {
-	  corpo: {
-		active: true,
-		price: 319,
-	  },
-	  dev: {
-		active: false,
-		price: 149,
-	  },
-	  priv: {
-		active: false,
-		price: 79,
-	  }
-	}
-
-	function calculate(price, value) {
-	  client.text((Math.round((price - (value / 100 * price)))) + '$');
-	  reseller.text((Math.round(((percentageBonus - value) / 100 * price))) + '$')
-	}
-
-	function reset(price) {
-	  slider.val(0);
-	  client.text(price + '$');
-	  reseller.text((Math.round((percentageBonus / 100 * price))) + '$');
-	}
-	developerBtn.on('click', function(e) {
-	  license.dev.active = true;
-	  license.corpo.active = false;
-	  license.priv.active = false;
-	  reset(license.dev.price)
-	});
-	privateBtn.on('click', function(e) {
-	  license.dev.active = false;
-	  license.corpo.active = false;
-	  license.priv.active = true;
-	  reset(license.priv.price);
-	});
-	corporateBtn.on('click', function(e) {
-	  license.dev.active = false;
-	  license.corpo.active = true;
-	  license.priv.active = false;
-	  reset(license.corpo.price);
-	});
-	slider.on("input change", function(e) {
-	if (license.priv.active) {
-	  calculate(license.priv.price, $(this).val());
-	} else if (license.corpo.active) {
-	  calculate(license.corpo.price, $(this).val());
-	} else if (license.dev.active) {
-	  calculate(license.dev.price, $(this).val());
-	}
-	})
-
-
-	$("#calculatorSlider").slider();
-	$("#calculatorSlider").on("slide", function(slideEvt) {
-		$("#ex6SliderVal").text(slideEvt.value);
-	});
-
-
-	</script>
 
 
 	<script>
@@ -407,7 +607,7 @@
 		}
 	  }, { // Secondary yAxis
 		title: {
-		  text: '농산물가격',
+		  text: '배추 소비자가',
 		  style: {
 			color: Highcharts.getOptions().colors[0]
 		  }
@@ -435,7 +635,7 @@
 		  'rgba(255,255,255,0.25)'
 	  },
 	  series: [{
-		name: '농산물가격',
+		name: '배추 소비자가',
 		type: 'column',
 		yAxis: 1,
 		data: [49.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6, 148.5, 216.4, 194.1, 95.6, 54.4],
@@ -564,7 +764,7 @@
 								}
 							  }, { // Secondary yAxis
 								title: {
-								  text: '배추 소비자가격',
+								  text: '배추 소비자가',
 								  style: {
 									color: Highcharts.getOptions().colors[0]
 								  }
@@ -592,7 +792,7 @@
 								  'rgba(255,255,255,0.25)'
 							  },
 							series: [{
-								name: '농산물가격',
+								name: '배추 소비자가',
 								type: 'column',
 								yAxis: 1,
 								data: data[0].cabbage_price,
@@ -799,7 +999,7 @@
 								}
 							  }, { // Secondary yAxis
 								title: {
-								  text: '배추 소비자가격',
+								  text: '배추 소비자가',
 								  style: {
 									color: Highcharts.getOptions().colors[0]
 								  }
@@ -851,6 +1051,8 @@
 	})
 
 	</script>
+
+
 </body>
 {% endblock %}
 {% include 'finalApp/footer.html' %}
