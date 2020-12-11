@@ -112,24 +112,36 @@
 				</div>
 				<div class="col-md-7">
 					<div class="cart-table-wrap">
-						<h3>금일평균 소비자가 <span class="orange-text"> 0000원</span></h3>
+						<div id="today-mart-price">
+							<h3>오늘의 <span class="orange-text">마트</span>가격 <span class="orange-text"> 0000원</span></h3>
+						</div>
+						<div id="today-sijang-price">
+							<h3>오늘의 <span class="orange-text">시장</span>가격 <span class="orange-text"> 0000원</span></h3>
+						</div>
 						<table class="price-table">
 							<thead class="cart-table-head">
 								<tr class="table-head-row">
-									<th class="price-status">상태</th>
-									<th class="price-week-pred">주간예측가격</th>
+									<th class="price-status">구분</th>
+									<th class="price-week-pred">금주 평균 예측가</th>
 									<th class="price-twodaysago">2일전일가</th>
 									<th class="price-yesterday">전일가</th>
 									<th class="price-gap">차액정보(2일전일가-전일가)</th>
 								</tr>
 							</thead>
-							<tbody>
-								<tr class="table-body-row">
-									<td class="price-status"><img src="{% static 'assets/img/products/status-smile.png' %}" alt="" width="100"></td>
-									<td class="price-week-pred">00원/Kg</td>
-									<td class="price-twodaysago">85원</td>
-									<td class="price-yesterday">00원</td>
-									<td class="price-gap">1</td>
+							<tbody id="tablelist">
+								<tr class="table-body-row_m">
+									<td class="price-status">마트</td>
+									<td class="price-week-pred_m">00원/Kg</td>
+									<td class="price-twodaysago_m">85원</td>
+									<td class="price-yesterday_m">00원</td>
+									<td class="price-gap_m">100원</td>
+								</tr>
+								<tr class="table-body-row_s">
+									<td class="price-status_s">시장</td>
+									<td class="price-week-pred_s">00원/Kg</td>
+									<td class="price-twodaysago_s">85원</td>
+									<td class="price-yesterday_s">00원</td>
+									<td class="price-gap_s">200원</td>
 								</tr>
 						</table>
 					</div>
@@ -162,27 +174,81 @@
 
 	<div class="more-products mb-150" id="region3_p">
 		<div class="container" id="moreRegion3_p">
-			<div class="row">
-				<div class="col-lg-8 offset-lg-2 text-center">
-					<div class="section-title" id="vegdiv3_p">
-						{% csrf_token %}
-						<h3>소비자가격 형성에 영향을 주는 요인들<span class="orange-text"></span></h3>
-						<p>{{id}}의 가격은 어떤 변수의 영향을 가장 많이 받을까?</p>
-					</div>
-					<figure class="highcharts-figure" id="chartregion02">
-						<div id ="chartdiv02">
-							<p class="highcharts-description">
-<!--						    <canvas id="myChart" width="400" height="400"></canvas>-->
-							</p>
-						</div>
-					</figure>
-
+			<div class="col-lg-8 offset-lg-2 text-center">
+				<div class="section-title" id="vegdiv3_p">
+					{% csrf_token %}
+					<h3>소비자가격을 형성하는 <span class="orange-text">요인들</span></h3>
+					<p>채소가격은 어떤 변수의 영향을 가장 많이 받을까?</p>
 				</div>
+				<figure class="highcharts-figure" id="chartregion02">
+					<div id ="chartdiv02">
+						<p class="highcharts-description"></p>
+					</div>
+				</figure>
 			</div>
+			<div class="content-column col-lg-12">
+				<div class="col-lg-12 col-md-10 mb-5 mb-md-5 mt-100">
+					<div class="row">
+						<div class="col-lg-4">
+							<img src="{% static 'assets/img/icons/bank.png' %}" class="img-responsive" >
+						</div>
+						<div class="col-lg-8 align-self-center">
+							<div >
+								<h4>평균 도매가격</h4>
+								<p>소매가격이 결정되기 바로 이전 단계의 가격으로,  소비자가격과 밀접한 관계를 가지는 변수입니다.</p>
+							</div>
+							<div class="mt-5">
+								<h4>경락가 평균 가격</h4>
+								<p>가락시장과 같은 도매시장에서 채소를 경매하여 낙찰된 가격으로,<br>채소 가격이 결정되는 첫 단계로서 중요 변수로 측정됩니다.</p>
+							</div>
+							<div class="mt-5">
+								<h4>유가 전국평균 가격</h4>
+								<p>매년 오르는 물가를 반영하는 변수로 대부분의 채소에서 가장 높은 중요 변수로 측정됩니다.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-12 col-md-10 mb-5 mb-md-5 mt-150">
+					<div class="row">
+						<div class="col-lg-9 align-self-center text-right">
+							<div>
+								<h4>반입량</h4>
+								<p>공급량을 대변하는 변수입니다. 일반적으로 공급이 많으면 가격이 하락하고,<br>공급이 적으면 가격이 증가하는 추이를 보이며 그에 따른 중요한 변수로 측정됩니다.</p>
+							</div>
+							<div class="mt-5">
+								<h4>연휴의 유무</h4>
+								<p>추석이나 설날 등 민족대명절이 있는 연휴에는 아무래도 채소의 값이 올라가기 마련입니다.<br>하지만 1년 중 워낙 적은 수의 연휴가 있기 때문에 중요도는 크지 않는 것으로 보입니다.</p>
+							</div>
+						</div>
+						<div class="col-lg-3 ">
+							<img src="{% static 'assets/img/icons/warehouse.png' %}" class="img-responsive">
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-12 col-md-10 mb-5 mb-md-5 mt-150">
+					<div class="row">
+						<div class="col-lg-3 ">
+							<img src="{% static 'assets/img/icons/cloudy.png' %}" class="img-responsive">
+						</div>
+						<div class="col-lg-9 align-self-center">
+							<div>
+								<h4>최저기온/ 최고기온</h4>
+								<p>작물이 잘 자라기 위해서는 알맞은 온도가 필요합니다. 따라서 전혀 관련이 없다고 할 수는 없지만,<br>각 채소는 최적화된 산지에서 재배되기 때문에 높은 중요도를 보이지는 않습니다.</p>
+							</div>
+							<div class="mt-5">
+								<h4>일강수량</h4>
+								<p>풍작을 위해서는 작물이 물을 많이 흡수해야겠지요.<br>하지만 요즘은 하우스재배가 많고, 농부가 직접 물도 주기 때문에 큰 영향은 없는 것 같습니다.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+
 		</div>
 	</div>
-	<!-- end more products -->
 
+	<!-- end more products -->
 	</div>
 	</div>
 
@@ -193,6 +259,13 @@
 	<!--	예측 경락가-->
 	<script src="https://code.highcharts.com/highcharts.src.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+<!--	<script src="https://code.highcharts.com/highcharts.js"></script>-->
+	<script src="https://code.highcharts.com/modules/exporting.js"></script>
+	<script src="https://code.highcharts.com/modules/export-data.js"></script>
+	<script src="https://code.highcharts.com/modules/accessibility.js"></script>
+
+
 	<script>
 	$(document).ready(function() {
 		$('#vegetableclick1').click(function () {
@@ -202,8 +275,27 @@
 				datatype:'json',
 				type: 'post',
 				success: function (data) {
+					console.log(">>>>>>>>>>>")
 					console.log(data)
 					$('#preview').html($('<img src="{% static 'assets/img/products/onion.jpg' %}" alt="">'));
+					$('#tablelist').empty()
+					var txt = "";
+					$('#today-mart-price').html('<h3 class="text-center">' + ' 오늘의' + '<span class="orange-text">' +' 마트' + '</span>' +' 가격은 ' +
+								'<span class="orange-text">' + data[0].trData[0].today + '</span>' + '원 입니다' + '</h3><br>');
+					$('#today-sijang-price').html('<h3 class="text-center">' + ' 오늘의' + '<span class="orange-text">' +' 시장' + '</span>' +' 가격은 ' +
+								'<span class="orange-text">' + data[0].trData[1].today + '</span>' + '원 입니다' + '</h3><br>');
+
+					$.each(data[0].trData , function(idx, obj) {
+						txt +="<tr><td>"+obj.kind+"</td>" ;
+						txt +="<td>"+obj.weekly+' 원'+"</td>" ;
+						txt +="<td>"+obj.twodaysago+' 원'+"</a></td>";
+						txt +="<td>"+obj.yesterday+' 원'+"</td>";
+						txt +="<td>"+obj.gap+' 원'+"</td></tr>" ;
+					});
+					//alert(data[0].trData[0].kind)
+					//alert(data[0].trData)
+					$("#tablelist").append(txt);
+
 					$('#vegdiv1_p').empty();
 					$('#vegdiv1_p').html('<h3>' + ' 소비자가격' + '<span class="orange-text">' +' 예측' + '</span></h3>'+
 										'<p>' + data[0].category + '의 소비자가격을 예측해보자!' + '</p>');
@@ -225,21 +317,51 @@
 								}]
 						})
 						Highcharts.chart('chartdiv02', {
-
 							chart : { type : 'bar'},
 							title : { text :  data[0].category + '의 가격형성에 영향을 주는 요인들'},
-							xAxis : {  categories: data[0].price_total},
-							yAxis : { title : {text : '평균가격'} },
+							xAxis : {  categories: data[0].fs_name},
+							yAxis : {
+									min: 0,
+									title : {
+										text : '변수중요도'
+										//align: 'high'
+									}
+									//labels: {
+									//	overflow: 'justify'
+									//}
+							},
 							plotOptions: {
-								series: {
-            						colorByPoint: true
+								bar: {
+									dataLabels: {
+										enabled: true
+									}
         						}
         					},
+        				    legend: {
+								layout: 'vertical',
+								align: 'right',
+								verticalAlign: 'top',
+								x: -40,
+								y: 230,
+								floating: true,
+								borderWidth: 1,
+								backgroundColor:
+									Highcharts.defaultOptions.legend.backgroundColor || '#FFFFFF',
+								shadow: true
+							},
+							credits: {
+								enabled: false
+							},
 							series : [
-								{   name: "전체",
-									data: data[0].price_total
-								}]
-						})
+								{   name: "마트",
+									data: data[0].fm_number
+								},
+								{
+									name: "시장",
+									data: data[0].fs_number
+								} ]
+						}
+					)
 				}
 			});
 		})
@@ -252,6 +374,23 @@
 				success: function (data) {
 					console.log(data)
 					$('#preview').html($('<img src="{% static 'assets/img/products/cabbage.jpg' %}" alt="">'));
+
+					$('#tablelist').empty()
+					var txt = "";
+					$('#today-mart-price').html('<h3 class="text-center">' + ' 오늘의' + '<span class="orange-text">' +' 마트' + '</span>' +' 가격은 ' +
+								'<span class="orange-text">' + data[0].trData[0].today + '</span>' + '원 입니다' + '</h3><br>');
+					$('#today-sijang-price').html('<h3 class="text-center">' + ' 오늘의' + '<span class="orange-text">' +' 시장' + '</span>' +' 가격은 ' +
+								'<span class="orange-text">' + data[0].trData[1].today + '</span>' + '원 입니다' + '</h3><br>');
+
+					$.each(data[0].trData , function(idx, obj) {
+						txt +="<tr><td>"+obj.kind+"</td>" ;
+						txt +="<td>"+obj.weekly+' 원'+"</td>" ;
+						txt +="<td>"+obj.twodaysago+' 원'+"</a></td>";
+						txt +="<td>"+obj.yesterday+' 원'+"</td>";
+						txt +="<td>"+obj.gap+' 원'+"</td></tr>" ;
+					});
+					$("#tablelist").append(txt);
+
 					$('#vegdiv1_p').empty();
 					$('#vegdiv1_p').html('<h3>' + ' 소비자가격' + '<span class="orange-text">' +' 예측 결과' + '</span></h3>'+
 										'<p>' + data[0].category + '의 소비자가격을 예측해보자!' + '</p>');
@@ -274,17 +413,47 @@
 						Highcharts.chart('chartdiv02', {
 							chart : { type : 'bar'},
 							title : { text :  data[0].category + '의 가격형성에 영향을 주는 요인들'},
-							xAxis : {  categories: data[0].price_total },
-							yAxis : { title : {text : '평균가격'} },
+							xAxis : {  categories: data[0].fs_name},
+							yAxis : {
+									min: 0,
+									title : {
+										text : '변수중요도'
+										//align: 'high'
+									}
+									//labels: {
+									//	overflow: 'justify'
+									//}
+							},
 							plotOptions: {
-								series: {
-            						colorByPoint: true
+								bar: {
+									dataLabels: {
+										enabled: true
+									}
         						}
-    						},
+        					},
+        				    legend: {
+								layout: 'vertical',
+								align: 'right',
+								verticalAlign: 'top',
+								x: -40,
+								y: 230,
+								floating: true,
+								borderWidth: 1,
+								backgroundColor:
+									Highcharts.defaultOptions.legend.backgroundColor || '#FFFFFF',
+								shadow: true
+							},
+							credits: {
+								enabled: false
+							},
 							series : [
-								{   name: "전체",
-									data: data[0].price_total
-								}]
+								{   name: "마트",
+									data: data[0].fm_number
+								},
+								{
+									name: "시장",
+									data: data[0].fs_number
+								} ]
 						})
 				}
 			});
@@ -298,6 +467,23 @@
 				success: function (data) {
 					console.log(data)
 					$('#preview').html($('<img src="{% static 'assets/img/products/Radish.jpg' %}" alt="">'));
+
+					$('#tablelist').empty()
+					var txt = "";
+					$('#today-mart-price').html('<h3 class="text-center">' + ' 오늘의' + '<span class="orange-text">' +' 마트' + '</span>' +' 가격은 ' +
+								'<span class="orange-text">' + data[0].trData[0].today + '</span>' + '원 입니다' + '</h3><br>');
+					$('#today-sijang-price').html('<h3 class="text-center">' + ' 오늘의' + '<span class="orange-text">' +' 시장' + '</span>' +' 가격은 ' +
+								'<span class="orange-text">' + data[0].trData[1].today + '</span>' + '원 입니다' + '</h3><br>');
+
+					$.each(data[0].trData , function(idx, obj) {
+						txt +="<tr><td>"+obj.kind+"</td>" ;
+						txt +="<td>"+obj.weekly+' 원'+"</td>" ;
+						txt +="<td>"+obj.twodaysago+' 원'+"</a></td>";
+						txt +="<td>"+obj.yesterday+' 원'+"</td>";
+						txt +="<td>"+obj.gap+' 원'+"</td></tr>" ;
+					});
+					$("#tablelist").append(txt);
+
 					$('#vegdiv1_p').empty();
 					$('#vegdiv1_p').html('<h3>' + ' 소비자가격' + '<span class="orange-text">' +' 예측 결과' + '</span></h3>'+
 										'<p>' + data[0].category + '의 소비자가격을 예측해보자!' + '</p>');
@@ -319,18 +505,48 @@
 						})
 						Highcharts.chart('chartdiv02', {
 							chart : { type : 'bar'},
-							title : { text :  data[0].category + '의 소비자가 형성 변수 중요도'},
-							xAxis : {  categories: data[0].price_total },
-							yAxis : { title : {text : '평균가격'} },
+							title : { text :  data[0].category + '의 가격형성에 영향을 주는 요인들'},
+							xAxis : {  categories: data[0].fs_name},
+							yAxis : {
+									min: 0,
+									title : {
+										text : '변수중요도'
+										//align: 'high'
+									}
+									//labels: {
+									//	overflow: 'justify'
+									//}
+							},
 							plotOptions: {
-								series: {
-            						colorByPoint: true
+								bar: {
+									dataLabels: {
+										enabled: true
+									}
         						}
-    						},
+        					},
+        				    legend: {
+								layout: 'vertical',
+								align: 'right',
+								verticalAlign: 'top',
+								x: -40,
+								y: 230,
+								floating: true,
+								borderWidth: 1,
+								backgroundColor:
+									Highcharts.defaultOptions.legend.backgroundColor || '#FFFFFF',
+								shadow: true
+							},
+							credits: {
+								enabled: false
+							},
 							series : [
-								{   name: "전체",
-									data: data[0].price_total
-								}]
+								{   name: "마트",
+									data: data[0].fm_number
+								},
+								{
+									name: "시장",
+									data: data[0].fs_number
+								} ]
 						})
 				}
 			});
@@ -345,56 +561,27 @@
 				success: function (data) {
 					console.log(data)
 					$('#preview').html($('<img src="{% static 'assets/img/products/cucumber.jpg' %}" alt="">'));
+
+					$('#tablelist').empty()
+					var txt = "";
+					$('#today-mart-price').html('<h3 class="text-center">' + ' 오늘의' + '<span class="orange-text">' +' 마트' + '</span>' +' 가격은 ' +
+								'<span class="orange-text">' + data[0].trData[0].today + '</span>' + '원 입니다' + '</h3><br>');
+					$('#today-sijang-price').html('<h3 class="text-center">' + ' 오늘의' + '<span class="orange-text">' +' 시장' + '</span>' +' 가격은 ' +
+								'<span class="orange-text">' + data[0].trData[1].today + '</span>' + '원 입니다' + '</h3><br>');
+
+					$.each(data[0].trData , function(idx, obj) {
+						txt +="<tr><td>"+obj.kind+"</td>" ;
+						txt +="<td>"+obj.weekly+' 원'+"</td>" ;
+						txt +="<td>"+obj.twodaysago+' 원'+"</a></td>";
+						txt +="<td>"+obj.yesterday+' 원'+"</td>";
+						txt +="<td>"+obj.gap+' 원'+"</td></tr>" ;
+					});
+					$("#tablelist").append(txt);
+
 					$('#vegdiv1_p').empty();
-					$('#vegdiv1_p').html('<h3>' + ' 소비자가격' + '<span class="orange-text">' +' 예측 결과' + '</span></h3>'+
+					$('#vegdiv1_p').html('<h3 class="text-center">' + ' 소비자가격' + '<span class="orange-text">' +' 예측 결과' + '</span></h3>'+
 										'<p>' + data[0].category + '의 예측 경락가를 알아보자!' + '</p>');
-					$('#vegdiv2_p').html('<h3>' + ' 주간 소비자가격'+ '<span class="orange-text">'+ '예측' + '</span></h3>');
-						Highcharts.chart('chartdiv', {
-							chart : { type : 'line'},
-							title : { text : data[0].category + '소비자가격 예측'},
-							xAxis : {  categories: data[0].days},
-							yAxis : {
-								title : {text : '가격(원)'}
-						},
-							series : [
-								{   name: "마트",
-									data: data[0].price_mart
-								},
-								{   name: "시장",
-									data:  data[0].price_sijang
-								}]
-						})
-						Highcharts.chart('chartdiv02', {
-							chart : { type : 'bar'},
-							title : { text :  data[0].category + '의 소비자가 형성 변수 중요도'},
-							xAxis : {  categories: data[0].price_total},
-							yAxis : { title : {text : '평균가격'} },
-							plotOptions: {
-								series: {
-            						colorByPoint: true
-        						}
-    						},
-							series : [
-								{   name: "전체",
-									data: data[0].price_total
-								}]
-						})
-				}
-			});
-		})
-		$('#vegetableclick5').click(function () {
-			$.ajax({
-				url: "{% url 'vegetableSelectProducer' id='상추' %}",
-				data: {'csrfmiddlewaretoken': '{{csrf_token}}'},
-				datatype:'json',
-				type: 'post',
-				success: function (data) {
-					console.log(data)
-					$('#preview').html($('<img src="{% static 'assets/img/products/lettuce.jpg' %}" alt="">'));
-					$('#vegdiv1_p').empty();
-					$('#vegdiv1_p').html('<h3>'+ ' 소비자가격' + '<span class="orange-text">' +' 예측 결과' + '</span></h3>'+
-										'<p>' + data[0].category + '의 소비자가격을 예측해보자!' + '</p>');
-					$('#vegdiv2_p').html('<h3>' + ' 주간 소비자가격'+ '<span class="orange-text">'+ '예측' + '</span></h3>');
+					$('#vegdiv2_p').html('<h3 class="text-center">' + ' 주간 소비자가격'+ '<span class="orange-text">'+ '예측' + '</span></h3>');
 						Highcharts.chart('chartdiv', {
 							chart : { type : 'line'},
 							title : { text : data[0].category + '소비자가격 예측'},
@@ -413,17 +600,140 @@
 						Highcharts.chart('chartdiv02', {
 							chart : { type : 'bar'},
 							title : { text :  data[0].category + '의 가격형성에 영향을 주는 요인들'},
-							xAxis : {  categories: data[0].price_total},
-							yAxis : { title : {text : '평균가격'} },
+							xAxis : {  categories: data[0].fs_name},
+							yAxis : {
+									min: 0,
+									title : {
+										text : '변수중요도'
+										//align: 'high'
+									}
+									//labels: {
+									//	overflow: 'justify'
+									//}
+							},
 							plotOptions: {
-								series: {
-            						colorByPoint: true
+								bar: {
+									dataLabels: {
+										enabled: true
+									}
         						}
-    						},
+        					},
+        				    legend: {
+								layout: 'vertical',
+								align: 'right',
+								verticalAlign: 'top',
+								x: -40,
+								y: 230,
+								floating: true,
+								borderWidth: 1,
+								backgroundColor:
+									Highcharts.defaultOptions.legend.backgroundColor || '#FFFFFF',
+								shadow: true
+							},
+							credits: {
+								enabled: false
+							},
 							series : [
-								{   name: "전체",
-									data: data[0].price_total
+								{   name: "마트",
+									data: data[0].fm_number
+								},
+								{
+									name: "시장",
+									data: data[0].fs_number
+								} ]
+						})
+				}
+			});
+		})
+		$('#vegetableclick5').click(function () {
+			$.ajax({
+				url: "{% url 'vegetableSelectProducer' id='상추' %}",
+				data: {'csrfmiddlewaretoken': '{{csrf_token}}'},
+				datatype:'json',
+				type: 'post',
+				success: function (data) {
+					console.log(data)
+					$('#preview').html($('<img src="{% static 'assets/img/products/lettuce.jpg' %}" alt="">'));
+
+					$('#tablelist').empty()
+					var txt = "";
+					$('#today-mart-price').html('<h3 class="text-center">' + ' 오늘의' + '<span class="orange-text">' +' 마트' + '</span>' +' 가격은 ' +
+								'<span class="orange-text">' + data[0].trData[0].today + '</span>' + '원 입니다' + '</h3><br>');
+					$('#today-sijang-price').html('<h3 class="text-center">' + ' 오늘의' + '<span class="orange-text">' +' 시장' + '</span>' +' 가격은  ' +
+								'<span class="orange-text">' + data[0].trData[1].today + '</span>' + '원 입니다' + '</h3><br>');
+
+					$.each(data[0].trData , function(idx, obj) {
+						txt +="<tr><td>"+obj.kind+"</td>" ;
+						txt +="<td>"+obj.weekly+' 원'+"</td>" ;
+						txt +="<td>"+obj.twodaysago+' 원'+"</a></td>";
+						txt +="<td>"+obj.yesterday+' 원'+"</td>";
+						txt +="<td>"+obj.gap+' 원'+"</td></tr>" ;
+					});
+					$("#tablelist").append(txt);
+
+					$('#vegdiv1_p').empty();
+					$('#vegdiv1_p').html('<h3 class="text-center">'+ ' 소비자가격' + '<span class="orange-text">' +' 예측 결과' + '</span></h3>'+
+										'<p>' + data[0].category + '의 소비자가격을 예측해보자!' + '</p>');
+					$('#vegdiv2_p').html('<h3 class="text-center">' + ' 주간 소비자가격'+ '<span class="orange-text">'+ '예측' + '</span></h3>');
+						Highcharts.chart('chartdiv', {
+							chart : { type : 'line'},
+							title : { text : data[0].category + '소비자가격 예측'},
+							xAxis : {  categories: data[0].days},
+							yAxis : {
+								title : {text : '가격(원)'}
+						},
+							series : [
+								{   name: "마트",
+									data: data[0].price_mart
+								},
+								{   name: "시장",
+									data:  data[0].price_sijang
 								}]
+						})
+						Highcharts.chart('chartdiv02', {
+							chart : { type : 'bar'},
+							title : { text :  data[0].category + '의 가격형성에 영향을 주는 요인들'},
+							xAxis : {  categories: data[0].fs_name},
+							yAxis : {
+									min: 0,
+									title : {
+										text : '변수중요도'
+										//align: 'high'
+									}
+									//labels: {
+									//	overflow: 'justify'
+									//}
+							},
+							plotOptions: {
+								bar: {
+									dataLabels: {
+										enabled: true
+									}
+        						}
+        					},
+        				    legend: {
+								layout: 'vertical',
+								align: 'right',
+								verticalAlign: 'top',
+								x: -40,
+								y: 230,
+								floating: true,
+								borderWidth: 1,
+								backgroundColor:
+									Highcharts.defaultOptions.legend.backgroundColor || '#FFFFFF',
+								shadow: true
+							},
+							credits: {
+								enabled: false
+							},
+							series : [
+								{   name: "마트",
+									data: data[0].fm_number
+								},
+								{
+									name: "시장",
+									data: data[0].fs_number
+								} ]
 						})
 				}
 			});
